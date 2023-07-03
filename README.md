@@ -27,6 +27,6 @@
 - Go to Product > Build Documentation or **⌃⇧⌘ D**
 
 
-### XCode 15 beta note
+### XCode 15 beta note (iOS 17)
 
 - At the current time XCode 15 is in beta and in the console you might see message "A structure that defines how a layer displays a player’s visual content within the layer’s bounds" I found on Stack-overflow that many came across this message and at the time it is treated like XCode 15 beta bug
