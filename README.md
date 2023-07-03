@@ -18,7 +18,7 @@
 |**errorTextSize**| Size of the error text | 17.0 |
 
 ## SwiftUI example for the package
-[ SwiftUI loop video player example](https://github.com/The-Igor/swiftui-loop-videoplayer-example)
+[ SwiftUI loop video player package](https://github.com/The-Igor/swiftui-loop-videoplayer)
 
   ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/img_02.gif)
 
