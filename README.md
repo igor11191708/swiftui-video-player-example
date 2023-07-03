@@ -1,10 +1,10 @@
-# SwiftUI loop video player Example
+# SwiftUI loop video player
 
 ## How to use the package
-### 1. Create PlayerView
+### 1. Create LoopPlayerView
 
 ```swift
-   PlayerView(resourceName: "swipe")
+   LoopPlayerView(resourceName: "swipe")
 ```
 
 ### Params
@@ -15,19 +15,17 @@
 |**extention**| Video extension | "mp4" |
 |**errorText**| Error message text| "Resource is not found" |
 |**videoGravity**| A structure that defines how a layer displays a player’s visual content within the layer’s bounds | .resizeAspect |
+|**errorTextSize**| Size of the error text | 17.0 |
 
-## Used package
-[ SwiftUI loop video player package](https://github.com/The-Igor/swiftui-loop-videoplayer)
+## SwiftUI example for the package
+[ SwiftUI loop video player example](https://github.com/The-Igor/swiftui-loop-videoplayer-example)
 
-  ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/img_01.gif)
-
-
+  ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/img_02.gif)
 
 ## Documentation(API)
 - You need to have Xcode 13 installed in order to have access to Documentation Compiler (DocC)
 
 - Go to Product > Build Documentation or **⌃⇧⌘ D**
-
 
 ### XCode 15 beta note (iOS 17)
 

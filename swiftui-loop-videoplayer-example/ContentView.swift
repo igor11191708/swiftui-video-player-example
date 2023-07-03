@@ -10,30 +10,39 @@ import swiftui_loop_videoplayer
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack{
-            NavigationLink(destination: Video())
-            {
-                labelTpl("display", color: .green)
-            }
-            NavigationLink(destination: Video1())
-            {
-                labelTpl("video")
-            }
-            NavigationLink(destination: Video2())
-            {
-               labelTpl("airplayvideo.circle")
-            }
-            NavigationLink(destination: Video3())
-            {
-                labelTpl("e.circle", color: .red)
-            }
-        }
+            NavigationStack{
+                ZStack{
+                    VStack{
+                        Spacer()
+                        NavigationLink(destination: Video())
+                        {
+                            labelTpl("display", color: .green)
+                        }
+                        NavigationLink(destination: Video1())
+                        {
+                            labelTpl("video")
+                        }
+                        NavigationLink(destination: Video2())
+                        {
+                            labelTpl("airplayvideo.circle")
+                        }
+                        NavigationLink(destination: Video3())
+                        {
+                            labelTpl("e.circle", color: .red)
+                        }
+                        Spacer()
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color("app_blue"))
+                .ignoresSafeArea()
+            }.preferredColorScheme(.dark)
     }
     
     @ViewBuilder
     private func labelTpl(_ name : String, color : Color = .blue) -> some View{
         Image(systemName: name)
-            .font(.system(size: 50))
+            .font(.system(size: 102))
             .padding(8)
             .foregroundColor(color)
     }
@@ -42,27 +51,31 @@ struct ContentView: View {
 struct Video1 : View{
     var body: some View{
         VStack {
-           PlayerView(resourceName: "swipe")
+            Spacer()
+           LoopPlayerView(resourceName: "swipe")
                 .frame(width: 300, height: 239)
                 .offset(x: 102, y: -25)
+            Spacer()
         }
+        .frame(maxWidth: .infinity)
         .ignoresSafeArea()
+        .background(Color("app_blue"))
     }
 }
 
 struct Video2 : View{
     var body: some View{
         ZStack {
-           PlayerView(resourceName: "swipe")
-        }
+           LoopPlayerView(resourceName: "swipe")
+        }.background(Color("app_blue"))
     }
 }
 
 struct Video3 : View{
     var body: some View{
         ZStack(alignment: .center) {
-           PlayerView(resourceName: "swipe_")
-        }
+            LoopPlayerView(resourceName: "swipe_", errorTextSize: 27.0)
+        } .background(Color("app_blue"))
     }
 }
 
@@ -70,7 +83,8 @@ struct Video3 : View{
 struct Video : View{
     var body: some View{
         ZStack(alignment: .center) {
-            PlayerView(resourceName: "swipe", videoGravity: .resizeAspectFill)
+            LoopPlayerView(resourceName: "swipe", videoGravity: .resizeAspectFill)
         }.ignoresSafeArea()
+           
     }
 }

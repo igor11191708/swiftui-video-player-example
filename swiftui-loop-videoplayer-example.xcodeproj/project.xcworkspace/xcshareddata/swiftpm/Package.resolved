@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/The-Igor/swiftui-loop-videoplayer.git",
       "state" : {
-        "revision" : "e35d6f7bd54d61e0a48aa630d091e1a8d7e115c6",
-        "version" : "1.0.0"
+        "branch" : "main",
+        "revision" : "4489264c075436adf0fa2acbdaf9f75128feb79c"
       }
     }
   ],
