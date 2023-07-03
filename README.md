@@ -17,7 +17,7 @@
 |**videoGravity**| A structure that defines how a layer displays a player’s visual content within the layer’s bounds | .resizeAspect |
 
 ## Used package
-[ SwiftUI loop video player example](https://github.com/The-Igor/swiftui-loop-videoplayer)
+[ SwiftUI loop video player package](https://github.com/The-Igor/swiftui-loop-videoplayer)
 
   ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/img_01.gif)
 
