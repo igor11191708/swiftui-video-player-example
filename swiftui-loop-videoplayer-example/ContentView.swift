@@ -85,6 +85,5 @@ struct Video : View{
         ZStack(alignment: .center) {
             LoopPlayerView(resourceName: "swipe", videoGravity: .resizeAspectFill)
         }.ignoresSafeArea()
-           
     }
 }
