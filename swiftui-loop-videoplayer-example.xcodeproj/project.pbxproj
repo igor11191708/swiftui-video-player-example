@@ -14,6 +14,7 @@
 		78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7BFC2A52AA5D0028E9E3 /* swipe.mp4 */; };
 		78AF7C002A52AA6D0028E9E3 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78AF7BFF2A52AA6D0028E9E3 /* swiftui-loop-videoplayer */; };
 		78AF7C032A52BDE80028E9E3 /* img_01.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7C022A52BDE80028E9E3 /* img_01.gif */; };
+		78AF7C052A52BF6A0028E9E3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7C042A52BF6A0028E9E3 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		78AF7BFA2A52AA080028E9E3 /* swiftui-loop-videoplayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swiftui-loop-videoplayer"; path = "../swiftui-loop-videoplayer"; sourceTree = "<group>"; };
 		78AF7BFC2A52AA5D0028E9E3 /* swipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe.mp4; sourceTree = "<group>"; };
 		78AF7C022A52BDE80028E9E3 /* img_01.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = img_01.gif; sourceTree = "<group>"; };
+		78AF7C042A52BF6A0028E9E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		78AF7BEA2A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example */ = {
 			isa = PBXGroup;
 			children = (
+				78AF7C042A52BF6A0028E9E3 /* README.md */,
 				78AF7C012A52BDDF0028E9E3 /* img */,
 				78AF7BFB2A52AA5D0028E9E3 /* Resources */,
 				78AF7BEB2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift */,
@@ -172,6 +175,7 @@
 			files = (
 				78AF7BF32A52A9DB0028E9E3 /* Preview Assets.xcassets in Resources */,
 				78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */,
+				78AF7C052A52BF6A0028E9E3 /* README.md in Resources */,
 				78AF7BF02A52A9DB0028E9E3 /* Assets.xcassets in Resources */,
 				78AF7C032A52BDE80028E9E3 /* img_01.gif in Resources */,
 			);
