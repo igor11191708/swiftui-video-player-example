@@ -39,7 +39,7 @@ You can group error settings in group **"ErrorGroup"** or just pass all settings
 | Name of setting | Description | Default |
 | --- | --- |  --- | 
 |**FileName("swipe")**| Name of the video to play| - |
-|** Ext("mp4")**| Video extension | "mp4" |
+|**Ext("mp4")**| Video extension | "mp4" |
 |**Gravity(.resizeAspectFill)**| A structure that defines how a layer displays a player’s visual content within the layer’s bounds | .resizeAspect |
 |**EText("Not found")**| Error message text| "Resource is not found" |
 |**EFontSize(27)**| Size of the error text | 17.0 |
