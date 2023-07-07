@@ -32,7 +32,7 @@
             } 
 ```  
 If you add any setting twice or more the first one only will be applied
-You can group error settings in group **"ErrorGroup"** or just pass all settings as a linear list of settings
+You can group error settings in group **ErrorGroup** or just pass all settings as a linear list of settings
 
 ### Settings
 
