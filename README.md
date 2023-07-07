@@ -36,7 +36,7 @@ You can group error settings in group **"ErrorGroup"** or just pass all settings
 
 ### Settings
 
-| Name of setting | Description | Default |
+| Name | Description | Default |
 | --- | --- |  --- | 
 |**FileName("swipe")**| Name of the video to play| - |
 |**Ext("mp4")**| Video extension | "mp4" |
