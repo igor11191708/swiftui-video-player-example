@@ -52,7 +52,7 @@ struct Video1 : View{
     var body: some View{
         VStack {
             Spacer()
-           LoopPlayerView(resourceName: "swipe")
+            LoopPlayerView(fileName : "swipe")
                 .frame(width: 300, height: 239)
                 .offset(x: 102, y: -25)
             Spacer()
@@ -66,7 +66,15 @@ struct Video1 : View{
 struct Video2 : View{
     var body: some View{
         ZStack {
-           LoopPlayerView(resourceName: "swipe")
+            LoopPlayerView{
+                Settings{
+                    FileName("swipe")
+                    ErrorGroup{
+                        EText("File not found")
+                        EFontSize(27)
+                    }
+                }
+            }
         }.background(Color("app_blue"))
     }
 }
@@ -74,7 +82,13 @@ struct Video2 : View{
 struct Video3 : View{
     var body: some View{
         ZStack(alignment: .center) {
-            LoopPlayerView(resourceName: "swipe_", errorTextSize: 27.0)
+            LoopPlayerView{
+                Settings{
+                    FileName("swipe_")
+                    EText("Custom error text")
+                    EFontSize(33)
+                }
+            }
         } .background(Color("app_blue"))
     }
 }
@@ -83,7 +97,13 @@ struct Video3 : View{
 struct Video : View{
     var body: some View{
         ZStack(alignment: .center) {
-            LoopPlayerView(resourceName: "swipe", videoGravity: .resizeAspectFill)
+            LoopPlayerView{
+                Settings{
+                    FileName("swipe")
+                    Ext("mp4")
+                    Gravity(.resizeAspectFill)
+                }
+            }
         }.ignoresSafeArea()
     }
 }
