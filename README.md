@@ -7,33 +7,35 @@
 ### 1. Create LoopPlayerView
 
 ```swift
-   LoopPlayerView(fileName: "swipe")    
+    LoopPlayerView(fileName: "swipe")    
 ```
 
-   or in declarative way
+   or in a declarative way
    
  ```swift
-        LoopPlayerView{
-                Settings{
-                    FileName("swipe")
-                    Ext("mp4")
-                    Gravity(.resizeAspectFill)
-                    ErrorGroup{
-                        EText("Not found")
-                        EFontSize(27)
-                    }
+    LoopPlayerView{
+            Settings{
+                FileName("swipe")
+                Ext("mp4")
+                Gravity(.resizeAspectFill)
+                ErrorGroup{
+                    EText("Not found")
+                    EFontSize(27)
                 }
-            }   
-            
-           LoopPlayerView{
-                Settings{
-                    FileName("swipe")
-                    Ext("mp4")
-                    Gravity(.resizeAspectFill)
-                    EFontSize(27)                  
-                }
-            } 
-```  
+            }
+        }   
+``` 
+          
+ ```swift            
+       LoopPlayerView{
+            Settings{
+                FileName("swipe")
+                Ext("mp4")
+                Gravity(.resizeAspectFill)
+                EFontSize(27)                  
+            }
+        } 
+```   
 If you add any setting twice or more the first one only will be applied
 You can group error settings in group **ErrorGroup** or just pass all settings as a linear list of settings. You don't need to follow some specific order for settings, just pass in arbitrary oder settings you are interested in. The only required setting is **FileName**.
 
@@ -50,7 +52,7 @@ You can group error settings in group **ErrorGroup** or just pass all settings a
 ## SwiftUI example for the package
 [ SwiftUI loop video player package](https://github.com/The-Igor/swiftui-loop-videoplayer)
 
-  ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/img_02.gif)
+  ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui.gif)
 
 ## Documentation(API)
 - You need to have Xcode 13 installed in order to have access to Documentation Compiler (DocC)
