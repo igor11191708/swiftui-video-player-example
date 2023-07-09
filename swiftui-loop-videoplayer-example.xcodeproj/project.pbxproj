@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		784A16232A58374B00E8BBEA /* swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 784A16222A58374B00E8BBEA /* swiftui.gif */; };
+		788D66212A5B1B7B0047A134 /* swiftui_video_hint.gif in Resources */ = {isa = PBXBuildFile; fileRef = 788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */; };
 		78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF7BEB2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift */; };
 		78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF7BED2A52A9DA0028E9E3 /* ContentView.swift */; };
 		78AF7BF02A52A9DB0028E9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7BEF2A52A9DB0028E9E3 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		784A16222A58374B00E8BBEA /* swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui.gif; sourceTree = "<group>"; };
+		788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_hint.gif; sourceTree = "<group>"; };
 		78AF7BE82A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-loop-videoplayer-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78AF7BEB2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_loop_videoplayer_exampleApp.swift; sourceTree = "<group>"; };
 		78AF7BED2A52A9DA0028E9E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */,
 				784A16222A58374B00E8BBEA /* swiftui.gif */,
 			);
 			path = img;
@@ -174,6 +177,7 @@
 				78AF7C072A52BFBB0028E9E3 /* README.md in Resources */,
 				784A16232A58374B00E8BBEA /* swiftui.gif in Resources */,
 				78AF7BF02A52A9DB0028E9E3 /* Assets.xcassets in Resources */,
+				788D66212A5B1B7B0047A134 /* swiftui_video_hint.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,8 +324,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,8 +352,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,6 +9,9 @@ import SwiftUI
 import swiftui_loop_videoplayer
 
 struct ContentView: View {
+    
+    @State var hintOn : Bool = false
+    
     var body: some View {
             NavigationStack{
                 ZStack{
@@ -34,9 +37,39 @@ struct ContentView: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .background(Color("app_blue"))
+                .background(.quaternary)
                 .ignoresSafeArea()
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Button(action: { hintOn = true }, label: {
+                            Image(systemName: "questionmark.circle.fill")
+                        })
+                    }
+                }
             }.preferredColorScheme(.dark)
+            .sheet(isPresented: $hintOn){
+                    Video2()
+                    .overlay(hintTitleTpl, alignment: .topLeading)
+            }
+           
+            
+    }
+    
+    @ViewBuilder
+    private var hintTitleTpl : some View{
+        HStack{
+            Spacer()
+            VStack(){
+                Image(systemName: "questionmark.video")
+                Text("Video hint")
+                    .font(.system(size: 50))
+                    .padding()
+            }.foregroundColor(.orange)
+                .font(.system(size: 70))
+                .fontWeight(.thin)
+            Spacer()
+        }
+        .padding(.top, 50)
     }
     
     @ViewBuilder

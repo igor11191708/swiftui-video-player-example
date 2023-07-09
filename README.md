@@ -37,6 +37,9 @@
         } 
 ```  
 You can group error settings in group **ErrorGroup** or just pass all settings as a linear list of settings. You don't need to follow some specific order for settings, just pass in an arbitrary oder you are interested in. The only required setting is **FileName**.
+  ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui.gif)
+  
+
 
 ### Settings
 
@@ -51,7 +54,10 @@ You can group error settings in group **ErrorGroup** or just pass all settings a
 ## SwiftUI example for the package
 [ SwiftUI loop video player package](https://github.com/The-Igor/swiftui-loop-videoplayer)
 
-  ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui.gif)
+## Practical idea for the package
+You can introduce video hints about some functionality into the app, for example how to add positions to favorites. Put loop video hint into background or open as popup.
+
+  ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui_video_hint.gif)
 
 ## Documentation(API)
 - You need to have Xcode 13 installed in order to have access to Documentation Compiler (DocC)
