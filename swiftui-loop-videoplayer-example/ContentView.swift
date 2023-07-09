@@ -70,7 +70,6 @@ struct Video2 : View{
                 Settings{
                     FileName("swipe")
                     ErrorGroup{
-                        EText("File not found")
                         EFontSize(27)
                     }
                 }
@@ -85,7 +84,7 @@ struct Video3 : View{
             LoopPlayerView{
                 Settings{
                     FileName("swipe_")
-                    EText("Custom error text")
+                    EColor(.orange)
                     EFontSize(33)
                 }
             }

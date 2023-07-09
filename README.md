@@ -19,7 +19,7 @@
                 Ext("mp4")
                 Gravity(.resizeAspectFill)
                 ErrorGroup{
-                    EText("Not found")
+                    EColor(.accentColor)
                     EFontSize(27)
                 }
             }
@@ -35,8 +35,8 @@
                 EFontSize(27)                  
             }
         } 
-```   
-If you add any setting twice or more the first one only will be applied. You can group error settings in group **ErrorGroup** or just pass all settings as a linear list of settings. You don't need to follow some specific order for settings, just pass in arbitrary oder settings you are interested in. The only required setting is **FileName**.
+```  
+You can group error settings in group **ErrorGroup** or just pass all settings as a linear list of settings. You don't need to follow some specific order for settings, just pass in an arbitrary oder you are interested in. The only required setting is **FileName**.
 
 ### Settings
 
@@ -45,7 +45,7 @@ If you add any setting twice or more the first one only will be applied. You can
 |**FileName("swipe")**| Name of the video to play| - |
 |**Ext("mp4")**| Video extension | "mp4" |
 |**Gravity(.resizeAspectFill)**| A structure that defines how a layer displays a player’s visual content within the layer’s bounds | .resizeAspect |
-|**EText("Not found")**| Error message text| "Resource is not found" |
+|**EColor(.accentColor)**| Error message text color| .red |
 |**EFontSize(27)**| Size of the error text | 17.0 |
 
 ## SwiftUI example for the package
