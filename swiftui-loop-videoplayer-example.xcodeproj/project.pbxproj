@@ -18,6 +18,7 @@
 		78AF7C002A52AA6D0028E9E3 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78AF7BFF2A52AA6D0028E9E3 /* swiftui-loop-videoplayer */; };
 		78AF7C072A52BFBB0028E9E3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7C062A52BFBB0028E9E3 /* README.md */; };
 		78AF7C192A52F5660028E9E3 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78AF7C182A52F5660028E9E3 /* swiftui-loop-videoplayer */; };
+		78B42EF12C529543005E2367 /* macos.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78B42EF02C529543005E2367 /* macos.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		78AF7BF22A52A9DB0028E9E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		78AF7BFC2A52AA5D0028E9E3 /* swipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe.mp4; sourceTree = "<group>"; };
 		78AF7C062A52BFBB0028E9E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		78B42EF02C529543005E2367 /* macos.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = macos.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				78B42EF02C529543005E2367 /* macos.gif */,
 				7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */,
 				788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */,
 				784A16222A58374B00E8BBEA /* swiftui.gif */,
@@ -175,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B42EF12C529543005E2367 /* macos.gif in Resources */,
 				78AF7BF32A52A9DB0028E9E3 /* Preview Assets.xcassets in Resources */,
 				78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */,
 				78AF7C072A52BFBB0028E9E3 /* README.md in Resources */,
