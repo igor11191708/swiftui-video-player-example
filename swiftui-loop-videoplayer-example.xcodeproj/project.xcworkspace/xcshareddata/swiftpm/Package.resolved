@@ -1,4 +1,5 @@
 {
+  "originHash" : "4a6c5f86155d1e838f9840fc9be719bd3dfed1ed467b16e89e68b5a0091ca397",
   "pins" : [
     {
       "identity" : "swiftui-loop-videoplayer",
@@ -6,9 +7,9 @@
       "location" : "https://github.com/The-Igor/swiftui-loop-videoplayer.git",
       "state" : {
         "branch" : "main",
-        "revision" : "59504a3fad96fc89c6b471971e18ae323528d8ea"
+        "revision" : "f3d1b880e08b303faa95ddeaea4142bcfe287590"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
