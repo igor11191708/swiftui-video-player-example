@@ -12,16 +12,20 @@ struct ContentView: View {
     
     @State var hintOn : Bool = false
     
+    @State var fileName : String = "logo"
+    
+    let options: [String] = ["logo", "swipe"]
+    
     var body: some View {
             NavigationStack{
                 ZStack{
                     VStack{
                         Spacer()
-                        NavigationLink(destination: Video())
+                        NavigationLink(destination: Video(fileName: $fileName))
                         {
                             labelTpl("display", color: .green)
                         }
-                        NavigationLink(destination: Video1())
+                        NavigationLink(destination: Video1(fileName: $fileName))
                         {
                             labelTpl("video")
                         }
@@ -40,6 +44,14 @@ struct ContentView: View {
                 .background(.quaternary)
                 .ignoresSafeArea()
                 .toolbar{
+                    ToolbarItem(placement: .navigationBarLeading){
+                        Picker("Select an option", selection: $fileName) {
+                            ForEach(options, id: \.self) { option in
+                                Text(option).tag(option)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                    }
                     ToolbarItem(placement: .navigationBarTrailing){
                         Button(action: { hintOn = true }, label: {
                             Image(systemName: "questionmark.circle.fill")
@@ -82,17 +94,42 @@ struct ContentView: View {
 }
 
 struct Video1 : View{
+    
+    @Binding var fileName : String
+    
+    let options: [String] = ["logo", "swipe"]
+    
+    var videoWidth : CGFloat{
+        fileName == "logo" ? 794 : 600
+    }
+    var videoHeight : CGFloat{
+        fileName == "logo" ? 1088 : 476
+    }
+    
     var body: some View{
-        VStack {
-            Spacer()
-            LoopPlayerView(fileName : "swipe")
-                .frame(width: 300, height: 239)
-                .offset(x: 102, y: -25)
-            Spacer()
+        GeometryReader{ proxy in
+            let width = min(proxy.size.width / 1.5, videoWidth)
+            let ratio = width / videoWidth
+            let length = videoWidth * ratio
+            VStack{
+                Spacer()
+                LoopPlayerView(fileName : fileName)
+                    .frame(width: videoWidth * ratio, height: videoHeight * ratio)
+                Spacer()
+            }.offset(x : proxy.size.width - length)
         }
-        .frame(maxWidth: .infinity)
         .ignoresSafeArea()
         .background(Color("app_blue"))
+        .toolbar{
+            ToolbarItem(placement: .navigationBarLeading){
+                Picker("Select an option", selection: $fileName) {
+                    ForEach(options, id: \.self) { option in
+                        Text(option).tag(option)
+                    }
+                }
+                .pickerStyle(.segmented)
+            }
+        }
     }
 }
 
@@ -127,11 +164,14 @@ struct Video3 : View{
 
 
 struct Video : View{
+    
+    @Binding var fileName : String
+    
     var body: some View{
         ZStack(alignment: .center) {
             LoopPlayerView{
                 Settings{
-                    FileName("swipe")
+                    FileName(fileName)
                     Ext("mp4")
                     Gravity(.resizeAspectFill)
                 }

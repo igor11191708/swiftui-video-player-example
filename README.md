@@ -52,6 +52,9 @@ You can group error settings in group **ErrorGroup** or just pass all settings a
 |**EColor(.accentColor)**| Error message text color| .red |
 |**EFontSize(27)**| Size of the error text | 17.0 |
 
+### Change video file dynamically 
+  ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/change_video_file.gif)
+  
 ## SwiftUI example for the package
 [ SwiftUI loop video player package](https://github.com/The-Igor/swiftui-loop-videoplayer)
 
