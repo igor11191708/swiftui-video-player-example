@@ -410,8 +410,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/The-Igor/swiftui-loop-videoplayer";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.1;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
