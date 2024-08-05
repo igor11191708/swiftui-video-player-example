@@ -29,9 +29,13 @@ struct ContentView: View {
                         {
                             labelTpl("video")
                         }
-                        NavigationLink(destination: Video2())
+                        NavigationLink(destination: Video3())
                         {
                             labelTpl("airplayvideo.circle")
+                        }
+                        NavigationLink(destination: Video8())
+                        {
+                            labelTpl("cloud")
                         }
                         NavigationLink(destination: Video3())
                         {
@@ -138,7 +142,7 @@ struct Video2 : View{
         ZStack {
             LoopPlayerView{
                 Settings{
-                    FileName("swipe")
+                    SourceName("swipe")
                     ErrorGroup{
                         EFontSize(27)
                     }
@@ -148,12 +152,50 @@ struct Video2 : View{
     }
 }
 
+
+struct Video8: View {
+    @State private var selectedVideoURL = "https://devstreaming-cdn.apple.com/videos/streaming/ examples/img_bipbop_adv_example_ts/master.m3u8"
+
+    let videoOptions = [
+        "Apple HLS Stream from URL": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8",
+        "Big Buck Bunny from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        "Elephant's Dream from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+    ]
+
+    var body: some View {
+        ZStack {
+            LoopPlayerView {
+                Settings {
+                    SourceName(selectedVideoURL)
+                    Gravity(.resizeAspectFill)
+                    ErrorGroup {
+                        EFontSize(27)
+                    }
+                }
+            }
+        }
+        .ignoresSafeArea()
+        .tag(selectedVideoURL)
+        .background(Color("app_blue"))
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Picker("Select Video", selection: $selectedVideoURL) {
+                    ForEach(videoOptions.keys.sorted(), id: \.self) { key in
+                        Text(key).tag(videoOptions[key]!)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+            }
+        }
+    }
+}
+
 struct Video3 : View{
     var body: some View{
         ZStack(alignment: .center) {
             LoopPlayerView{
                 Settings{
-                    FileName("swipe_")
+                    SourceName("swipe_")
                     EColor(.orange)
                     EFontSize(33)
                 }
@@ -171,7 +213,7 @@ struct Video : View{
         ZStack(alignment: .center) {
             LoopPlayerView{
                 Settings{
-                    FileName(fileName)
+                    SourceName(fileName)
                     Ext("mp4")
                     Gravity(.resizeAspectFill)
                 }

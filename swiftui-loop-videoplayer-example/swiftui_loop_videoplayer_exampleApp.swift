@@ -38,9 +38,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
     /// Setup audio params
     func setupAudio() {
+        let audioSession = AVAudioSession.sharedInstance()
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: [.mixWithOthers])
-            try AVAudioSession.sharedInstance().setActive(true)
+            try audioSession.setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: [.mixWithOthers])
+            try audioSession.setActive(true)
         } catch {
             print("something went wrong")
         }
