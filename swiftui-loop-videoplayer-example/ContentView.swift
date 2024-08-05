@@ -154,7 +154,7 @@ struct Video2 : View{
 
 
 struct Video8: View {
-    @State private var selectedVideoURL = "https://devstreaming-cdn.apple.com/videos/streaming/ examples/img_bipbop_adv_example_ts/master.m3u8"
+    @State private var selectedVideoURL = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
 
     let videoOptions = [
         "Apple HLS Stream from URL": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8",
