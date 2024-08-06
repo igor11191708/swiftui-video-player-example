@@ -47,21 +47,6 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity)
                 .background(.quaternary)
                 .ignoresSafeArea()
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarLeading){
-                        Picker("Select an option", selection: $fileName) {
-                            ForEach(options, id: \.self) { option in
-                                Text(option).tag(option)
-                            }
-                        }
-                        .pickerStyle(.segmented)
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        Button(action: { hintOn = true }, label: {
-                            Image(systemName: "questionmark.circle.fill")
-                        })
-                    }
-                }
             }.preferredColorScheme(.dark)
             .sheet(isPresented: $hintOn){
                     Video2()
@@ -91,7 +76,7 @@ struct ContentView: View {
     @ViewBuilder
     private func labelTpl(_ name : String, color : Color = .blue) -> some View{
         Image(systemName: name)
-            .font(.system(size: 102))
+            .font(.system(size: 78))
             .padding(8)
             .foregroundColor(color)
     }
