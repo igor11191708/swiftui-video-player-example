@@ -29,7 +29,7 @@ struct ContentView: View {
                         {
                             labelTpl("video")
                         }
-                        NavigationLink(destination: Video3())
+                        NavigationLink(destination: Video2())
                         {
                             labelTpl("airplayvideo.circle")
                         }
