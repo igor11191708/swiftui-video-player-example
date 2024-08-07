@@ -33,6 +33,10 @@ struct ContentView: View {
                         {
                             labelTpl("airplayvideo.circle")
                         }
+                        NavigationLink(destination: Video6())
+                        {
+                            labelTpl("appletvremote.gen2")
+                        }
                         NavigationLink(destination: Video8())
                         {
                             labelTpl("cloud")
@@ -137,6 +141,67 @@ struct Video2 : View{
     }
 }
 
+struct Video6: View {
+    
+    @State private var playbackCommand: PlaybackCommand = .play
+    
+    var isPlaying: Bool {
+        playbackCommand == .play
+    }
+    
+    var body: some View {
+        VStack {
+            LoopPlayerView(
+                {
+                    Settings {
+                        SourceName("logo")
+                        ErrorGroup {
+                            EFontSize(27)
+                        }
+                    }
+                },
+                command: $playbackCommand
+            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            HStack {
+                Button(action: {
+                    playbackCommand = .play
+                }) {
+                    Image(systemName: "play.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                .buttonStyle(CustomButtonStyle(backgroundColor: isPlaying ? .gray : .blue))
+                .disabled(isPlaying)
+                
+                Button(action: {
+                    playbackCommand = .pause
+                }) {
+                    Image(systemName: "pause.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                .buttonStyle(CustomButtonStyle(backgroundColor: isPlaying ? .blue : .gray))
+                .disabled(!isPlaying)
+                
+                Button(action: {
+                    playbackCommand = .seek(to: 2.0)
+                    DispatchQueue.main.async{
+                        playbackCommand = .play
+                    }
+                }) {
+                    Image(systemName: "checkmark.gobackward")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+            }
+            .padding()
+        }
+    }
+}
+
 
 struct Video8: View {
     @State private var selectedVideoURL = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
@@ -204,5 +269,18 @@ struct Video : View{
                 }
             }
         }.ignoresSafeArea()
+    }
+}
+
+fileprivate struct CustomButtonStyle: ButtonStyle {
+    var backgroundColor: Color
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(backgroundColor)
+            .foregroundColor(.white)
+            .clipShape(Circle())
+            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
     }
 }

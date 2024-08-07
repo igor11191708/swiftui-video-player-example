@@ -9,10 +9,28 @@ Please note that using videos from URLs requires ensuring that you have the righ
 ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/remote_video_player_swiftui.gif)
 
 ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui.gif)
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/macos.gif)
   
 
-### Settings
+## API Specifications
+
+| Property/Method                       | Type                          | Description                                                            |
+|---------------------------------------|-------------------------------|------------------------------------------------------------------------|
+| `settings`                            | `Settings`                    | A struct containing configuration settings for the video player.       |
+| `command`                             | `Binding<PlaybackCommand>`    | A binding to control playback actions (play, pause, or seek).          |
+| `init(fileName:ext:gravity:eColor:eFontSize:command:)` | Constructor       | Initializes the player with specific video parameters and playback command binding. |
+| `init(_ settings: () -> Settings, command:)` | Constructor | Initializes the player with a declarative settings block and playback command binding. |
+
+### Playback Commands
+
+| Command                     | Description                                                                                                                                          |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `play`                      | Command to play the video.                                                                                                                            |
+| `pause`                     | Command to pause the video.                                                                                                                           |
+| `seek(to: Double)`          | Command to seek to a specific time in the video. The parameter is the target position in seconds. Note: Errors such as seeking out of bounds are not currently handled and will be silently ignored. Potential errors include: <br> - `.seekTimeOutOfBounds` <br> - `.invalidDuration` <br> - `.playerOrCurrentItemNil`. Future versions may introduce error handling for these cases. |
+
+![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/play_commands.gif)
+
+### Initializer Parameters Settings
 
 | Name | Description | Default |
 | --- | --- |  --- |
@@ -21,6 +39,8 @@ Please note that using videos from URLs requires ensuring that you have the righ
 | **Gravity** | How the video content should be resized to fit the player's bounds. | .resizeAspect |
 | **EColor** | Error message text color. | .red |
 | **EFontSize** | Size of the error text. | 17.0 |
+
+![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/macos.gif)
 
 ### Change video file dynamically 
   ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/change_video_file.gif)
