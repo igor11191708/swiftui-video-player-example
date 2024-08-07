@@ -161,9 +161,9 @@ struct Video6: View {
                 command: $playbackCommand
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onChange(of: playbackCommand) {
-                            updatePlayingState(for: $0)
-                        }
+            .onChange(of: playbackCommand) { newCommand in
+                updatePlayingState(for: newCommand)
+            }
             
             HStack {
                 makeButton(action: {
