@@ -154,7 +154,7 @@ struct Video6: View {
             LoopPlayerView(
                 {
                     Settings {
-                        SourceName("logo")
+                        SourceName("swipe")
                         ErrorGroup {
                             EFontSize(27)
                         }

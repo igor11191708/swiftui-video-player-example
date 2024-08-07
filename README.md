@@ -28,8 +28,6 @@ Please note that using videos from URLs requires ensuring that you have the righ
 | `pause`                     | Command to pause the video.                                                                                                                           |
 | `seek(to: Double)`          | Command to seek to a specific time in the video. The parameter is the target position in seconds. Note: Errors such as seeking out of bounds are not currently handled and will be silently ignored. Potential errors include: <br> - `.seekTimeOutOfBounds` <br> - `.invalidDuration` <br> - `.playerOrCurrentItemNil`. Future versions may introduce error handling for these cases. |
 
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/play_commands.gif)
-
 ### Initializer Parameters Settings
 
 | Name | Description | Default |
@@ -41,11 +39,8 @@ Please note that using videos from URLs requires ensuring that you have the righ
 | **EFontSize** | Size of the error text. | 17.0 |
 
 ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/macos.gif)
-
-### Change video file dynamically 
-  ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/change_video_file.gif)
-  
-## New Functionality: Remote Video URLs
+ 
+## Remote Video URLs
 
 ### Video Source Compatibility
 
@@ -55,7 +50,12 @@ Please note that using videos from URLs requires ensuring that you have the righ
 | Direct MP4 URLs | Yes | Directly accessible MP4 URLs can be used if they are hosted on servers that permit CORS. |
 | HLS Streams | Yes | HLS streams are supported and can be used for live streaming purposes. |
 
+## Playback Commands
 
+The package now supports playback commands, allowing you to control video playback actions such as play, pause, and seek to specific times. This provides greater flexibility and control over video playback.
+
+
+![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/commands.gif)
   
 ## Practical idea for the package
 You can introduce video hints about some functionality into the app, for example how to add positions to favorites. Put loop video hint into background or open as popup.

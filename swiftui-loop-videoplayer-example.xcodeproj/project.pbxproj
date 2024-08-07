@@ -11,7 +11,6 @@
 		784A16232A58374B00E8BBEA /* swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 784A16222A58374B00E8BBEA /* swiftui.gif */; };
 		786A7B892C5CB80200018844 /* logo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 786A7B882C5CB80200018844 /* logo.mp4 */; };
 		786A7B8C2C5CBA4D00018844 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 786A7B8B2C5CBA4D00018844 /* swiftui-loop-videoplayer */; };
-		786A7B932C5CCC8800018844 /* change_video_file.gif in Resources */ = {isa = PBXBuildFile; fileRef = 786A7B922C5CCC8800018844 /* change_video_file.gif */; };
 		786A7B992C60B87E00018844 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 786A7B982C60B87E00018844 /* swiftui-loop-videoplayer */; };
 		786A7B9C2C61382C00018844 /* remote_video_player_swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 786A7B9B2C61382C00018844 /* remote_video_player_swiftui.gif */; };
 		786A7B9F2C6138AE00018844 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 786A7B9E2C6138AE00018844 /* swiftui-loop-videoplayer */; };
@@ -23,14 +22,13 @@
 		78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7BFC2A52AA5D0028E9E3 /* swipe.mp4 */; };
 		78AF7C072A52BFBB0028E9E3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7C062A52BFBB0028E9E3 /* README.md */; };
 		78B42EF32C529785005E2367 /* macos.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78B42EF22C529785005E2367 /* macos.gif */; };
-		78F87AF12C6371BC007E26CD /* play_commands.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87AF02C6371BC007E26CD /* play_commands.gif */; };
+		78F87AF32C6374EF007E26CD /* commands.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87AF22C6374EF007E26CD /* commands.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tip_video_swiftui.gif; sourceTree = "<group>"; };
 		784A16222A58374B00E8BBEA /* swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui.gif; sourceTree = "<group>"; };
 		786A7B882C5CB80200018844 /* logo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = logo.mp4; sourceTree = "<group>"; };
-		786A7B922C5CCC8800018844 /* change_video_file.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = change_video_file.gif; sourceTree = "<group>"; };
 		786A7B9A2C60C77800018844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		786A7B9B2C61382C00018844 /* remote_video_player_swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = remote_video_player_swiftui.gif; sourceTree = "<group>"; };
 		788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_hint.gif; sourceTree = "<group>"; };
@@ -42,7 +40,7 @@
 		78AF7BFC2A52AA5D0028E9E3 /* swipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe.mp4; sourceTree = "<group>"; };
 		78AF7C062A52BFBB0028E9E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		78B42EF22C529785005E2367 /* macos.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = macos.gif; sourceTree = "<group>"; };
-		78F87AF02C6371BC007E26CD /* play_commands.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play_commands.gif; sourceTree = "<group>"; };
+		78F87AF22C6374EF007E26CD /* commands.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = commands.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +116,8 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
-				78F87AF02C6371BC007E26CD /* play_commands.gif */,
+				78F87AF22C6374EF007E26CD /* commands.gif */,
 				786A7B9B2C61382C00018844 /* remote_video_player_swiftui.gif */,
-				786A7B922C5CCC8800018844 /* change_video_file.gif */,
 				7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */,
 				78B42EF22C529785005E2367 /* macos.gif */,
 				788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */,
@@ -195,11 +192,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				786A7B932C5CCC8800018844 /* change_video_file.gif in Resources */,
 				78B42EF32C529785005E2367 /* macos.gif in Resources */,
+				78F87AF32C6374EF007E26CD /* commands.gif in Resources */,
 				78AF7BF32A52A9DB0028E9E3 /* Preview Assets.xcassets in Resources */,
 				78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */,
-				78F87AF12C6371BC007E26CD /* play_commands.gif in Resources */,
 				786A7B9C2C61382C00018844 /* remote_video_player_swiftui.gif in Resources */,
 				78AF7C072A52BFBB0028E9E3 /* README.md in Resources */,
 				7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */,
