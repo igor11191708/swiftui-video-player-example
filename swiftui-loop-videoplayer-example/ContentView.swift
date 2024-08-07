@@ -144,6 +144,7 @@ struct Video2 : View{
 struct Video6: View {
     
     @State private var playbackCommand: PlaybackCommand = .play
+    @State private var isMuted: Bool = true
     
     var isPlaying: Bool {
         playbackCommand == .play
@@ -154,7 +155,7 @@ struct Video6: View {
             LoopPlayerView(
                 {
                     Settings {
-                        SourceName("swipe")
+                        SourceName("https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8")
                         ErrorGroup {
                             EFontSize(27)
                         }
@@ -199,7 +200,7 @@ struct Video6: View {
                     playbackCommand = .seek(to: 2.0)
                     pause()
                 }) {
-                    Image(systemName: "checkmark.gobackward")
+                    Image(systemName: "gobackward.10")
                         .resizable()
                         .frame(width: 20, height: 20)
                 }
@@ -210,6 +211,16 @@ struct Video6: View {
                     pause()
                 }) {
                     Image(systemName: "forward.end.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                
+                Button(action: {
+                    isMuted.toggle()
+                    playbackCommand = isMuted ? .mute : .unmute
+                }) {
+                    Image(systemName: isMuted ? "speaker.slash.fill" : "speaker.2.fill")
                         .resizable()
                         .frame(width: 20, height: 20)
                 }
