@@ -144,18 +144,15 @@ struct Video2 : View{
 struct Video6: View {
     
     @State private var playbackCommand: PlaybackCommand = .play
+    @State private var isPlaying: Bool = true
     @State private var isMuted: Bool = true
-    
-    var isPlaying: Bool {
-        playbackCommand == .play
-    }
     
     var body: some View {
         VStack {
             LoopPlayerView(
                 {
                     Settings {
-                        SourceName("https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8")
+                        SourceName("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
                         ErrorGroup {
                             EFontSize(27)
                         }
@@ -164,79 +161,71 @@ struct Video6: View {
                 command: $playbackCommand
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onChange(of: playbackCommand) {
+                            updatePlayingState(for: $0)
+                        }
             
             HStack {
-                Button(action: {
+                makeButton(action: {
                     playbackCommand = .begin
                     pause()
-                }) {
-                    Image(systemName: "backward.end.fill")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                }
-                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                }, imageName: "backward.end.fill")
                 
-                Button(action: {
+                makeButton(action: {
                     playbackCommand = .play
-                }) {
-                    Image(systemName: "play.fill")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                }
-                .buttonStyle(CustomButtonStyle(backgroundColor: isPlaying ? .gray : .blue))
+                }, imageName: "play.fill", backgroundColor: isPlaying ? .gray : .blue)
                 .disabled(isPlaying)
                 
-                Button(action: {
+                makeButton(action: {
                     playbackCommand = .pause
-                }) {
-                    Image(systemName: "pause.fill")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                }
-                .buttonStyle(CustomButtonStyle(backgroundColor: isPlaying ? .blue : .gray))
+                }, imageName: "pause.fill", backgroundColor: isPlaying ? .blue : .gray)
                 .disabled(!isPlaying)
                 
-                Button(action: {
+                makeButton(action: {
                     playbackCommand = .seek(to: 2.0)
                     pause()
-                }) {
-                    Image(systemName: "gobackward.10")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                }
-                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                }, imageName: "gobackward.10")
                 
-                Button(action: {
+                makeButton(action: {
                     playbackCommand = .end
                     pause()
-                }) {
-                    Image(systemName: "forward.end.fill")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                }
-                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                }, imageName: "forward.end.fill")
                 
-                Button(action: {
+                makeButton(action: {
                     isMuted.toggle()
                     playbackCommand = isMuted ? .mute : .unmute
-                }) {
-                    Image(systemName: isMuted ? "speaker.slash.fill" : "speaker.2.fill")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                }
-                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                }, imageName: isMuted ? "speaker.slash.fill" : "speaker.2.fill")
             }
             .padding()
         }
     }
     
-    func pause(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
+    private func updatePlayingState(for command: PlaybackCommand) {
+            switch command {
+            case .play:
+                isPlaying = true
+            case .pause:
+                isPlaying = false
+            default:
+                break // No action needed for other commands
+            }
+        }
+    
+    private func makeButton(action: @escaping () -> Void, imageName: String, backgroundColor: Color = .blue) -> some View {
+        Button(action: action) {
+            Image(systemName: imageName)
+                .resizable()
+                .frame(width: 20, height: 20)
+        }
+        .buttonStyle(CustomButtonStyle(backgroundColor: backgroundColor))
+    }
+    
+    func pause() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             playbackCommand = .pause
         }
     }
 }
-
 
 struct Video8: View {
     @State private var selectedVideoURL = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
