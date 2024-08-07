@@ -22,7 +22,7 @@
 		78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7BFC2A52AA5D0028E9E3 /* swipe.mp4 */; };
 		78AF7C072A52BFBB0028E9E3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7C062A52BFBB0028E9E3 /* README.md */; };
 		78B42EF32C529785005E2367 /* macos.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78B42EF22C529785005E2367 /* macos.gif */; };
-		78F87AF32C6374EF007E26CD /* commands.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87AF22C6374EF007E26CD /* commands.gif */; };
+		78F87AF52C637DC2007E26CD /* play_commands.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87AF42C637DC2007E26CD /* play_commands.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 		78AF7BFC2A52AA5D0028E9E3 /* swipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe.mp4; sourceTree = "<group>"; };
 		78AF7C062A52BFBB0028E9E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		78B42EF22C529785005E2367 /* macos.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = macos.gif; sourceTree = "<group>"; };
-		78F87AF22C6374EF007E26CD /* commands.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = commands.gif; sourceTree = "<group>"; };
+		78F87AF42C637DC2007E26CD /* play_commands.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play_commands.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
-				78F87AF22C6374EF007E26CD /* commands.gif */,
+				78F87AF42C637DC2007E26CD /* play_commands.gif */,
 				786A7B9B2C61382C00018844 /* remote_video_player_swiftui.gif */,
 				7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */,
 				78B42EF22C529785005E2367 /* macos.gif */,
@@ -193,9 +193,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B42EF32C529785005E2367 /* macos.gif in Resources */,
-				78F87AF32C6374EF007E26CD /* commands.gif in Resources */,
 				78AF7BF32A52A9DB0028E9E3 /* Preview Assets.xcassets in Resources */,
 				78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */,
+				78F87AF52C637DC2007E26CD /* play_commands.gif in Resources */,
 				786A7B9C2C61382C00018844 /* remote_video_player_swiftui.gif in Resources */,
 				78AF7C072A52BFBB0028E9E3 /* README.md in Resources */,
 				7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */,

@@ -166,6 +166,16 @@ struct Video6: View {
             
             HStack {
                 Button(action: {
+                    playbackCommand = .begin
+                    pause()
+                }) {
+                    Image(systemName: "backward.end.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                
+                Button(action: {
                     playbackCommand = .play
                 }) {
                     Image(systemName: "play.fill")
@@ -187,17 +197,31 @@ struct Video6: View {
                 
                 Button(action: {
                     playbackCommand = .seek(to: 2.0)
-                    DispatchQueue.main.async{
-                        playbackCommand = .play
-                    }
+                    pause()
                 }) {
                     Image(systemName: "checkmark.gobackward")
                         .resizable()
                         .frame(width: 20, height: 20)
                 }
                 .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                
+                Button(action: {
+                    playbackCommand = .end
+                    pause()
+                }) {
+                    Image(systemName: "forward.end.fill")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
             }
             .padding()
+        }
+    }
+    
+    func pause(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
+            playbackCommand = .pause
         }
     }
 }
