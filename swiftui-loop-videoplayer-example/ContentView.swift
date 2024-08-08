@@ -33,7 +33,15 @@ struct ContentView: View {
                         {
                             labelTpl("airplayvideo.circle")
                         }
-                        NavigationLink(destination: Video6())
+                        
+                        NavigationLink(destination: Video6{
+                            VideoSettings {
+                                SourceName("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
+                                ErrorGroup {
+                                    EFontSize(27)
+                                }
+                            }
+                        })
                         {
                             labelTpl("appletvremote.gen2")
                         }
@@ -83,6 +91,7 @@ struct ContentView: View {
             .font(.system(size: 78))
             .padding(8)
             .foregroundColor(color)
+            .frame(width: 102)
     }
 }
 
@@ -114,7 +123,7 @@ struct Video1 : View{
         .ignoresSafeArea()
         .background(Color("app_blue"))
         .toolbar{
-            ToolbarItem(placement: .navigationBarLeading){
+            ToolbarItem(placement: .navigation){
                 Picker("Select an option", selection: $fileName) {
                     ForEach(options, id: \.self) { option in
                         Text(option).tag(option)
@@ -130,7 +139,7 @@ struct Video2 : View{
     var body: some View{
         ZStack {
             LoopPlayerView{
-                Settings{
+                VideoSettings{
                     SourceName("swipe")
                     ErrorGroup{
                         EFontSize(27)
@@ -141,30 +150,29 @@ struct Video2 : View{
     }
 }
 
+
 struct Video6: View {
     
     @State private var playbackCommand: PlaybackCommand = .play
     @State private var isPlaying: Bool = true
     @State private var isMuted: Bool = true
+    @State private var settings: VideoSettings
+
+    // Initialize settings using a custom init to ensure proper setup
+    init(_ settings: () -> VideoSettings) {
+        self._settings = State(initialValue: settings())
+    }
     
     var body: some View {
         VStack {
             LoopPlayerView(
-                {
-                    Settings {
-                        SourceName("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
-                        ErrorGroup {
-                            EFontSize(27)
-                        }
-                    }
-                },
+                settings : $settings,
                 command: $playbackCommand
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onChange(of: playbackCommand) { newCommand in
-                updatePlayingState(for: newCommand)
+            .onChange(of: playbackCommand) { value in
+                updatePlayingState(for: value)
             }
-            
             HStack {
                 makeButton(action: {
                     playbackCommand = .begin
@@ -228,37 +236,45 @@ struct Video6: View {
 }
 
 struct Video8: View {
-    @State private var selectedVideoURL = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
+    
+    static let initVideo = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
+    
+    @State private var selectedVideoURL = Video8.initVideo
 
     let videoOptions = [
         "Apple HLS Stream from URL": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8",
         "Big Buck Bunny from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
         "Elephant's Dream from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
     ]
+    
+    @State private var settings: VideoSettings = .init{
+        SourceName(Video8.initVideo)
+        Gravity(.resizeAspectFill)
+    }
 
     var body: some View {
         ZStack {
             LoopPlayerView {
-                Settings {
-                    SourceName(selectedVideoURL)
-                    Gravity(.resizeAspectFill)
-                    ErrorGroup {
-                        EFontSize(27)
-                    }
-                }
+                settings
             }
         }
         .ignoresSafeArea()
         .tag(selectedVideoURL)
         .background(Color("app_blue"))
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
+            ToolbarItem(placement: .navigation) {
                 Picker("Select Video", selection: $selectedVideoURL) {
                     ForEach(videoOptions.keys.sorted(), id: \.self) { key in
                         Text(key).tag(videoOptions[key]!)
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
+            }
+        }
+        .onChange(of: selectedVideoURL){ value in
+            settings = VideoSettings {
+                SourceName(selectedVideoURL)
+                Gravity(.resizeAspectFill)
             }
         }
     }
@@ -268,7 +284,7 @@ struct Video3 : View{
     var body: some View{
         ZStack(alignment: .center) {
             LoopPlayerView{
-                Settings{
+                VideoSettings{
                     SourceName("swipe_")
                     EColor(.orange)
                     EFontSize(33)
@@ -286,7 +302,7 @@ struct Video : View{
     var body: some View{
         ZStack(alignment: .center) {
             LoopPlayerView{
-                Settings{
+                VideoSettings{
                     SourceName(fileName)
                     Ext("mp4")
                     Gravity(.resizeAspectFill)
