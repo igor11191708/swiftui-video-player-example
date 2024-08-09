@@ -98,7 +98,8 @@ struct Video6: View {
                 }
             }
             
-            // Brightness and Contrast Sliders
+            /// Brightness and Contrast: These settings function also filters but are managed separately from the filter stack. Adjustments to brightness and contrast are applied additionally and independently of the image filters.
+            /// Independent Management: Developers should manage brightness and contrast adjustments through their dedicated methods or properties to ensure these settings are accurately reflected in the video output.
             VStack {
                 HStack {
                     Text("Brightness")
