@@ -9,6 +9,15 @@
 ## Disclaimer on Video Sources like YouTube
 Please note that using videos from URLs requires ensuring that you have the right to use and stream these videos. Videos hosted on platforms like YouTube cannot be used directly due to restrictions in their terms of service. Always ensure the video URL is compliant with copyright laws and platform policies. 
   
+![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/filters.gif)
+### Video Sample
+
+The video used in this example, "Big Buck Bunny," is provided under the [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/). It was originally created by the Blender Foundation. Any modifications to the video are listed here.
+
+[Stream or Download Big Buck Bunny](https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4)
+
+[Stream or Download Big Buck Bunny](https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4)
+
 ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui.gif)
   
 ![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/macos.gif) 
