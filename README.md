@@ -9,22 +9,6 @@
 ## Disclaimer on Video Sources like YouTube
 Please note that using videos from URLs requires ensuring that you have the right to use and stream these videos. Videos hosted on platforms like YouTube cannot be used directly due to restrictions in their terms of service. Always ensure the video URL is compliant with copyright laws and platform policies. 
   
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/filters.gif)
-
-### Video Sample
-
-“Big Buck Bunny” video, an open-source animated film created by the Blender Foundation. This video is instrumental in demonstrating the capabilities of the open source video processing software.
-
-Credits:
-
-    •    Original Creation: Blender Foundation
-
-    •    Video Title: “Big Buck Bunny”
-
-    •    Source: Big Buck Bunny https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
-
-    •    License: The video is released under the Creative Commons Attribution 3.0 License, which allows for reuse, redistribution, and modification for any purpose, even commercially, as long as appropriate credit is given. https://creativecommons.org/licenses/by/3.0/
-
 [Stream or Download Big Buck Bunny](https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4)
 
 [Stream or Download Big Buck Bunny](https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4)
