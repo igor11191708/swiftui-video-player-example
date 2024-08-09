@@ -92,6 +92,7 @@ struct Video6: View {
                     playbackCommand = .removeAllFilters
                     return
                 }
+                // When applying filters, each new filter is added to a stack, building on the effects of those previously applied. If a newly applied filter should replace, rather than accumulate with, the existing ones, you must manually remove the previous filters from the stack before applying the new one.
                 if let filter = CIFilter(name: filter.0, parameters: filter.1) {
                     playbackCommand = .filter(filter)
                 }
