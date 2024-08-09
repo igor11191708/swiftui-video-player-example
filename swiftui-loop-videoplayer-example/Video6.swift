@@ -1,10 +1,9 @@
 //
 //  Video6.swift
-//  swiftui-loop-videoplayer-example
+//  loop_player
 //
 //  Created by Igor Shelopaev on 09.08.24.
 //
-
 import swiftui_loop_videoplayer
 import SwiftUI
 import AVFoundation
@@ -93,7 +92,9 @@ struct Video6: View {
                     playbackCommand = .removeAllFilters
                     return
                 }
-                playbackCommand = .filter(name: filter.0, parameters: filter.1)
+                if let filter = CIFilter(name: filter.0, parameters: filter.1) {
+                    playbackCommand = .filter(filter)
+                }
             }
             
             // Brightness and Contrast Sliders
