@@ -24,7 +24,13 @@ struct Video6: View {
     let filters = [
         ("None", [String: Any]()),
         ("CISepiaTone", [kCIInputIntensityKey: 0.8]),
-        ("CIColorMonochrome", [kCIInputColorKey: CIColor(color: .gray), kCIInputIntensityKey: 1.0])
+        ("CIColorMonochrome", [kCIInputColorKey: CIColor(color: .gray), kCIInputIntensityKey: 1.0]),
+        ("CIHighlightShadowAdjust", ["inputHighlightAmount": 1.0, "inputShadowAmount": 0.3]), // Use string literals for keys
+        ("CIToneCurve", ["inputPoint0": CIVector(x: 0.0, y: 0.0),
+                         "inputPoint1": CIVector(x: 0.25, y: 0.15),
+                         "inputPoint2": CIVector(x: 0.5, y: 0.5),
+                         "inputPoint3": CIVector(x: 0.75, y: 0.85),
+                         "inputPoint4": CIVector(x: 1.0, y: 1.0)])
     ]
     
     // Initialize settings using a custom init to ensure proper setup
@@ -92,9 +98,8 @@ struct Video6: View {
                     playbackCommand = .removeAllFilters
                     return
                 }
-                // When applying filters, each new filter is added to a stack, building on the effects of those previously applied. If a newly applied filter should replace, rather than accumulate with, the existing ones, you must manually remove the previous filters from the stack before applying the new one.
                 if let filter = CIFilter(name: filter.0, parameters: filter.1) {
-                    playbackCommand = .filter(filter)
+                    playbackCommand = .filter(filter, clear: true)
                 }
             }
             
