@@ -22,6 +22,7 @@
 		78AF7C072A52BFBB0028E9E3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7C062A52BFBB0028E9E3 /* README.md */; };
 		78B42EF32C529785005E2367 /* macos.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78B42EF22C529785005E2367 /* macos.gif */; };
 		78F87B3F2C6668F0007E26CD /* Video6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B3E2C6668F0007E26CD /* Video6.swift */; };
+		78F87B452C6743AD007E26CD /* video_filters.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B442C6743AC007E26CD /* video_filters.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		78AF7C062A52BFBB0028E9E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		78B42EF22C529785005E2367 /* macos.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = macos.gif; sourceTree = "<group>"; };
 		78F87B3E2C6668F0007E26CD /* Video6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video6.swift; sourceTree = "<group>"; };
+		78F87B442C6743AC007E26CD /* video_filters.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = video_filters.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				78F87B442C6743AC007E26CD /* video_filters.gif */,
 				7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */,
 				78B42EF22C529785005E2367 /* macos.gif */,
 				788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */,
@@ -195,6 +198,7 @@
 				78AF7C072A52BFBB0028E9E3 /* README.md in Resources */,
 				7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */,
 				784A16232A58374B00E8BBEA /* swiftui.gif in Resources */,
+				78F87B452C6743AD007E26CD /* video_filters.gif in Resources */,
 				78AF7BF02A52A9DB0028E9E3 /* Assets.xcassets in Resources */,
 				786A7B892C5CB80200018844 /* logo.mp4 in Resources */,
 				788D66212A5B1B7B0047A134 /* swiftui_video_hint.gif in Resources */,
