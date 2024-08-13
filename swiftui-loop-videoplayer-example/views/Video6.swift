@@ -13,6 +13,7 @@ struct Video6: View {
     
     @State private var playbackCommand: PlaybackCommand = .play
     @State private var isPlaying: Bool = true
+    @State private var isLogoAdded: Bool = false
     @State private var isMuted: Bool = true
     @State private var selectedFilterIndex: Int = 0
 
@@ -81,31 +82,44 @@ struct Video6: View {
                     isMuted.toggle()
                     playbackCommand = isMuted ? .mute : .unmute
                 }, imageName: isMuted ? "speaker.slash.fill" : "speaker.2.fill")
+                Spacer()
             }
             .padding()
+            HStack {
+                makeButton(action: {
+                    playbackCommand = .addVector(VectorLogoLayer())
+                    isLogoAdded.toggle()
+                }, imageName: "diamond.fill", backgroundColor: isLogoAdded ? .gray : .blue )
+                .disabled(isLogoAdded)
+                makeButton(action: {
+                    playbackCommand = .removeAllVectors
+                    isLogoAdded.toggle()
+                }, imageName: "diamond", backgroundColor: isLogoAdded ? .blue : .gray )
+                .disabled(!isLogoAdded)
+                Spacer()
+                // Segmented Control for Filters
+                Picker("Select Filter", selection: $selectedFilterIndex) {
+                    ForEach(0..<filters.count, id: \.self) { index in
+                        Text(self.filters[index].0).tag(index)
+                    }
+                }
+                .pickerStyle(.menu)
+                .onChange(of: selectedFilterIndex) { newIndex in
+                    // Apply the selected filter
+                    let filter = filters[newIndex]
+                    print(filter.0)
+                    if filter.0 == "None" {
+                        playbackCommand = .removeAllFilters
+                        return
+                    }else if let filter = CIFilter(name: filter.0, parameters: filter.1) {
+                        playbackCommand = .filter(filter, clear: true)
+                    }else{
+                        let filter = ArtFilter()
+                        playbackCommand = .filter(filter, clear: true)
+                    }
+                }
+            }                .padding(.horizontal)
 
-            // Segmented Control for Filters
-            Picker("Select Filter", selection: $selectedFilterIndex) {
-                ForEach(0..<filters.count, id: \.self) { index in
-                    Text(self.filters[index].0).tag(index)
-                }
-            }
-            .pickerStyle(.menu)
-            .padding()
-            .onChange(of: selectedFilterIndex) { newIndex in
-                // Apply the selected filter
-                let filter = filters[newIndex]
-                print(filter.0)
-                if filter.0 == "None" {
-                    playbackCommand = .removeAllFilters
-                    return
-                }else if let filter = CIFilter(name: filter.0, parameters: filter.1) {
-                    playbackCommand = .filter(filter, clear: true)
-                }else{
-                    let filter = ArtFilter()
-                    playbackCommand = .filter(filter, clear: true)
-                }
-            }
             
             /// Brightness and Contrast: These settings function also filters but are managed separately from the filter stack. Adjustments to brightness and contrast are applied additionally and independently of the image filters.
             /// Independent Management: Developers should manage brightness and contrast adjustments through their dedicated methods or properties to ensure these settings are accurately reflected in the video output.
@@ -168,3 +182,5 @@ fileprivate struct CustomButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
     }
 }
+
+

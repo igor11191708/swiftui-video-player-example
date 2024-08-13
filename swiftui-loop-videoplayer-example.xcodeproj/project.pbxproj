@@ -26,6 +26,8 @@
 		78F87B4A2C6B484D007E26CD /* ArtFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B492C6B484D007E26CD /* ArtFilter.swift */; };
 		78F87B512C6B4D69007E26CD /* apple_logo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B502C6B4D69007E26CD /* apple_logo.mp4 */; };
 		78F87B552C6B5277007E26CD /* swiftui_video_player.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B542C6B5276007E26CD /* swiftui_video_player.gif */; };
+		78F87B602C6BB28C007E26CD /* VectorLogoLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B5E2C6BB28C007E26CD /* VectorLogoLayer.swift */; };
+		78F87B622C6BB2F2007E26CD /* vector.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B612C6BB2F2007E26CD /* vector.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		78F87B492C6B484D007E26CD /* ArtFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtFilter.swift; sourceTree = "<group>"; };
 		78F87B502C6B4D69007E26CD /* apple_logo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = apple_logo.mp4; sourceTree = "<group>"; };
 		78F87B542C6B5276007E26CD /* swiftui_video_player.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_player.gif; sourceTree = "<group>"; };
+		78F87B5E2C6BB28C007E26CD /* VectorLogoLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorLogoLayer.swift; sourceTree = "<group>"; };
+		78F87B612C6BB2F2007E26CD /* vector.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = vector.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		78AF7BEA2A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example */ = {
 			isa = PBXGroup;
 			children = (
+				78F87B5F2C6BB28C007E26CD /* vector */,
 				78F87B4E2C6B48B9007E26CD /* views */,
 				78F87B482C6B4836007E26CD /* filters */,
 				786A7B9A2C60C77800018844 /* Info.plist */,
@@ -125,6 +130,7 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				78F87B612C6BB2F2007E26CD /* vector.gif */,
 				78F87B542C6B5276007E26CD /* swiftui_video_player.gif */,
 				78F87B442C6743AC007E26CD /* video_filters.gif */,
 				7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */,
@@ -149,6 +155,14 @@
 				78F87B3E2C6668F0007E26CD /* Video6.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		78F87B5F2C6BB28C007E26CD /* vector */ = {
+			isa = PBXGroup;
+			children = (
+				78F87B5E2C6BB28C007E26CD /* VectorLogoLayer.swift */,
+			);
+			path = vector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +236,7 @@
 				78AF7BF32A52A9DB0028E9E3 /* Preview Assets.xcassets in Resources */,
 				78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */,
 				78AF7C072A52BFBB0028E9E3 /* README.md in Resources */,
+				78F87B622C6BB2F2007E26CD /* vector.gif in Resources */,
 				78F87B552C6B5277007E26CD /* swiftui_video_player.gif in Resources */,
 				7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */,
 				784A16232A58374B00E8BBEA /* swiftui.gif in Resources */,
@@ -242,6 +257,7 @@
 				78F87B3F2C6668F0007E26CD /* Video6.swift in Sources */,
 				78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */,
 				78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */,
+				78F87B602C6BB28C007E26CD /* VectorLogoLayer.swift in Sources */,
 				78F87B4A2C6B484D007E26CD /* ArtFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
