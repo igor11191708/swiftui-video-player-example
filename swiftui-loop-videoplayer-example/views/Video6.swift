@@ -53,31 +53,37 @@ struct Video6: View {
             
             // Control Buttons
             HStack {
+                // Button to move playback to the beginning and pause
                 makeButton(action: {
                     playbackCommand = .begin
                     pause()
                 }, imageName: "backward.end.fill")
                 
+                // Button to play the video
                 makeButton(action: {
                     playbackCommand = .play
                 }, imageName: "play.fill", backgroundColor: isPlaying ? .gray : .blue)
                 .disabled(isPlaying)
                 
+                // Button to pause the video
                 makeButton(action: {
                     playbackCommand = .pause
                 }, imageName: "pause.fill", backgroundColor: isPlaying ? .blue : .gray)
                 .disabled(!isPlaying)
                 
+                // Button to seek back 10 seconds in the video and pause
                 makeButton(action: {
                     playbackCommand = .seek(to: 2.0)
                     pause()
                 }, imageName: "gobackward.10")
                 
+                // Button to move playback to the end and pause
                 makeButton(action: {
                     playbackCommand = .end
                     pause()
                 }, imageName: "forward.end.fill")
                 
+                // Button to toggle mute and unmute
                 makeButton(action: {
                     isMuted.toggle()
                     playbackCommand = isMuted ? .mute : .unmute
@@ -86,11 +92,14 @@ struct Video6: View {
             }
             .padding()
             HStack {
+                // Button to add a vector graphic layer over the video
                 makeButton(action: {
                     playbackCommand = .addVector(VectorLogoLayer())
                     isLogoAdded.toggle()
                 }, imageName: "diamond.fill", backgroundColor: isLogoAdded ? .gray : .blue )
                 .disabled(isLogoAdded)
+                
+                // Button to remove all vector graphic layers from the video
                 makeButton(action: {
                     playbackCommand = .removeAllVectors
                     isLogoAdded.toggle()
@@ -118,8 +127,8 @@ struct Video6: View {
                         playbackCommand = .filter(filter, clear: true)
                     }
                 }
-            }                .padding(.horizontal)
-
+            }
+            .padding(.horizontal)
             
             /// Brightness and Contrast: These settings function also filters but are managed separately from the filter stack. Adjustments to brightness and contrast are applied additionally and independently of the image filters.
             /// Independent Management: Developers should manage brightness and contrast adjustments through their dedicated methods or properties to ensure these settings are accurately reflected in the video output.
@@ -139,7 +148,8 @@ struct Video6: View {
                     }
                     .padding()
                 }
-            }.padding()
+            }
+            .padding()
         }
     }
     
