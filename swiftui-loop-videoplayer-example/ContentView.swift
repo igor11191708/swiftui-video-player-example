@@ -36,7 +36,7 @@ struct ContentView: View {
                         
                         NavigationLink(destination: Video6{
                             VideoSettings {
-                                SourceName("https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
+                                SourceName("apple_logo")
                                 ErrorGroup {
                                     EFontSize(27)
                                 }
