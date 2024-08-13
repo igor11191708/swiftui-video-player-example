@@ -19,7 +19,7 @@ struct ContentView: View {
     var body: some View {
             NavigationStack{
                 ZStack{
-                    VStack{
+                    ResponsiveStack(spacing: 5) {
                         Spacer()
                         NavigationLink(destination: Video(fileName: $fileName))
                         {
@@ -64,8 +64,6 @@ struct ContentView: View {
                     Video2()
                     .overlay(hintTitleTpl, alignment: .topLeading)
             }
-           
-            
     }
     
     @ViewBuilder
@@ -79,7 +77,6 @@ struct ContentView: View {
                     .padding()
             }.foregroundColor(.orange)
                 .font(.system(size: 70))
-                .fontWeight(.thin)
             Spacer()
         }
         .padding(.top, 50)
@@ -88,7 +85,7 @@ struct ContentView: View {
     @ViewBuilder
     private func labelTpl(_ name : String, color : Color = .blue) -> some View{
         Image(systemName: name)
-            .font(.system(size: 78))
+            .font(.system(size: 68))
             .padding(8)
             .foregroundColor(color)
             .frame(width: 102)
@@ -110,13 +107,19 @@ struct Video1 : View{
     
     var body: some View{
         GeometryReader{ proxy in
-            let width = min(proxy.size.width / 1.5, videoWidth)
-            let ratio = width / videoWidth
-            let length = videoWidth * ratio
+            let orient = proxy.size.height > proxy.size.width
+            let width = orient ? min(proxy.size.width / 1.5, videoWidth) : min(proxy.size.height / 1.5, videoHeight)
+            let ratio = orient ? width / videoWidth : width / videoHeight
+            let length = orient ?  videoWidth * ratio : videoHeight * ratio
             VStack{
                 Spacer()
-                LoopPlayerView(fileName : fileName)
-                    .frame(width: videoWidth * ratio, height: videoHeight * ratio)
+                if orient{
+                    LoopPlayerView(fileName : fileName)
+                        .frame(width: videoWidth * ratio, height: videoHeight * ratio)
+                }else{
+                    LoopPlayerView(fileName : fileName)
+                        .frame(width: videoHeight * ratio, height: videoHeight * ratio)
+                }
                 Spacer()
             }.offset(x : proxy.size.width - length)
         }
@@ -237,5 +240,35 @@ fileprivate struct CustomButtonStyle: ButtonStyle {
             .foregroundColor(.white)
             .clipShape(Circle())
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+    }
+}
+
+struct ResponsiveStack<Content: View>: View {
+    
+    let spacing : CGFloat
+    
+    @ViewBuilder let content: Content
+    
+    var body: some View {
+        GeometryReader { geometry in
+            if geometry.size.width > geometry.size.height {
+                // Landscape mode
+                HStack(alignment: .center, spacing: spacing) {
+                    Spacer()
+                    content
+                    Spacer()
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height)
+            } else {
+                // Portrait mode
+                VStack(alignment: .center, spacing: spacing) {
+                    Spacer()
+                    content
+                    Spacer()
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
