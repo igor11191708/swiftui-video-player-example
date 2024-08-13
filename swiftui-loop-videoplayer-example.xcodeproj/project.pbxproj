@@ -25,6 +25,7 @@
 		78F87B452C6743AD007E26CD /* video_filters.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B442C6743AC007E26CD /* video_filters.gif */; };
 		78F87B4A2C6B484D007E26CD /* ArtFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B492C6B484D007E26CD /* ArtFilter.swift */; };
 		78F87B512C6B4D69007E26CD /* apple_logo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B502C6B4D69007E26CD /* apple_logo.mp4 */; };
+		78F87B532C6B51D5007E26CD /* swiftui_video_player.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B522C6B51D4007E26CD /* swiftui_video_player.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		78F87B442C6743AC007E26CD /* video_filters.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = video_filters.gif; sourceTree = "<group>"; };
 		78F87B492C6B484D007E26CD /* ArtFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtFilter.swift; sourceTree = "<group>"; };
 		78F87B502C6B4D69007E26CD /* apple_logo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = apple_logo.mp4; sourceTree = "<group>"; };
+		78F87B522C6B51D4007E26CD /* swiftui_video_player.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_player.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				78F87B522C6B51D4007E26CD /* swiftui_video_player.gif */,
 				78F87B442C6743AC007E26CD /* video_filters.gif */,
 				7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */,
 				78B42EF22C529785005E2367 /* macos.gif */,
@@ -219,6 +222,7 @@
 				78AF7BF32A52A9DB0028E9E3 /* Preview Assets.xcassets in Resources */,
 				78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */,
 				78AF7C072A52BFBB0028E9E3 /* README.md in Resources */,
+				78F87B532C6B51D5007E26CD /* swiftui_video_player.gif in Resources */,
 				7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */,
 				784A16232A58374B00E8BBEA /* swiftui.gif in Resources */,
 				78F87B452C6743AD007E26CD /* video_filters.gif in Resources */,
