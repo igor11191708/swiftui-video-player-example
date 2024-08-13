@@ -106,6 +106,7 @@
 		78AF7BFB2A52AA5D0028E9E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78F87B502C6B4D69007E26CD /* apple_logo.mp4 */,
 				786A7B882C5CB80200018844 /* logo.mp4 */,
 				78AF7BFC2A52AA5D0028E9E3 /* swipe.mp4 */,
 			);
@@ -122,7 +123,6 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
-				78F87B502C6B4D69007E26CD /* apple_logo.mp4 */,
 				78F87B442C6743AC007E26CD /* video_filters.gif */,
 				7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */,
 				78B42EF22C529785005E2367 /* macos.gif */,
