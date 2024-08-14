@@ -12,7 +12,7 @@ struct ContentView: View {
     
     @State var hintOn : Bool = false
     
-    @State var fileName : String = "logo"
+    @State var fileName : String = "swipe"
     
     let options: [String] = ["logo", "swipe"]
     
@@ -107,23 +107,15 @@ struct Video1 : View{
     
     var body: some View{
         GeometryReader{ proxy in
-            let orient = proxy.size.height > proxy.size.width
-            let width = orient ? min(proxy.size.width / 1.5, videoWidth) : min(proxy.size.height / 1.5, videoHeight)
-            let ratio = orient ? width / videoWidth : width / videoHeight
-            let length = orient ?  videoWidth * ratio : videoHeight * ratio
-            VStack{
+            let adjustedSize = adjustChildSize(toFit: proxy.size, initialChildSize: .init(width: videoWidth, height: videoHeight))
+            
+            VStack(alignment : .trailing){
                 Spacer()
-                if orient{
                     LoopPlayerView(fileName : fileName)
-                        .frame(width: videoWidth * ratio, height: videoHeight * ratio)
-                }else{
-                    LoopPlayerView(fileName : fileName)
-                        .frame(width: videoHeight * ratio, height: videoHeight * ratio)
-                }
+                    .frame(width: adjustedSize.width, height: adjustedSize.height)
                 Spacer()
-            }.offset(x : proxy.size.width - length)
+            }.offset(x : proxy.size.width - adjustedSize.width)
         }
-        .ignoresSafeArea()
         .background(Color("app_blue"))
         .toolbar{
             ToolbarItem(placement: .navigation){
@@ -270,5 +262,20 @@ struct ResponsiveStack<Content: View>: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+}
+
+fileprivate func adjustChildSize(toFit parentSize: CGSize, initialChildSize childSize: CGSize) -> CGSize {
+    let maxWidth = parentSize.width * 0.75
+    let maxHeight = parentSize.height * 0.75
+
+    if childSize.width > maxWidth || childSize.height > maxHeight {
+        let widthRatio = maxWidth / childSize.width
+        let heightRatio = maxHeight / childSize.height
+        let adjustmentRatio = min(widthRatio, heightRatio)
+
+        return CGSize(width: childSize.width * adjustmentRatio, height: childSize.height * adjustmentRatio)
+    } else {
+        return childSize
     }
 }
