@@ -95,27 +95,37 @@ struct Video1 : View{
     
     @Binding var fileName : String
     
-    var videoWidth : CGFloat{
-       600
-    }
+    let options: [String] = ["apple_logo", "swipe"]
     
+    var videoWidth : CGFloat{
+        fileName == "apple_logo" ? 652 : 600
+    }
     var videoHeight : CGFloat{
-         476
+        fileName == "apple_logo" ? 720 : 476
     }
     
     var body: some View{
         GeometryReader{ proxy in
             let adjustedSize = adjustChildSize(toFit: proxy.size, initialChildSize: .init(width: videoWidth, height: videoHeight))
+            
             VStack(alignment : .trailing){
                 Spacer()
-                    LoopPlayerView(fileName : "swipe")
+                    LoopPlayerView(fileName : fileName)
                     .frame(width: adjustedSize.width, height: adjustedSize.height)
                 Spacer()
             }.offset(x : proxy.size.width - adjustedSize.width)
-            
         }
-        .background(Color("app_blue"))
-        .modifier(ConditionalIgnoreSafeArea())
+        .background(fileName == "swipe" ? Color("app_blue") : Color.black)
+        .toolbar{
+            ToolbarItem(placement: .navigation){
+                Picker("Select an option", selection: $fileName) {
+                    ForEach(options, id: \.self) { option in
+                        Text(option).tag(option)
+                    }
+                }
+                .pickerStyle(.segmented)
+            }
+        }
     }
 }
 
