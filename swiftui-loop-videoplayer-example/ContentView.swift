@@ -15,8 +15,6 @@ struct ContentView: View {
     
     @State var fileName : String = "swipe"
     
-    let options: [String] = ["logo", "swipe"]
-    
     var body: some View {
             NavigationStack{
                 ZStack{
@@ -97,13 +95,12 @@ struct Video1 : View{
     
     @Binding var fileName : String
     
-    let options: [String] = ["logo", "swipe"]
-    
     var videoWidth : CGFloat{
-        fileName == "logo" ? 794 : 600
+       600
     }
+    
     var videoHeight : CGFloat{
-        fileName == "logo" ? 1088 : 476
+         476
     }
     
     var body: some View{
@@ -111,7 +108,7 @@ struct Video1 : View{
             let adjustedSize = adjustChildSize(toFit: proxy.size, initialChildSize: .init(width: videoWidth, height: videoHeight))
             VStack(alignment : .trailing){
                 Spacer()
-                    LoopPlayerView(fileName : fileName)
+                    LoopPlayerView(fileName : "swipe")
                     .frame(width: adjustedSize.width, height: adjustedSize.height)
                 Spacer()
             }.offset(x : proxy.size.width - adjustedSize.width)
@@ -119,16 +116,6 @@ struct Video1 : View{
         }
         .background(Color("app_blue"))
         .modifier(ConditionalIgnoreSafeArea())
-        .toolbar{
-            ToolbarItem(placement: .navigation){
-                Picker("Select an option", selection: $fileName) {
-                    ForEach(options, id: \.self) { option in
-                        Text(option).tag(option)
-                    }
-                }
-                .pickerStyle(.segmented)
-            }
-        }
     }
 }
 
