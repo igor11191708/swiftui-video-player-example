@@ -33,7 +33,7 @@ struct Video8: View {
         VStack {
             ZStack {
                 LoopPlayerView(settings: $settings, command: $playbackCommand)
-                    .onTimeChange { newTime in
+                    .onPlayerTimeChange { newTime in
                         if !isEditing {
                             currentTime = newTime
                         }
