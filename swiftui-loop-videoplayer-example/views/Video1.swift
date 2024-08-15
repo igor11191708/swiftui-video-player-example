@@ -75,7 +75,8 @@ fileprivate func adjustChildSize(toFit parentSize: CGSize, initialChildSize chil
 
 
 fileprivate struct ConditionalIgnoreSafeArea: ViewModifier {
-
+    
+    #if canImport(UIKit)
     class OrientationManager: ObservableObject {
         @Published var orientation: UIDeviceOrientation = .unknown
         private var cancellables: Set<AnyCancellable> = []
@@ -91,13 +92,18 @@ fileprivate struct ConditionalIgnoreSafeArea: ViewModifier {
     
     @StateObject var model = OrientationManager()
     
+    #endif
     
     func body(content: Content) -> some View {
+        #if canImport(UIKit)
         if model.orientation == .landscapeLeft {
             content
                 .ignoresSafeArea()
         } else {
             content
         }
+        #else
+            content
+        #endif
     }
 }
