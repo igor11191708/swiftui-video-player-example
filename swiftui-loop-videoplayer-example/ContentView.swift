@@ -144,51 +144,6 @@ struct Video2 : View{
     }
 }
 
-struct Video8: View {
-    
-    static let initVideo = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
-    
-    @State private var selectedVideoURL = Video8.initVideo
-
-    let videoOptions = [
-        "Apple HLS Stream from URL": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8",
-        "Big Buck Bunny from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-        "Elephant's Dream from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-    ]
-    
-    @State private var settings: VideoSettings = .init{
-        SourceName(Video8.initVideo)
-        Gravity(.resizeAspectFill)
-    }
-
-    var body: some View {
-        ZStack {
-            LoopPlayerView {
-                settings
-            }
-        }
-        .ignoresSafeArea()
-        .tag(selectedVideoURL)
-        .background(Color("app_blue"))
-        .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Picker("Select Video", selection: $selectedVideoURL) {
-                    ForEach(videoOptions.keys.sorted(), id: \.self) { key in
-                        Text(key).tag(videoOptions[key]!)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-            }
-        }
-        .onChange(of: selectedVideoURL){ value in
-            settings = VideoSettings {
-                SourceName(selectedVideoURL)
-                Gravity(.resizeAspectFill)
-            }
-        }
-    }
-}
-
 struct Video3 : View{
     var body: some View{
         ZStack(alignment: .center) {
