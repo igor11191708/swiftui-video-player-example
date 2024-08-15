@@ -10,7 +10,6 @@ import SwiftUI
 import AVFoundation
 
 struct Video8: View {
-    
     @State private var playbackCommand: PlaybackCommand = .play
     static let initVideo = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
     @State private var isEditing = false
@@ -98,9 +97,13 @@ struct Video8: View {
     }
     
     private func onEditingChanged(editing: Bool) {
-        isEditing = editing
+        isEditing = true
         if !editing {
             seekToTime(currentTime)
+            Task{
+                try? await Task.sleep(for: .seconds(1))
+                isEditing = false
+            }
         }
     }
     
