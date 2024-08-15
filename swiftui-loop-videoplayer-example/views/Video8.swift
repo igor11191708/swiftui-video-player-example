@@ -38,6 +38,12 @@ struct Video8: View {
                             currentTime = newTime
                         }
                     }
+                    .onPlayerEventChange{ event in
+                        if case .seek(_, let currentTime) = event{
+                            self.currentTime = currentTime
+                            isEditing = false
+                        }
+                    }
             }
             .ignoresSafeArea()
             .tag(selectedVideoURL)
@@ -59,7 +65,7 @@ struct Video8: View {
             HStack {
                 Text(formatTime(currentTime))
                 Slider(value: $currentTime, in: 0...(duration ?? 0), onEditingChanged: onEditingChanged)
-                    .disabled(duration == nil)
+                    .disabled(duration == nil || isEditing == true)
                 Text(formatTime(duration ?? 0))
             }
             .padding()
@@ -102,7 +108,6 @@ struct Video8: View {
             seekToTime(currentTime)
             Task{
                 try? await Task.sleep(for: .seconds(1))
-                isEditing = false
             }
         }
     }
