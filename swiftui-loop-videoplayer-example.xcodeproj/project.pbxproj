@@ -23,6 +23,7 @@
 		78AF7C072A52BFBB0028E9E3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7C062A52BFBB0028E9E3 /* README.md */; };
 		78B42EF32C529785005E2367 /* macos.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78B42EF22C529785005E2367 /* macos.gif */; };
 		78D7B6732C6E1CE1002833B3 /* Video8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D7B6722C6E1CE1002833B3 /* Video8.swift */; };
+		78D7B6752C6E2C13002833B3 /* Video1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D7B6742C6E2C13002833B3 /* Video1.swift */; };
 		78F87B3F2C6668F0007E26CD /* Video6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B3E2C6668F0007E26CD /* Video6.swift */; };
 		78F87B452C6743AD007E26CD /* video_filters.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B442C6743AC007E26CD /* video_filters.gif */; };
 		78F87B4A2C6B484D007E26CD /* ArtFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B492C6B484D007E26CD /* ArtFilter.swift */; };
@@ -48,6 +49,7 @@
 		78AF7C062A52BFBB0028E9E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		78B42EF22C529785005E2367 /* macos.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = macos.gif; sourceTree = "<group>"; };
 		78D7B6722C6E1CE1002833B3 /* Video8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video8.swift; sourceTree = "<group>"; };
+		78D7B6742C6E2C13002833B3 /* Video1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video1.swift; sourceTree = "<group>"; };
 		78F87B3E2C6668F0007E26CD /* Video6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video6.swift; sourceTree = "<group>"; };
 		78F87B442C6743AC007E26CD /* video_filters.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = video_filters.gif; sourceTree = "<group>"; };
 		78F87B492C6B484D007E26CD /* ArtFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtFilter.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				78D7B6722C6E1CE1002833B3 /* Video8.swift */,
 				78F87B3E2C6668F0007E26CD /* Video6.swift */,
+				78D7B6742C6E2C13002833B3 /* Video1.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				78D7B6732C6E1CE1002833B3 /* Video8.swift in Sources */,
 				78F87B3F2C6668F0007E26CD /* Video6.swift in Sources */,
+				78D7B6752C6E2C13002833B3 /* Video1.swift in Sources */,
 				78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */,
 				78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */,
 				78F87B602C6BB28C007E26CD /* VectorLogoLayer.swift in Sources */,
