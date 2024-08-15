@@ -106,9 +106,6 @@ struct Video8: View {
         isEditing = true
         if !editing {
             seekToTime(currentTime)
-            Task{
-                try? await Task.sleep(for: .seconds(1))
-            }
         }
     }
     
