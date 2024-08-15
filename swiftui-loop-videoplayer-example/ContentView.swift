@@ -12,19 +12,18 @@ import swiftui_loop_videoplayer
 struct ContentView: View {
     
     @State var hintOn : Bool = false
-    
-    @State var fileName : String = "swipe"
+
     
     var body: some View {
             NavigationStack{
                 ZStack{
                     ResponsiveStack(spacing: 5) {
                         Spacer()
-                        NavigationLink(destination: Video(fileName: $fileName))
+                        NavigationLink(destination: Video(fileName: .constant("swipe")))
                         {
                             labelTpl("display", color: .green)
                         }
-                        NavigationLink(destination: Video1(fileName: $fileName))
+                        NavigationLink(destination: Video1())
                         {
                             labelTpl("video")
                         }
@@ -93,7 +92,8 @@ struct ContentView: View {
 
 struct Video1 : View{
     
-    @Binding var fileName : String
+    @State var fileName : String = "swipe"
+    @State private var playbackCommand: PlaybackCommand = .play
     
     let options: [String] = ["apple_logo", "swipe"]
     
@@ -104,18 +104,27 @@ struct Video1 : View{
         fileName == "apple_logo" ? 720 : 476
     }
     
+    @State private var settings: VideoSettings = .init {
+        SourceName("swipe")
+    }
+    
     var body: some View{
         GeometryReader{ proxy in
             let adjustedSize = adjustChildSize(toFit: proxy.size, initialChildSize: .init(width: videoWidth, height: videoHeight))
             
             VStack(alignment : .trailing){
                 Spacer()
-                    LoopPlayerView(fileName : fileName)
+                    LoopPlayerView(settings: $settings, command: $playbackCommand)
                     .frame(width: adjustedSize.width, height: adjustedSize.height)
                 Spacer()
             }.offset(x : proxy.size.width - adjustedSize.width)
         }
         .background(fileName == "swipe" ? Color("app_blue") : Color.black)
+        .onChange(of: fileName){ name in
+            self.settings = .init {
+                SourceName(fileName)
+            }
+        }
         .toolbar{
             ToolbarItem(placement: .navigation){
                 Picker("Select an option", selection: $fileName) {
