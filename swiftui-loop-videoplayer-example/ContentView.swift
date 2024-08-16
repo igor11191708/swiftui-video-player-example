@@ -95,6 +95,7 @@ struct Video2 : View{
             LoopPlayerView{
                 VideoSettings{
                     SourceName("swipe")
+                    Loop()
                     ErrorGroup{
                         EFontSize(27)
                     }
@@ -112,6 +113,7 @@ struct Video3 : View{
                     SourceName("swipe_")
                     EColor(.orange)
                     EFontSize(33)
+                    Loop()
                 }
             }
         } .background(Color("app_blue"))
@@ -130,6 +132,7 @@ struct Video : View{
                     SourceName(fileName)
                     Ext("mp4")
                     Gravity(.resizeAspectFill)
+                    Loop()
                 }
             }
         }.ignoresSafeArea()

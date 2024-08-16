@@ -25,6 +25,7 @@ struct Video1 : View{
     
     @State private var settings: VideoSettings = .init {
         SourceName("swipe")
+        Loop()
     }
     
     var body: some View{
@@ -43,6 +44,7 @@ struct Video1 : View{
         .onChange(of: fileName){ name in
             self.settings = .init {
                 SourceName(fileName)
+                Loop()
             }
         }
         .toolbar{
