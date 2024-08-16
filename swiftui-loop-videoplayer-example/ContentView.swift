@@ -92,7 +92,7 @@ struct ContentView: View {
 struct Video2 : View{
     var body: some View{
         ZStack {
-            LoopPlayerView{
+            ExtVideoPlayer{
                 VideoSettings{
                     SourceName("swipe")
                     Loop()
@@ -108,7 +108,7 @@ struct Video2 : View{
 struct Video3 : View{
     var body: some View{
         ZStack(alignment: .center) {
-            LoopPlayerView{
+            ExtVideoPlayer{
                 VideoSettings{
                     SourceName("swipe_")
                     EColor(.orange)
@@ -127,7 +127,7 @@ struct Video : View{
     
     var body: some View{
         ZStack(alignment: .center) {
-            LoopPlayerView{
+            ExtVideoPlayer{
                 VideoSettings{
                     SourceName(fileName)
                     Ext("mp4")

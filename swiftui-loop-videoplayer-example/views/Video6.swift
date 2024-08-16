@@ -42,7 +42,7 @@ struct Video6: View {
     
     var body: some View {
         ResponsiveStack(spacing : 0) {
-            LoopPlayerView(
+            ExtVideoPlayer(
                 settings : $settings,
                 command: $playbackCommand
             )
