@@ -83,6 +83,7 @@ struct Video8: View {
         settings = VideoSettings {
             SourceName(newURL)
             Gravity(.resizeAspectFill)
+            Loop()
         }
     }
 
