@@ -34,6 +34,7 @@ struct ContentView: View {
                         NavigationLink(destination: Video6{
                             VideoSettings {
                                 SourceName("apple_logo")
+                                Loop()
                                 ErrorGroup {
                                     EFontSize(27)
                                 }
