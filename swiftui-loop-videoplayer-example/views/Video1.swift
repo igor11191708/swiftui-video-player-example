@@ -2,7 +2,7 @@
 //  Video1.swift
 //  swiftui-loop-videoplayer-example
 //
-//  Created by Igor  on 15.08.24.
+//  Created by Igor Shelopaev on 15.08.24.
 //
 
 import SwiftUI

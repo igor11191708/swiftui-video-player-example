@@ -2,7 +2,7 @@
 //  VectorLogoLayer.swift
 //  loop_player
 //
-//  Created by Igor  on 13.08.24.
+//  Created by Igor Shelopaev on 13.08.24.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  Video8.swift
 //  loop_player
 //
-//  Created by Igor  on 15.08.24.
+//  Created by Igor Shelopaev on 15.08.24.
 //
 
 import swiftui_loop_videoplayer
