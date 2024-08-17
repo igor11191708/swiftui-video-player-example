@@ -27,7 +27,6 @@ struct Video8: View {
         SourceName(Video8.initVideo)
         Gravity(.resizeAspectFill)
         TimePublishing()
-        Loop()
     }
 
     var body: some View {
@@ -43,6 +42,7 @@ struct Video8: View {
                         if case .seek(_, let currentTime) = event{
                             self.currentTime = currentTime
                             isEditing = false
+                            playbackCommand = .play
                         }
                     }
             }
