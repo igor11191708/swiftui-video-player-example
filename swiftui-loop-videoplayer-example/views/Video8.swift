@@ -27,7 +27,6 @@ struct Video8: View {
         SourceName(Video8.initVideo)
         Gravity(.resizeAspectFill)
         TimePublishing()
-        Loop()
     }
 
     var body: some View {
