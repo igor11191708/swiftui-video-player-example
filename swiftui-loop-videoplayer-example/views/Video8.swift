@@ -39,11 +39,16 @@ struct Video8: View {
                             currentTime = newTime
                         }
                     }
-                    .onPlayerEventChange{ event in
-                        if case .seek(_, let currentTime) = event{
-                            self.currentTime = currentTime
-                            isEditing = false
-                            playbackCommand = .play
+                    .onPlayerEventChange{ events in
+                        print(events)
+                        events.forEach{
+                            if case .seek(let success, let currentTime) = $0{
+                                if success{
+                                    self.currentTime = currentTime
+                                    playbackCommand = .play
+                                }
+                                isEditing = false
+                            }
                         }
                     }
             }
