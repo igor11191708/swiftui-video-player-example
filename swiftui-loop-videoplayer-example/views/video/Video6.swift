@@ -17,7 +17,14 @@ struct Video6: View {
     @State private var isMuted: Bool = true
     @State private var selectedFilterIndex: Int = 0
 
-    @State private var settings: VideoSettings
+    @State private var settings: VideoSettings = VideoSettings {
+        SourceName("apple_logo")
+        Loop()
+        ErrorGroup {
+            EFontSize(27)
+        }
+    }
+    
     @State var brightness: Float = 0.0
     @State var contrast: Float = 1.0
     
@@ -34,11 +41,6 @@ struct Video6: View {
         ("CIKaleidoscope", ["inputCount": 6, "inputCenter": CIVector(x: 150, y: 150)]),
         ("CIZoomBlur", [kCIInputAmountKey: 20, kCIInputCenterKey: CIVector(x: 150, y: 150)])
     ]
-    
-    // Initialize settings using a custom init to ensure proper setup
-    init(_ settings: () -> VideoSettings) {
-        self._settings = State(initialValue: settings())
-    }
     
     var body: some View {
         ResponsiveStack(spacing : 0) {
