@@ -20,6 +20,7 @@ struct Video2 : View{
                     }
                 }
             }
+            .accessibilityIdentifier("Video2_ExtVideoPlayer")
         }.background(Color("app_blue"))
     }
 }

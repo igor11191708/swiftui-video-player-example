@@ -17,6 +17,7 @@ struct swiftui_loop_videoplayer_exampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .accessibilityIdentifier("ContentView")
         }
     }
 }

@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */; };
 		78446B872C80D3BD003CF3F1 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78446B862C80D3BD003CF3F1 /* swiftui-loop-videoplayer */; };
+		78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
+		78446BA02C821C9E003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
 		784A16232A58374B00E8BBEA /* swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 784A16222A58374B00E8BBEA /* swiftui.gif */; };
 		786A7B9F2C6138AE00018844 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 786A7B9E2C6138AE00018844 /* swiftui-loop-videoplayer */; };
 		7876EDE12C80B0590084DC8C /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE02C80B0590084DC8C /* Video.swift */; };
 		7876EDE32C80B09D0084DC8C /* Video2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE22C80B09D0084DC8C /* Video2.swift */; };
 		7876EDE52C80B0D00084DC8C /* Video3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE42C80B0D00084DC8C /* Video3.swift */; };
 		7876EDE82C80B1310084DC8C /* ResponsiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE72C80B1310084DC8C /* ResponsiveStack.swift */; };
-		7876EDEA2C80B69F0084DC8C /* ContentViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE92C80B69F0084DC8C /* ContentViewUITests.swift */; };
+		7876EDEA2C80B69F0084DC8C /* NavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE92C80B69F0084DC8C /* NavigationUITests.swift */; };
 		788D66212A5B1B7B0047A134 /* swiftui_video_hint.gif in Resources */ = {isa = PBXBuildFile; fileRef = 788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */; };
 		7892F7342C6BDFE600B7A3B5 /* rotate.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7892F7332C6BDFE600B7A3B5 /* rotate.gif */; };
 		7892F7382C6CA80800B7A3B5 /* rotate_around_edge.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7892F7372C6CA80800B7A3B5 /* rotate_around_edge.gif */; };
@@ -49,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tip_video_swiftui.gif; sourceTree = "<group>"; };
+		78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerModel.swift; sourceTree = "<group>"; };
 		784A16222A58374B00E8BBEA /* swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui.gif; sourceTree = "<group>"; };
 		786A7B9A2C60C77800018844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7876EDD52C80AFBA0084DC8C /* VideoPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +59,7 @@
 		7876EDE22C80B09D0084DC8C /* Video2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video2.swift; sourceTree = "<group>"; };
 		7876EDE42C80B0D00084DC8C /* Video3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video3.swift; sourceTree = "<group>"; };
 		7876EDE72C80B1310084DC8C /* ResponsiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveStack.swift; sourceTree = "<group>"; };
-		7876EDE92C80B69F0084DC8C /* ContentViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewUITests.swift; sourceTree = "<group>"; };
+		7876EDE92C80B69F0084DC8C /* NavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITests.swift; sourceTree = "<group>"; };
 		788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_hint.gif; sourceTree = "<group>"; };
 		7892F7332C6BDFE600B7A3B5 /* rotate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rotate.gif; sourceTree = "<group>"; };
 		7892F7372C6CA80800B7A3B5 /* rotate_around_edge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rotate_around_edge.gif; sourceTree = "<group>"; };
@@ -99,10 +102,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78446B8F2C820FD6003CF3F1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		7876EDD62C80AFBA0084DC8C /* VideoPlayerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7876EDE92C80B69F0084DC8C /* ContentViewUITests.swift */,
+				7876EDE92C80B69F0084DC8C /* NavigationUITests.swift */,
 			);
 			path = VideoPlayerUITests;
 			sourceTree = "<group>";
@@ -143,6 +154,7 @@
 		78AF7BEA2A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example */ = {
 			isa = PBXGroup;
 			children = (
+				78446B8F2C820FD6003CF3F1 /* model */,
 				78F87B5F2C6BB28C007E26CD /* vector */,
 				78F87B4E2C6B48B9007E26CD /* views */,
 				78F87B482C6B4836007E26CD /* filters */,
@@ -344,7 +356,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7876EDEA2C80B69F0084DC8C /* ContentViewUITests.swift in Sources */,
+				78446BA02C821C9E003CF3F1 /* VideoPlayerModel.swift in Sources */,
+				7876EDEA2C80B69F0084DC8C /* NavigationUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +372,7 @@
 				7876EDE82C80B1310084DC8C /* ResponsiveStack.swift in Sources */,
 				78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */,
 				78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */,
+				78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */,
 				7876EDE12C80B0590084DC8C /* Video.swift in Sources */,
 				7876EDE32C80B09D0084DC8C /* Video2.swift in Sources */,
 				78F87B602C6BB28C007E26CD /* VectorLogoLayer.swift in Sources */,
@@ -562,7 +576,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "igorshell.swiftui-loop-videoplayer-example";
+				PRODUCT_BUNDLE_IDENTIFIER = "igorshelopaev.swiftui-loop-videoplayer-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -593,7 +607,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "igorshell.swiftui-loop-videoplayer-example";
+				PRODUCT_BUNDLE_IDENTIFIER = "igorshelopaev.swiftui-loop-videoplayer-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

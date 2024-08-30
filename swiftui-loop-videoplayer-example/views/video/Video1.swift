@@ -35,6 +35,7 @@ struct Video1 : View{
             VStack(alignment : .trailing){
                 Spacer()
                     ExtVideoPlayer(settings: $settings, command: $playbackCommand)
+                    .accessibilityIdentifier("Video1_ExtVideoPlayer")
                     .frame(width: adjustedSize.width, height: adjustedSize.height)
                 Spacer()
             }.offset(x : proxy.size.width - adjustedSize.width)

@@ -22,6 +22,7 @@ struct Video : View{
                     Loop()
                 }
             }
+            .accessibilityIdentifier("Video_ExtVideoPlayer")
         }.ignoresSafeArea()
     }
 }

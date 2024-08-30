@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+
     
     @State public var navigationPath = NavigationPath()
 
@@ -15,24 +16,11 @@ struct ContentView: View {
         NavigationStack(path: $navigationPath) {
             ResponsiveStack(spacing: 5) {
                 Spacer()
-                NavigationLink(value: "Video") {
-                    labelTpl("display", color: .green)
-                }
-                .accessibilityIdentifier("Video")
-                NavigationLink(value: "Video1") {
-                    labelTpl("video")
-                }
-                NavigationLink(value: "Video2") {
-                    labelTpl("airplayvideo.circle")
-                }
-                NavigationLink(value: "Video6") {
-                    labelTpl("appletvremote.gen2")
-                }
-                NavigationLink(value: "Video8") {
-                    labelTpl("cloud")
-                }
-                NavigationLink(value: "Video3") {
-                    labelTpl("e.circle", color: .red)
+                ForEach(VideoPlayerModel.data, id: \.self) { view in
+                    NavigationLink(value: view.name) {
+                        labelTpl(view.icon, color: view.color)
+                    }
+                    .accessibilityIdentifier(view.name)
                 }
                 Spacer()
             }
@@ -59,14 +47,13 @@ struct ContentView: View {
         }
         .preferredColorScheme(.dark)
     }
-}
-
-// ViewBuilder for labels
-@ViewBuilder
-fileprivate func labelTpl(_ name: String, color: Color = .blue) -> some View {
-    Image(systemName: name)
-        .font(.system(size: 68))
-        .padding(8)
-        .foregroundColor(color)
-        .frame(width: 102)
+    
+    @ViewBuilder
+    private func labelTpl(_ name: String, color: Color = .blue) -> some View {
+        Image(systemName: name)
+            .font(.system(size: 68))
+            .padding(8)
+            .foregroundColor(color)
+            .frame(width: 102)
+    }
 }

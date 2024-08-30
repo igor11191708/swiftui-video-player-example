@@ -34,6 +34,7 @@ struct Video8: View {
         VStack {
             ZStack {
                 ExtVideoPlayer(settings: $settings, command: $playbackCommand)
+                    .accessibilityIdentifier("Video8_ExtVideoPlayer")
                     .onPlayerTimeChange { newTime in
                         if !isEditing {
                             currentTime = newTime

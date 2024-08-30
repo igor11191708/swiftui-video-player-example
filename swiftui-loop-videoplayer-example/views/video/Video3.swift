@@ -19,6 +19,7 @@ struct Video3 : View{
                     Loop()
                 }
             }
+            .accessibilityIdentifier("Video3_ExtVideoPlayer")
         } .background(Color("app_blue"))
     }
 }

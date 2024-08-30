@@ -48,6 +48,7 @@ struct Video6: View {
                 settings : $settings,
                 command: $playbackCommand
             )
+            .accessibilityIdentifier("Video6_ExtVideoPlayer")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .onChange(of: playbackCommand) { value in
                 updatePlayingState(for: value)
