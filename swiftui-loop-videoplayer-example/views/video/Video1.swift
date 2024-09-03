@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 import swiftui_loop_videoplayer
 
-struct Video1 : View{
+struct Video1 : VideoTpl{
     
     @State var fileName : String = "swipe"
     @State private var playbackCommand: PlaybackCommand = .play

@@ -8,7 +8,7 @@
 import SwiftUI
 import swiftui_loop_videoplayer
 
-struct Video : View{
+struct Video : VideoTpl{
     
     let fileName : String = "swipe"
     

@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 import CoreImage
 
-struct Video6: View {
+struct Video6: VideoTpl {
     
     @State private var playbackCommand: PlaybackCommand = .play
     @State private var isPlaying: Bool = true

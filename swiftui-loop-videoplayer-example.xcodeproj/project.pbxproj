@@ -11,6 +11,7 @@
 		78446B872C80D3BD003CF3F1 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78446B862C80D3BD003CF3F1 /* swiftui-loop-videoplayer */; };
 		78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
 		78446BA02C821C9E003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
+		78446BA32C86F370003CF3F1 /* VideoTpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446BA22C86F370003CF3F1 /* VideoTpl.swift */; };
 		784A16232A58374B00E8BBEA /* swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 784A16222A58374B00E8BBEA /* swiftui.gif */; };
 		786A7B9F2C6138AE00018844 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 786A7B9E2C6138AE00018844 /* swiftui-loop-videoplayer */; };
 		7876EDE12C80B0590084DC8C /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE02C80B0590084DC8C /* Video.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tip_video_swiftui.gif; sourceTree = "<group>"; };
 		78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerModel.swift; sourceTree = "<group>"; };
+		78446BA22C86F370003CF3F1 /* VideoTpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoTpl.swift; path = ../../../../../Library/VideoTpl.swift; sourceTree = "<group>"; };
 		784A16222A58374B00E8BBEA /* swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui.gif; sourceTree = "<group>"; };
 		786A7B9A2C60C77800018844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7876EDD52C80AFBA0084DC8C /* VideoPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,14 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		78446BA12C86F35C003CF3F1 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				78446BA22C86F370003CF3F1 /* VideoTpl.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
 		7876EDD62C80AFBA0084DC8C /* VideoPlayerUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		78AF7BEA2A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example */ = {
 			isa = PBXGroup;
 			children = (
+				78446BA12C86F35C003CF3F1 /* protocol */,
 				78446B8F2C820FD6003CF3F1 /* model */,
 				78F87B5F2C6BB28C007E26CD /* vector */,
 				78F87B4E2C6B48B9007E26CD /* views */,
@@ -369,6 +380,7 @@
 				78F87B3F2C6668F0007E26CD /* Video6.swift in Sources */,
 				78D7B6752C6E2C13002833B3 /* Video1.swift in Sources */,
 				7876EDE52C80B0D00084DC8C /* Video3.swift in Sources */,
+				78446BA32C86F370003CF3F1 /* VideoTpl.swift in Sources */,
 				7876EDE82C80B1310084DC8C /* ResponsiveStack.swift in Sources */,
 				78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */,
 				78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */,

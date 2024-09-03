@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-
     
     @State public var navigationPath = NavigationPath()
 
@@ -26,23 +25,8 @@ struct ContentView: View {
             }
             .background(.quaternary)
             .ignoresSafeArea()
-            .navigationDestination(for: String.self) { item in
-                switch item {
-                case "Video":
-                    Video()
-                case "Video1":
-                    Video1()
-                case "Video2":
-                    Video2()
-                case "Video6":
-                    Video6()
-                case "Video8":
-                    Video8()
-                case "Video3":
-                    Video3()
-                default:
-                    EmptyView()
-                }
+            .navigationDestination(for: String.self) { name in
+                VideoPlayerModel.getDestination(for: name)
             }
         }
         .preferredColorScheme(.dark)

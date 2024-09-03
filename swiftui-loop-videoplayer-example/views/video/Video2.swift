@@ -8,7 +8,7 @@
 import SwiftUI
 import swiftui_loop_videoplayer
 
-struct Video2 : View{
+struct Video2 : VideoTpl{
     var body: some View{
         ZStack {
             ExtVideoPlayer{

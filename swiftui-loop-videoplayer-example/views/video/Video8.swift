@@ -9,7 +9,7 @@ import swiftui_loop_videoplayer
 import SwiftUI
 import AVFoundation
 
-struct Video8: View {
+struct Video8: VideoTpl {
     @State private var playbackCommand: PlaybackCommand = .play
     static let initVideo = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
     @State private var isEditing = false
