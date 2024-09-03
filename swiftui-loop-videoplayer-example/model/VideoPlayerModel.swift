@@ -40,18 +40,18 @@ struct VideoPlayerModel: Hashable {
                lhs.icon == rhs.icon &&
                lhs.color == rhs.color
     }
-    
-    @ViewBuilder
-    static func getDestination(for name: String) -> some View {
-        switch name{
-            case "Video": Video()
-            case "Video1": Video1()
-            case "Video2": Video2()
-            case "Video6": Video6()
-            case "Video8": Video8()
-            case "Video3": Video3()
-        default : EmptyView()
-        }
+}
+
+@ViewBuilder
+func getDestination(for name: String) -> some View {
+    switch name{
+        case "Video": Video()
+        case "Video1": Video1()
+        case "Video2": Video2()
+        case "Video6": Video6()
+        case "Video8": Video8()
+        case "Video3": Video3()
+    default : EmptyView()
     }
 }
 

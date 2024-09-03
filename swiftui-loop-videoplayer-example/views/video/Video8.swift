@@ -53,7 +53,7 @@ struct Video8: VideoTpl {
                         }
                     }
             }
-            .ignoresSafeArea()
+            .ignoresSafeArea() 
             .tag(selectedVideoURL)
             .background(Color("app_blue"))
             .toolbar {

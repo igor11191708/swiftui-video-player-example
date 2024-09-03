@@ -26,7 +26,7 @@ struct ContentView: View {
             .background(.quaternary)
             .ignoresSafeArea()
             .navigationDestination(for: String.self) { name in
-                VideoPlayerModel.getDestination(for: name)
+                getDestination(for: name)
             }
         }
         .preferredColorScheme(.dark)
