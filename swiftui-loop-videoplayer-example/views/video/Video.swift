@@ -32,7 +32,6 @@ struct Video : VideoTpl{
                             return false
                         }
                     }.count
-                    print(count)
                     loopCount += count
                 }
                 .accessibilityIdentifier("Video_ExtVideoPlayer")

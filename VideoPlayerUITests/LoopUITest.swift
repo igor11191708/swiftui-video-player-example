@@ -9,7 +9,7 @@ import XCTest
 @testable import swiftui_loop_videoplayer_example
 
 final class LoopUITest: XCTestCase {
-
+    
     let videoName : String = "Video"
     
     /// Tests the increment of loop counts in a video player over time.
