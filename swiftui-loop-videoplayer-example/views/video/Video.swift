@@ -12,17 +12,35 @@ struct Video : VideoTpl{
     
     let fileName : String = "swipe"
     
+    @State var loopCount : Int = 0
+    
     var body: some View{
-        ZStack(alignment: .center) {
-            ExtVideoPlayer{
-                VideoSettings{
-                    SourceName(fileName)
-                    Ext("mp4")
-                    Gravity(.resizeAspectFill)
-                    Loop()
+            ZStack{
+                ExtVideoPlayer{
+                    VideoSettings{
+                        SourceName(fileName)
+                        Ext("mp4")
+                        Gravity(.resizeAspectFill)
+                        Loop()
+                    }
                 }
-            }
-            .accessibilityIdentifier("Video_ExtVideoPlayer")
-        }.ignoresSafeArea()
+                .onPlayerEventChange { events in
+                    let count = events.filter {
+                        if case .currentItemChanged(_) = $0 {
+                            return true
+                        } else {
+                            return false
+                        }
+                    }.count
+                    print(count)
+                    loopCount += count
+                }
+                .accessibilityIdentifier("Video_ExtVideoPlayer")
+                Text("Loop count \(loopCount)")
+                    .padding()
+                    .background(Color.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .accessibilityIdentifier("Video_LoopCounter")
+            }.ignoresSafeArea()
     }
 }
