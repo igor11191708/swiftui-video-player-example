@@ -12,13 +12,16 @@ struct Video3 : VideoTpl{
     
     @State var error : VPErrors? = nil
     
+    var getOffsetY : CGFloat{
+        error == nil ? -1002 : 0
+    }
+    
     var body: some View{
-        ZStack(alignment: .top) {
+        ZStack(alignment: .center) {
             ExtVideoPlayer{
                 VideoSettings{
                     SourceName("swipe_")
-                    EColor(.orange)
-                    EFontSize(33)
+                    ErrorWidgetOff()
                     Loop()
                 }
             }
@@ -26,18 +29,25 @@ struct Video3 : VideoTpl{
             .onPlayerEventChange { events in
                 events.forEach { item in
                     if case .error(let e) = item {
-                        error = e
+                        withAnimation(.spring){
+                            error = e
+                        }
                     }
                 }
             }
-            if let error{
-                Text("\(error.description)")
-                    .padding()
-                    .background(Color.orange)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .padding(50)
-                    .accessibilityIdentifier("Video3_Error")
-            }
+            errorTpl
         } .background(Color("app_blue"))
+    }
+    
+    @ViewBuilder
+    var errorTpl : some View{
+        Text("\(error?.description ?? "")")
+            .padding()
+            .background(Color.orange)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding(50)
+            .font(.largeTitle)
+            .offset(y: getOffsetY )
+            .accessibilityIdentifier("Video3_Error")
     }
 }
