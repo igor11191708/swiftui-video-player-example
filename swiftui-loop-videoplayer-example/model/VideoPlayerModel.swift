@@ -11,7 +11,7 @@ import SwiftUI
 struct VideoPlayerModel: Hashable {
     
     static let data : [VideoPlayerModel] = [
-        .init(name: "Video", icon: "display", color: .green),
+        .init(name: "Video11", icon: "display", color: .green),
         .init(name: "Video1", icon: "video", color: .blue),
         .init(name: "Video2", icon: "airplayvideo.circle", color: .blue),
         .init(name: "Video6", icon: "appletvremote.gen2", color: .blue),
@@ -45,7 +45,7 @@ struct VideoPlayerModel: Hashable {
 @ViewBuilder
 func getDestination(for name: String) -> some View {
     switch name{
-        case "Video": Video()
+        case "Video11": Video11()
         case "Video1": Video1()
         case "Video2": Video2()
         case "Video6": Video6()
@@ -54,7 +54,3 @@ func getDestination(for name: String) -> some View {
     default : EmptyView()
     }
 }
-
-
-
-

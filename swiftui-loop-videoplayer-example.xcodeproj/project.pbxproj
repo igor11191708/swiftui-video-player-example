@@ -14,7 +14,7 @@
 		78446BA32C86F370003CF3F1 /* VideoTpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446BA22C86F370003CF3F1 /* VideoTpl.swift */; };
 		784A16232A58374B00E8BBEA /* swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 784A16222A58374B00E8BBEA /* swiftui.gif */; };
 		786A7B9F2C6138AE00018844 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 786A7B9E2C6138AE00018844 /* swiftui-loop-videoplayer */; };
-		7876EDE12C80B0590084DC8C /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE02C80B0590084DC8C /* Video.swift */; };
+		7876EDE12C80B0590084DC8C /* Video11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE02C80B0590084DC8C /* Video11.swift */; };
 		7876EDE32C80B09D0084DC8C /* Video2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE22C80B09D0084DC8C /* Video2.swift */; };
 		7876EDE52C80B0D00084DC8C /* Video3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE42C80B0D00084DC8C /* Video3.swift */; };
 		7876EDE82C80B1310084DC8C /* ResponsiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE72C80B1310084DC8C /* ResponsiveStack.swift */; };
@@ -25,7 +25,7 @@
 		78ABCBFB2C870C670083884B /* Video8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D7B6722C6E1CE1002833B3 /* Video8.swift */; };
 		78ABCBFC2C870C690083884B /* Video6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B3E2C6668F0007E26CD /* Video6.swift */; };
 		78ABCBFD2C870C6C0083884B /* Video1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D7B6742C6E2C13002833B3 /* Video1.swift */; };
-		78ABCBFE2C870C6F0083884B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE02C80B0590084DC8C /* Video.swift */; };
+		78ABCBFE2C870C6F0083884B /* Video11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE02C80B0590084DC8C /* Video11.swift */; };
 		78ABCBFF2C870C720083884B /* Video2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE22C80B09D0084DC8C /* Video2.swift */; };
 		78ABCC002C870C740083884B /* Video3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE42C80B0D00084DC8C /* Video3.swift */; };
 		78ABCC012C870C810083884B /* VideoTpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446BA22C86F370003CF3F1 /* VideoTpl.swift */; };
@@ -33,6 +33,10 @@
 		78ABCC032C870CAC0083884B /* VectorLogoLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B5E2C6BB28C007E26CD /* VectorLogoLayer.swift */; };
 		78ABCC042C870CB00083884B /* ArtFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B492C6B484D007E26CD /* ArtFilter.swift */; };
 		78ABCC062C87298B0083884B /* LoopUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC052C87298B0083884B /* LoopUITest.swift */; };
+		78ABCC082C883B730083884B /* ErrorsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC072C883B730083884B /* ErrorsUITest.swift */; };
+		78ABCC0B2C88482C0083884B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC0A2C88482C0083884B /* AppManager.swift */; };
+		78ABCC0E2C8848E80083884B /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC0D2C8848E80083884B /* Initializable.swift */; };
+		78ABCC112C884E580083884B /* Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC102C884E580083884B /* Navigable.swift */; };
 		78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF7BEB2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift */; };
 		78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF7BED2A52A9DA0028E9E3 /* ContentView.swift */; };
 		78AF7BF02A52A9DB0028E9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7BEF2A52A9DB0028E9E3 /* Assets.xcassets */; };
@@ -68,7 +72,7 @@
 		784A16222A58374B00E8BBEA /* swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui.gif; sourceTree = "<group>"; };
 		786A7B9A2C60C77800018844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7876EDD52C80AFBA0084DC8C /* VideoPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7876EDE02C80B0590084DC8C /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		7876EDE02C80B0590084DC8C /* Video11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video11.swift; sourceTree = "<group>"; };
 		7876EDE22C80B09D0084DC8C /* Video2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video2.swift; sourceTree = "<group>"; };
 		7876EDE42C80B0D00084DC8C /* Video3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video3.swift; sourceTree = "<group>"; };
 		7876EDE72C80B1310084DC8C /* ResponsiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveStack.swift; sourceTree = "<group>"; };
@@ -77,6 +81,11 @@
 		7892F7332C6BDFE600B7A3B5 /* rotate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rotate.gif; sourceTree = "<group>"; };
 		7892F7372C6CA80800B7A3B5 /* rotate_around_edge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rotate_around_edge.gif; sourceTree = "<group>"; };
 		78ABCC052C87298B0083884B /* LoopUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopUITest.swift; sourceTree = "<group>"; };
+		78ABCC072C883B730083884B /* ErrorsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsUITest.swift; sourceTree = "<group>"; };
+		78ABCC0A2C88482C0083884B /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		78ABCC0D2C8848E80083884B /* Initializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializable.swift; sourceTree = "<group>"; };
+		78ABCC0F2C884DB70083884B /* swiftui-loop-videoplayer-example.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "swiftui-loop-videoplayer-example.xctestplan"; sourceTree = "<group>"; };
+		78ABCC102C884E580083884B /* Navigable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigable.swift; sourceTree = "<group>"; };
 		78AF7BE82A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftui-loop-videoplayer-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78AF7BEB2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_loop_videoplayer_exampleApp.swift; sourceTree = "<group>"; };
 		78AF7BED2A52A9DA0028E9E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,8 +144,11 @@
 		7876EDD62C80AFBA0084DC8C /* VideoPlayerUITests */ = {
 			isa = PBXGroup;
 			children = (
+				78ABCC0C2C8848C30083884B /* protocol */,
+				78ABCC092C8848160083884B /* utility */,
 				7876EDE92C80B69F0084DC8C /* NavigationUITests.swift */,
 				78ABCC052C87298B0083884B /* LoopUITest.swift */,
+				78ABCC072C883B730083884B /* ErrorsUITest.swift */,
 			);
 			path = VideoPlayerUITests;
 			sourceTree = "<group>";
@@ -147,16 +159,34 @@
 				78D7B6722C6E1CE1002833B3 /* Video8.swift */,
 				78F87B3E2C6668F0007E26CD /* Video6.swift */,
 				78D7B6742C6E2C13002833B3 /* Video1.swift */,
-				7876EDE02C80B0590084DC8C /* Video.swift */,
+				7876EDE02C80B0590084DC8C /* Video11.swift */,
 				7876EDE22C80B09D0084DC8C /* Video2.swift */,
 				7876EDE42C80B0D00084DC8C /* Video3.swift */,
 			);
 			path = video;
 			sourceTree = "<group>";
 		};
+		78ABCC092C8848160083884B /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				78ABCC0A2C88482C0083884B /* AppManager.swift */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		78ABCC0C2C8848C30083884B /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				78ABCC0D2C8848E80083884B /* Initializable.swift */,
+				78ABCC102C884E580083884B /* Navigable.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
 		78AF7BDF2A52A9DA0028E9E3 = {
 			isa = PBXGroup;
 			children = (
+				78ABCC0F2C884DB70083884B /* swiftui-loop-videoplayer-example.xctestplan */,
 				78AF7C062A52BFBB0028E9E3 /* README.md */,
 				78AF7BEA2A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example */,
 				7876EDD62C80AFBA0084DC8C /* VideoPlayerUITests */,
@@ -380,17 +410,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78ABCC112C884E580083884B /* Navigable.swift in Sources */,
 				78ABCC062C87298B0083884B /* LoopUITest.swift in Sources */,
 				78ABCBFF2C870C720083884B /* Video2.swift in Sources */,
 				78ABCC002C870C740083884B /* Video3.swift in Sources */,
 				78ABCBFC2C870C690083884B /* Video6.swift in Sources */,
-				78ABCBFE2C870C6F0083884B /* Video.swift in Sources */,
+				78ABCBFE2C870C6F0083884B /* Video11.swift in Sources */,
 				78ABCBFB2C870C670083884B /* Video8.swift in Sources */,
+				78ABCC0B2C88482C0083884B /* AppManager.swift in Sources */,
 				78446BA02C821C9E003CF3F1 /* VideoPlayerModel.swift in Sources */,
 				78ABCC022C870CA00083884B /* ResponsiveStack.swift in Sources */,
 				78ABCC032C870CAC0083884B /* VectorLogoLayer.swift in Sources */,
 				78ABCBFD2C870C6C0083884B /* Video1.swift in Sources */,
+				78ABCC082C883B730083884B /* ErrorsUITest.swift in Sources */,
 				7876EDEA2C80B69F0084DC8C /* NavigationUITests.swift in Sources */,
+				78ABCC0E2C8848E80083884B /* Initializable.swift in Sources */,
 				78ABCC012C870C810083884B /* VideoTpl.swift in Sources */,
 				78ABCC042C870CB00083884B /* ArtFilter.swift in Sources */,
 			);
@@ -409,7 +443,7 @@
 				78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */,
 				78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */,
 				78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */,
-				7876EDE12C80B0590084DC8C /* Video.swift in Sources */,
+				7876EDE12C80B0590084DC8C /* Video11.swift in Sources */,
 				7876EDE32C80B09D0084DC8C /* Video2.swift in Sources */,
 				78F87B602C6BB28C007E26CD /* VectorLogoLayer.swift in Sources */,
 				78F87B4A2C6B484D007E26CD /* ArtFilter.swift in Sources */,

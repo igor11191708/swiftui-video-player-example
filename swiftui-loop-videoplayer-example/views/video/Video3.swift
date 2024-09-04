@@ -10,9 +10,21 @@ import swiftui_loop_videoplayer
 
 struct Video3 : VideoTpl{
     
-    @State var error : VPErrors? = nil
+    static public let videoPrefix : String = "Video3"
     
-    var getOffsetY : CGFloat{
+    static public var videoPlayerIdentifier : String {
+        "\(videoPrefix)_ExtVideoPlayer"
+    }
+    
+    static public var errorWidgetIdentifier : String {
+        "\(videoPrefix)_ErrorWidget"
+    }
+    
+    static public let sourceName = "swipe_"
+    
+    @State private var error : VPErrors? = nil
+    
+    private var getOffsetY : CGFloat{
         error == nil ? -1002 : 0
     }
     
@@ -20,12 +32,12 @@ struct Video3 : VideoTpl{
         ZStack(alignment: .center) {
             ExtVideoPlayer{
                 VideoSettings{
-                    SourceName("swipe_")
+                    SourceName(Video3.sourceName)
                     ErrorWidgetOff()
                     Loop()
                 }
             }
-            .accessibilityIdentifier("Video3_ExtVideoPlayer")
+            .accessibilityIdentifier(Video3.videoPlayerIdentifier)
             .onPlayerEventChange { events in
                 events.forEach { item in
                     if case .error(let e) = item {
@@ -40,7 +52,7 @@ struct Video3 : VideoTpl{
     }
     
     @ViewBuilder
-    var errorTpl : some View{
+    private var errorTpl : some View{
         Text("\(error?.description ?? "")")
             .padding()
             .background(Color.orange)
@@ -48,6 +60,6 @@ struct Video3 : VideoTpl{
             .padding(50)
             .font(.largeTitle)
             .offset(y: getOffsetY )
-            .accessibilityIdentifier("Video3_Error")
+            .accessibilityIdentifier(Video3.errorWidgetIdentifier)
     }
 }

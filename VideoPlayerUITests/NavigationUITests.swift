@@ -9,8 +9,13 @@ import XCTest
 import SwiftUI
 @testable import swiftui_loop_videoplayer_example
 
-final class NavigationUITests: XCTestCase {
+final class NavigationUITests: XCTestCase, Initializable, Navigable {
 
+    override class func setUp() {
+        super.setUp()
+        AppManager.shared.launchApplicationIfNeeded()
+    }
+    
     /// Tests the navigation from the main view to various video views and back.
     ///
     /// This test verifies that each video button in the `VideoPlayerModel.data` array correctly navigates to
@@ -28,23 +33,15 @@ final class NavigationUITests: XCTestCase {
     func testNavigationToVideoView() {
         
         let data = VideoPlayerModel.data
-        
-        let app = XCUIApplication()
-        app.launch()
 
         for video in data {
             
-            let videoButton = app.buttons.matching(identifier: video.name).firstMatch
-            XCTAssertTrue(videoButton.exists, "The \(video.name) button should exist")
-            
-            videoButton.tap()
+            tap(button: video.name)
             
             let videoPlayer = app.otherElements["\(video.name)_ExtVideoPlayer"]
             XCTAssertTrue(videoPlayer.waitForExistence(timeout: 5), "The ExtVideoPlayer included in \(video.name) should be visible on the screen")
             
-            let backButton = app.navigationBars.buttons.element(boundBy: 0)
-            XCTAssertTrue(backButton.exists, "The Back button should exist")
-            backButton.tap()
+            back()
             
             let contentView = app.otherElements["ContentView"]
             XCTAssertTrue(contentView.waitForExistence(timeout: 5), "ContentView should be visible again")

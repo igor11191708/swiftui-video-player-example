@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "E3825E53-5B0D-4195-B7F1-249C0A3E8AA8",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:swiftui-loop-videoplayer-example.xcodeproj",
+      "identifier" : "78AF7BE72A52A9DA0028E9E3",
+      "name" : "swiftui-loop-videoplayer-example"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:swiftui-loop-videoplayer-example.xcodeproj",
+        "identifier" : "7876EDD42C80AFBA0084DC8C",
+        "name" : "VideoPlayerUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

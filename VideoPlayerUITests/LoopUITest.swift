@@ -8,9 +8,13 @@
 import XCTest
 @testable import swiftui_loop_videoplayer_example
 
-final class LoopUITest: XCTestCase {
+final class LoopUITest: XCTestCase, Initializable, Navigable {
     
-    let videoName : String = "Video"
+    
+    override class func setUp() {
+        super.setUp()
+        AppManager.shared.launchApplicationIfNeeded()
+    }
     
     /// Tests the increment of loop counts in a video player over time.
     ///
@@ -26,16 +30,10 @@ final class LoopUITest: XCTestCase {
     /// 5. Waits for an additional 10 seconds and retrieves the loop count again.
     /// 6. Verifies that the loop count after 10 seconds is greater than the initial count, confirming proper loop functionality.
     func testLoop() {
-        let app = XCUIApplication()
-        app.launch()  // Launches the application
 
-        let videoButton = app.buttons.matching(identifier: videoName).firstMatch
-        XCTAssertTrue(videoButton.exists, "The \(videoName) button should exist")
-        
-        videoButton.tap()
+        let videoName = Video11.videoPrefix
 
-        let videoPlayer = app.otherElements["Video_ExtVideoPlayer"]
-        XCTAssertTrue(videoPlayer.waitForExistence(timeout: 8), "The ExtVideoPlayer should be visible on the screen")
+        tap(button: videoName, wait: 8)
         
         let initialLoopCount = getCurrentLoopCount(app: app)
         XCTAssertGreaterThan(initialLoopCount, 0, "Loop count should be greater than zero after some time playing.")
@@ -44,6 +42,8 @@ final class LoopUITest: XCTestCase {
 
         let afterTenSecondsLoopCount = getCurrentLoopCount(app: app)
         XCTAssertGreaterThan(afterTenSecondsLoopCount, initialLoopCount, "Loop count should be greater than initialLoopCount after some time playing.")
+        
+        back()
     }
 
     /// Retrieves the current loop count displayed on the screen.
@@ -54,8 +54,8 @@ final class LoopUITest: XCTestCase {
     /// - Parameter app: The XCUIApplication instance representing the app.
     /// - Returns: The integer value of the current loop count.
     func getCurrentLoopCount(app: XCUIApplication) -> Int {
-        let loopCounterText = app.staticTexts["Video_LoopCounter"]
-        XCTAssertTrue(loopCounterText.waitForExistence(timeout: 10), "Loop counter text should be visible on the screen")
+        let loopCounterText = app.staticTexts[Video11.loopCounterIdentifier]
+        XCTAssertTrue(loopCounterText.waitForExistence(timeout: 5), "Loop counter text should be visible on the screen")
         
         return extractLoopCount(from: loopCounterText.label)
     }

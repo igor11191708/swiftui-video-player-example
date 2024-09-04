@@ -8,7 +8,17 @@
 import SwiftUI
 import swiftui_loop_videoplayer
 
-struct Video : VideoTpl{
+struct Video11 : VideoTpl{
+    
+    static public let videoPrefix : String = "Video11"
+    
+    static public var videoPlayerIdentifier : String {
+        "\(videoPrefix)_ExtVideoPlayer"
+    }
+    
+    static public var loopCounterIdentifier : String {
+        "\(videoPrefix)_LoopCounter"
+    }
     
     let fileName : String = "swipe"
     
@@ -34,12 +44,12 @@ struct Video : VideoTpl{
                     }.count
                     loopCount += count
                 }
-                .accessibilityIdentifier("Video_ExtVideoPlayer")
+                .accessibilityIdentifier(Video11.videoPlayerIdentifier)
                 Text("Loop count \(loopCount)")
                     .padding()
                     .background(Color.blue)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .accessibilityIdentifier("Video_LoopCounter")
+                    .accessibilityIdentifier(Video11.loopCounterIdentifier)
             }.ignoresSafeArea()
     }
 }
