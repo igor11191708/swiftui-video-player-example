@@ -9,10 +9,14 @@ import XCTest
 @testable import swiftui_loop_videoplayer_example
 
 final class LoopUITest: XCTestCase, Initializable, Navigable {
-    
-    
-    override class func setUp() {
-        super.setUp()
+     
+    /// Prepares the test class for execution by ensuring the application is launched if not already running and sets failure handling.
+    ///
+    /// Throws an error if the setup process fails, potentially causing all subsequent tests to be skipped.
+    override func setUpWithError() throws {
+
+        continueAfterFailure = false
+        
         AppManager.shared.launchApplicationIfNeeded()
     }
     
