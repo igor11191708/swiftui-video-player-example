@@ -2,7 +2,7 @@
 //  ErrorsUITest.swift
 //  VideoPlayerUITests
 //
-//  Created by Igor Shelopaev on 04.09.24.
+//  Created by Igor Shelopaev
 //
 
 import XCTest
@@ -16,6 +16,10 @@ final class ErrorsUITest: XCTestCase, Initializable, Navigable {
     override func setUpWithError() throws {
         continueAfterFailure = false
         AppManager.shared.launchApplicationIfNeeded()
+    }
+    
+    override class func tearDown() {
+        AppManager.shared.terminateApplication()
     }
 
     /// Tests the non-existence of a specific resource video.

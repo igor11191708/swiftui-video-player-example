@@ -2,13 +2,13 @@
 //  LoopTest.swift
 //  VideoPlayerUITests
 //
-//  Created by Igor  on 03.09.24.
+//  Created by Igor on 03.09.24.
 //
 
 import XCTest
 @testable import swiftui_loop_videoplayer_example
 
-final class LoopUITest: XCTestCase, Initializable, Navigable {
+final class LoopUITest: XCTestCase, Initializable, Navigable, Existing {
      
     /// Prepares the test class for execution by ensuring the application is launched if not already running and sets failure handling.
     ///
@@ -18,6 +18,10 @@ final class LoopUITest: XCTestCase, Initializable, Navigable {
         continueAfterFailure = false
         
         AppManager.shared.launchApplicationIfNeeded()
+    }
+    
+    override class func tearDown() {
+        AppManager.shared.terminateApplication()
     }
     
     /// Tests the increment of loop counts in a video player over time.
@@ -58,21 +62,8 @@ final class LoopUITest: XCTestCase, Initializable, Navigable {
     /// - Parameter app: The XCUIApplication instance representing the app.
     /// - Returns: The integer value of the current loop count.
     func getCurrentLoopCount(app: XCUIApplication) -> Int {
-        let loopCounterText = app.staticTexts[Video11.loopCounterIdentifier]
-        XCTAssertTrue(loopCounterText.waitForExistence(timeout: 5), "Loop counter text should be visible on the screen")
+        let loopCounterText = check(staticTexts: Video11.loopCounterIdentifier, wait: 5)
         
-        return extractLoopCount(from: loopCounterText.label)
-    }
-
-    /// Extracts the loop count number from a text string.
-    ///
-    /// This function parses a string assumed to contain the format "Loop count X" and extracts the number
-    /// representing the loop count. It is used to interpret UI text as a usable integer.
-    ///
-    /// - Parameter text: The string containing the loop count text.
-    /// - Returns: The loop count as an integer.
-    func extractLoopCount(from text: String) -> Int {
-        let loopCountString = text.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-        return Int(loopCountString) ?? 0
+        return Extractor.extractInt(from: loopCounterText.label) ?? 0
     }
 }

@@ -9,7 +9,7 @@ import XCTest
 import SwiftUI
 @testable import swiftui_loop_videoplayer_example
 
-final class NavigationUITests: XCTestCase, Initializable, Navigable {
+final class NavigationUITests: XCTestCase, Initializable, Navigable, Existing {
 
     /// Prepares the test class for execution by ensuring the application is launched if not already running and sets failure handling.
     ///
@@ -44,16 +44,10 @@ final class NavigationUITests: XCTestCase, Initializable, Navigable {
         let data = VideoPlayerModel.data
 
         for video in data {
-            
             tap(button: video.name)
-            
-            let videoPlayer = app.otherElements["\(video.name)_ExtVideoPlayer"]
-            XCTAssertTrue(videoPlayer.waitForExistence(timeout: 5), "The ExtVideoPlayer included in \(video.name) should be visible on the screen")
-            
+            check(otherElement: "\(video.name)_ExtVideoPlayer", wait: 5)
             back()
-            
-            let contentView = app.otherElements["ContentView"]
-            XCTAssertTrue(contentView.waitForExistence(timeout: 5), "ContentView should be visible again")
+            check(otherElement: "ContentView", wait: 5)
         }
     }
 }
