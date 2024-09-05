@@ -16,7 +16,7 @@ class AppManager {
     private init() {}  // Private initializer to enforce singleton pattern
 
     func launchApplicationIfNeeded() {
-        if app.state != .runningForeground {
+        if app.state == .notRunning {
             app.launch()
         }
     }

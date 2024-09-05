@@ -33,12 +33,11 @@ final class NavigationUITests: XCTestCase, Initializable, Navigable, Existing {
     /// main view (ContentView) is visible again.
     ///
     /// The function performs the following steps:
-    /// 1. Initializes the app and launches it.
-    /// 2. Iterates through each video model in the `VideoPlayerModel.data` array.
-    /// 3. Locates and taps the button for each video model.
-    /// 4. Confirms that the video view, including the `ExtVideoPlayer`, is displayed.
-    /// 5. Taps the back button to return to the main view.
-    /// 6. Verifies that the main view (ContentView) is visible again.
+    /// 1. Iterates through each video model in the `VideoPlayerModel.data` array.
+    /// 2. Locates and taps the button for each video model.
+    /// 3. Confirms that the video view, including the `ExtVideoPlayer`, is displayed.
+    /// 4. Taps the back button to return to the main view.
+    /// 5. Verifies that the main view (ContentView) is visible again.
     func testNavigationToVideoView() {
         
         let data = VideoPlayerModel.data

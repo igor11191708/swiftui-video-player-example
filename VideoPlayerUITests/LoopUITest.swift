@@ -31,12 +31,11 @@ final class LoopUITest: XCTestCase, Initializable, Navigable, Existing {
     /// indicating that the video player correctly increments the count on each loop.
     ///
     /// The function performs the following steps:
-    /// 1. Initializes the XCUIApplication and launches it.
-    /// 2. Accesses and taps the video button to start the video.
-    /// 3. Waits for the video player to be visible on the screen.
-    /// 4. Retrieves the initial loop count and ensures it's greater than zero.
-    /// 5. Waits for an additional 10 seconds and retrieves the loop count again.
-    /// 6. Verifies that the loop count after 10 seconds is greater than the initial count, confirming proper loop functionality.
+    /// 1. Accesses and taps the video button to start the video.
+    /// 2. Waits for the video player to be visible on the screen.
+    /// 3. Retrieves the initial loop count and ensures it's greater than zero.
+    /// 4. Waits for an additional 10 seconds and retrieves the loop count again.
+    /// 5. Verifies that the loop count after 10 seconds is greater than the initial count, confirming proper loop functionality.
     func testLoop() {
 
         let videoName = Video11.videoPrefix
