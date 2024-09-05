@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Define project variables
+PROJECT_NAME="swiftui-loop-videoplayer-example.xcodeproj"
+SCHEME_NAME="swiftui-loop-videoplayer-example"
+DESTINATION='platform=iOS Simulator,name=iPhone 13,OS=15.4'
+
+# Run tests
+xcodebuild test -project $PROJECT_NAME -scheme $SCHEME_NAME -destination "$DESTINATION" | xcpretty
