@@ -10,6 +10,10 @@ import XCTest
 
 final class LoopUITests: XCTestCase, Initializable, Navigable, Existing {
      
+    let shouldBeGreaterThanZero = "Loop count should be greater than zero after some time playing."
+    
+    let shouldBeGreaterThanInitial = "Loop count should be greater than initialLoopCount after some time playing."
+    
     /// Prepares the test class for execution by ensuring the application is launched if not already running and sets failure handling.
     ///
     /// Throws an error if the setup process fails, potentially causing all subsequent tests to be skipped.
@@ -43,12 +47,12 @@ final class LoopUITests: XCTestCase, Initializable, Navigable, Existing {
         tap(button: videoName, wait: 8)
         
         let initialLoopCount = getCurrentLoopCount(app: app)
-        XCTAssertGreaterThan(initialLoopCount, 0, "Loop count should be greater than zero after some time playing.")
+        XCTAssertGreaterThan(initialLoopCount, 0, shouldBeGreaterThanZero)
         
         sleep(10)
 
         let afterTenSecondsLoopCount = getCurrentLoopCount(app: app)
-        XCTAssertGreaterThan(afterTenSecondsLoopCount, initialLoopCount, "Loop count should be greater than initialLoopCount after some time playing.")
+        XCTAssertGreaterThan(afterTenSecondsLoopCount, initialLoopCount, shouldBeGreaterThanInitial)
         
         back()
     }
