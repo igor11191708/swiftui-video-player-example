@@ -20,4 +20,8 @@ class AppManager {
             app.launch()
         }
     }
+    
+    func terminateApplication(){
+        app.terminate()
+    }
 }

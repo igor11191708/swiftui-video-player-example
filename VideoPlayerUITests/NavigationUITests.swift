@@ -21,6 +21,10 @@ final class NavigationUITests: XCTestCase, Initializable, Navigable {
         AppManager.shared.launchApplicationIfNeeded()
     }
     
+    override class func tearDown() {
+        AppManager.shared.terminateApplication()
+    }
+    
     /// Tests the navigation from the main view to various video views and back.
     ///
     /// This test verifies that each video button in the `VideoPlayerModel.data` array correctly navigates to
