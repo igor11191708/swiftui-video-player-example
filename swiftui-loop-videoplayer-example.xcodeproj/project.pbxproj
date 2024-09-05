@@ -32,8 +32,8 @@
 		78ABCC022C870CA00083884B /* ResponsiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE72C80B1310084DC8C /* ResponsiveStack.swift */; };
 		78ABCC032C870CAC0083884B /* VectorLogoLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B5E2C6BB28C007E26CD /* VectorLogoLayer.swift */; };
 		78ABCC042C870CB00083884B /* ArtFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B492C6B484D007E26CD /* ArtFilter.swift */; };
-		78ABCC062C87298B0083884B /* LoopUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC052C87298B0083884B /* LoopUITest.swift */; };
-		78ABCC082C883B730083884B /* ErrorsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC072C883B730083884B /* ErrorsUITest.swift */; };
+		78ABCC062C87298B0083884B /* LoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC052C87298B0083884B /* LoopUITests.swift */; };
+		78ABCC082C883B730083884B /* ErrorsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC072C883B730083884B /* ErrorsUITests.swift */; };
 		78ABCC0B2C88482C0083884B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC0A2C88482C0083884B /* AppManager.swift */; };
 		78ABCC0E2C8848E80083884B /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC0D2C8848E80083884B /* Initializable.swift */; };
 		78ABCC112C884E580083884B /* Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC102C884E580083884B /* Navigable.swift */; };
@@ -82,8 +82,8 @@
 		788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_hint.gif; sourceTree = "<group>"; };
 		7892F7332C6BDFE600B7A3B5 /* rotate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rotate.gif; sourceTree = "<group>"; };
 		7892F7372C6CA80800B7A3B5 /* rotate_around_edge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rotate_around_edge.gif; sourceTree = "<group>"; };
-		78ABCC052C87298B0083884B /* LoopUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopUITest.swift; sourceTree = "<group>"; };
-		78ABCC072C883B730083884B /* ErrorsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsUITest.swift; sourceTree = "<group>"; };
+		78ABCC052C87298B0083884B /* LoopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopUITests.swift; sourceTree = "<group>"; };
+		78ABCC072C883B730083884B /* ErrorsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsUITests.swift; sourceTree = "<group>"; };
 		78ABCC0A2C88482C0083884B /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		78ABCC0D2C8848E80083884B /* Initializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initializable.swift; sourceTree = "<group>"; };
 		78ABCC0F2C884DB70083884B /* swiftui-loop-videoplayer-example.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "swiftui-loop-videoplayer-example.xctestplan"; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 				78ABCC0C2C8848C30083884B /* protocol */,
 				78ABCC092C8848160083884B /* utility */,
 				7876EDE92C80B69F0084DC8C /* NavigationUITests.swift */,
-				78ABCC052C87298B0083884B /* LoopUITest.swift */,
-				78ABCC072C883B730083884B /* ErrorsUITest.swift */,
+				78ABCC052C87298B0083884B /* LoopUITests.swift */,
+				78ABCC072C883B730083884B /* ErrorsUITests.swift */,
 			);
 			path = VideoPlayerUITests;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78ABCC112C884E580083884B /* Navigable.swift in Sources */,
-				78ABCC062C87298B0083884B /* LoopUITest.swift in Sources */,
+				78ABCC062C87298B0083884B /* LoopUITests.swift in Sources */,
 				78ABCBFF2C870C720083884B /* Video2.swift in Sources */,
 				78ABCC002C870C740083884B /* Video3.swift in Sources */,
 				78ABCC172C89A5E50083884B /* Extractor.swift in Sources */,
@@ -430,7 +430,7 @@
 				78ABCC022C870CA00083884B /* ResponsiveStack.swift in Sources */,
 				78ABCC032C870CAC0083884B /* VectorLogoLayer.swift in Sources */,
 				78ABCBFD2C870C6C0083884B /* Video1.swift in Sources */,
-				78ABCC082C883B730083884B /* ErrorsUITest.swift in Sources */,
+				78ABCC082C883B730083884B /* ErrorsUITests.swift in Sources */,
 				7876EDEA2C80B69F0084DC8C /* NavigationUITests.swift in Sources */,
 				78ABCC0E2C8848E80083884B /* Initializable.swift in Sources */,
 				78ABCC012C870C810083884B /* VideoTpl.swift in Sources */,

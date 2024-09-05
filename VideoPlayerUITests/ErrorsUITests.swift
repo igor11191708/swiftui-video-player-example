@@ -1,5 +1,5 @@
 //
-//  ErrorsUITest.swift
+//  ErrorsUITests.swift
 //  VideoPlayerUITests
 //
 //  Created by Igor Shelopaev
@@ -8,7 +8,7 @@
 import XCTest
 import swiftui_loop_videoplayer
 
-final class ErrorsUITest: XCTestCase, Initializable, Navigable {
+final class ErrorsUITests: XCTestCase, Initializable, Navigable {
 
     /// Prepares the test class for execution by ensuring the application is launched if not already running and sets failure handling.
     ///
