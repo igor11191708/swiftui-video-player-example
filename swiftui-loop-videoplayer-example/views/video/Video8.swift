@@ -13,23 +13,19 @@ struct Video8: VideoTpl {
     
     static let videoPrefix : String = "Video8"
     
-    static var videoPlayerIdentifier : String {
-        "\(videoPrefix)_ExtVideoPlayer"
-    }
-    
-    static let initVideo = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
+    static var videoPlayerIdentifier : String {  "\(videoPrefix)_ExtVideoPlayer" }
     
     @State private var playbackCommand: PlaybackCommand = .play
     
     @State private var isEditing = false
     
-    @State private var selectedVideoURL = Video8.initVideo
+    @State private var selectedVideoURL = initVideo
     
     @State private var currentTime: Double = 0
     
     @State private var duration: Double? = nil
     
-    @State private var settings = getSettings(for: Video8.initVideo)
+    @State private var settings = getSettings(for: initVideo)
 
     var body: some View {
         VStack {
@@ -153,3 +149,5 @@ fileprivate let videoOptions = [
     "Big Buck Bunny from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "Elephant's Dream from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
 ]
+
+fileprivate let initVideo = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
