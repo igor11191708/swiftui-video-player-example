@@ -29,12 +29,6 @@ struct Video8: VideoTpl {
     
     @State private var duration: Double? = nil
     
-    let videoOptions = [
-        "Apple HLS Stream from URL": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8",
-        "Big Buck Bunny from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-        "Elephant's Dream from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-    ]
-    
     @State private var settings = getSettings(for: Video8.initVideo)
 
     var body: some View {
@@ -48,9 +42,9 @@ struct Video8: VideoTpl {
             .ignoresSafeArea() 
             .tag(selectedVideoURL)
             .background(Color("app_blue"))
-            .toolbar { toolbarTpl }
              sliderTpl
         }
+        .toolbar { toolbarTpl }
         .onAppear {
             handleVideoSelectionChange(selectedVideoURL)
         }
@@ -153,3 +147,9 @@ fileprivate func formatTime(_ time: Double) -> String {
     let seconds = Int(time) % 60
     return String(format: "%d:%02d", minutes, seconds)
 }
+
+fileprivate let videoOptions = [
+    "Apple HLS Stream from URL": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8",
+    "Big Buck Bunny from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "Elephant's Dream from URL": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+]
