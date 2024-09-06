@@ -30,6 +30,9 @@ struct ContentView: View {
             }
         }
         .preferredColorScheme(.dark)
+        .onAppear{
+            navigationPath = .init(["Video8"])
+        }
     }
     
     @ViewBuilder
