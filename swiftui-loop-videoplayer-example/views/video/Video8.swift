@@ -11,15 +11,15 @@ import AVFoundation
 
 struct Video8: VideoTpl {
     
-    static public let videoPrefix : String = "Video8"
+    static let videoPrefix : String = "Video8"
     
-    static public var videoPlayerIdentifier : String {
+    static var videoPlayerIdentifier : String {
         "\(videoPrefix)_ExtVideoPlayer"
     }
     
-    @State private var playbackCommand: PlaybackCommand = .play
-    
     static let initVideo = "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
+    
+    @State private var playbackCommand: PlaybackCommand = .play
     
     @State private var isEditing = false
     
