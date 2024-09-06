@@ -11,7 +11,12 @@ import swiftui_loop_videoplayer
 
 struct Video1 : VideoTpl{
     
+    static let videoPrefix : String = "Video1"
+    
+    static var videoPlayerIdentifier : String {  "\(videoPrefix)_ExtVideoPlayer" }
+    
     @State var fileName : String = "swipe"
+    
     @State private var playbackCommand: PlaybackCommand = .play
     
     let options: [String] = ["apple_logo", "swipe"]
@@ -35,7 +40,7 @@ struct Video1 : VideoTpl{
             VStack(alignment : .trailing){
                 Spacer()
                     ExtVideoPlayer(settings: $settings, command: $playbackCommand)
-                    .accessibilityIdentifier("Video1_ExtVideoPlayer")
+                    .accessibilityIdentifier(Self.videoPlayerIdentifier)
                     .frame(width: adjustedSize.width, height: adjustedSize.height)
                 Spacer()
             }.offset(x : proxy.size.width - adjustedSize.width)

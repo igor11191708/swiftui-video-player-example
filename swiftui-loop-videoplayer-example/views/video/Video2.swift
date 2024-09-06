@@ -9,6 +9,11 @@ import SwiftUI
 import swiftui_loop_videoplayer
 
 struct Video2 : VideoTpl{
+    
+    static let videoPrefix : String = "Video2"
+    
+    static var videoPlayerIdentifier : String {  "\(videoPrefix)_ExtVideoPlayer" }
+    
     var body: some View{
         ZStack {
             ExtVideoPlayer{
@@ -19,8 +24,7 @@ struct Video2 : VideoTpl{
                         EFontSize(27)
                     }
                 }
-            }
-            .accessibilityIdentifier("Video2_ExtVideoPlayer")
+            }.accessibilityIdentifier(Self.videoPlayerIdentifier)
         }.background(Color("app_blue"))
     }
 }
