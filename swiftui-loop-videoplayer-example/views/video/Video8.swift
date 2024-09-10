@@ -136,7 +136,7 @@ fileprivate func getSettings(for name: String) -> VideoSettings{
         SourceName(name)
         Gravity(.resizeAspectFill)
         TimePublishing()
-       // Loop()
+        Loop()
     }
 }
 
