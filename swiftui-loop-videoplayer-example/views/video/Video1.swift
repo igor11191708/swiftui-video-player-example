@@ -17,7 +17,7 @@ struct Video1 : VideoTpl{
     
     @State var fileName : String = "swipe"
     
-    @State private var playbackCommand: PlaybackCommand = .play
+    @State private var playbackCommand: PlaybackCommand = .idle
     
     let options: [String] = ["apple_logo", "swipe"]
     

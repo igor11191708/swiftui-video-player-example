@@ -15,7 +15,7 @@ struct Video8: VideoTpl {
     
     static var videoPlayerIdentifier : String {  "\(videoPrefix)_ExtVideoPlayer" }
     
-    @State private var playbackCommand: PlaybackCommand = .play
+    @State private var playbackCommand: PlaybackCommand = .idle
     
     @State private var isEditing = false
     

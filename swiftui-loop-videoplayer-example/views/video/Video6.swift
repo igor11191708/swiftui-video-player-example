@@ -15,7 +15,7 @@ struct Video6: VideoTpl {
     
     static var videoPlayerIdentifier : String {  "\(videoPrefix)_ExtVideoPlayer" }
     
-    @State private var playbackCommand: PlaybackCommand = .play
+    @State private var playbackCommand: PlaybackCommand = .idle
     
     @State private var isPlaying: Bool = true
     
@@ -28,6 +28,7 @@ struct Video6: VideoTpl {
     @State private var settings = VideoSettings {
         SourceName("apple_logo")
         Loop()
+        Mute()
     }
     
     @State var brightness: Float = 0.0
