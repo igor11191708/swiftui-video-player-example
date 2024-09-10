@@ -40,6 +40,7 @@
 		78ABCC1C2C89BC060083884B /* run_tests.sh in Resources */ = {isa = PBXBuildFile; fileRef = 78ABCC1B2C89BC060083884B /* run_tests.sh */; };
 		78ABCC1E2C89BEED0083884B /* test_config.yml in Resources */ = {isa = PBXBuildFile; fileRef = 78ABCC1D2C89BEED0083884B /* test_config.yml */; };
 		78ABCC242C8F5E280083884B /* VideoTpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC232C8F5E280083884B /* VideoTpl.swift */; };
+		78ABCC302C9043960083884B /* VideoTpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ABCC232C8F5E280083884B /* VideoTpl.swift */; };
 		78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF7BEB2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift */; };
 		78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF7BED2A52A9DA0028E9E3 /* ContentView.swift */; };
 		78AF7BF02A52A9DB0028E9E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78AF7BEF2A52A9DB0028E9E3 /* Assets.xcassets */; };
@@ -436,6 +437,7 @@
 				78446BA02C821C9E003CF3F1 /* VideoPlayerModel.swift in Sources */,
 				78ABCC022C870CA00083884B /* ResponsiveStack.swift in Sources */,
 				78ABCC032C870CAC0083884B /* VectorLogoLayer.swift in Sources */,
+				78ABCC302C9043960083884B /* VideoTpl.swift in Sources */,
 				78ABCBFD2C870C6C0083884B /* Video1.swift in Sources */,
 				78ABCC082C883B730083884B /* ErrorsUITests.swift in Sources */,
 				7876EDEA2C80B69F0084DC8C /* NavigationUITests.swift in Sources */,
