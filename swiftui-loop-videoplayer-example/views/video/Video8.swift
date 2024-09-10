@@ -93,6 +93,8 @@ struct Video8: VideoTpl {
         if playbackCommand != command{
             isEditing = true
             playbackCommand = command
+        }else{
+            isEditing = false
         }
     }
     
@@ -134,7 +136,7 @@ fileprivate func getSettings(for name: String) -> VideoSettings{
         SourceName(name)
         Gravity(.resizeAspectFill)
         TimePublishing()
-        Loop()
+       // Loop()
     }
 }
 
