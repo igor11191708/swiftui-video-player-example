@@ -1,6 +1,6 @@
 # SwiftUI video player Video from URL or Local file
 
-## [ SwiftUI video player package API](https://github.com/The-Igor/swiftui-loop-videoplayer)
+## [Video player API](https://github.com/The-Igor/swiftui-loop-videoplayer)
 
 ## Disclaimer on Video Sources like YouTube
 Please note that using videos from URLs requires ensuring that you have the right to use and stream these videos. Videos hosted on platforms like YouTube cannot be used directly due to restrictions in their terms of service. Always ensure the video URL is compliant with copyright laws and platform policies. 
