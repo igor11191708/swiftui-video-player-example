@@ -47,18 +47,10 @@ struct Video6: VideoTpl {
                 )
                 .onPlayerEventChange(perform: onPlayerEventChange)
                 .accessibilityIdentifier(Self.videoPlayerIdentifier)
-                .onChange(of: playbackCommand) { value in
-                    updatePlayingState(for: value)
-                }
-                .onChange(of: isLogoAdded){ value in
-                    playbackCommand = value ? .addVector(VectorLogoLayer()) : .removeAllVectors
-                }
-                .onChange(of: brightness){ value in
-                    playbackCommand = .brightness(value)
-                }
-                .onChange(of: contrast){ value in
-                    playbackCommand = .contrast(value)
-                }
+                .onChange(of: playbackCommand, perform: updatePlayingState)
+                .onChange(of: isLogoAdded, perform: onVectorChange)
+                .onChange(of: brightness, perform: onBrightnessChange)
+                .onChange(of: contrast, perform: onContrastChange)
                 Spacer()
                 VStack(alignment : .leading, spacing: 15) {
                     playbackControlsTpl
@@ -67,6 +59,18 @@ struct Video6: VideoTpl {
                     slidersBar
                 }.padding(.horizontal)
         }
+    }
+    
+    private func onVectorChange(value : Bool){
+        playbackCommand = value ? .addVector(VectorLogoLayer()) : .removeAllVectors
+    }
+    
+    private func onContrastChange(value: Float){
+        playbackCommand = .contrast(value)
+    }
+    
+    private func onBrightnessChange(value: Float){
+        playbackCommand = .brightness(value)
     }
     
     private func onPlayerEventChange(events: [PlayerEvent]){
@@ -90,7 +94,7 @@ struct Video6: VideoTpl {
         }
     }
     
-    func pause() {
+    private func pause() {
         playbackCommand = .pause
     }
     
