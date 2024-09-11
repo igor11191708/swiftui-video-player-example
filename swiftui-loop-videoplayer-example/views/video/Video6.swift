@@ -8,6 +8,8 @@ import swiftui_loop_videoplayer
 import SwiftUI
 import AVFoundation
 import CoreImage
+import CompactSlider
+/// The slider from the package https://github.com/buh/CompactSlider
 
 struct Video6: VideoTpl {
     
@@ -51,6 +53,12 @@ struct Video6: VideoTpl {
             }
             .onChange(of: isLogoAdded){ value in
                 playbackCommand = value ? .addVector(VectorLogoLayer()) : .removeAllVectors
+            }
+            .onChange(of: brightness){ value in
+                playbackCommand = .brightness(value)
+            }
+            .onChange(of: contrast){ value in
+                playbackCommand = .contrast(value)
             }
             Spacer()
             VStack(alignment : .leading, spacing: 15) {
@@ -186,16 +194,20 @@ struct Video6: VideoTpl {
         VStack(alignment: .leading, spacing: 15) {
             HStack {
                 Text("Brightness")
-                Slider(value: $brightness, in: 0.0...1.0, step: 0.1) { _ in
-                    playbackCommand = .brightness(brightness)
+                    .frame(width: 102, alignment: .leading)
+                CompactSlider(value: $brightness, in: 0.0...1.0, step: 0.1) {
+                    Text(String(format: "%.2f", brightness))
+                    Spacer()
                 }
                 .padding(.horizontal)
             }
             
             HStack {
                 Text("Contrast")
-                Slider(value: $contrast, in: 1.0...2.0, step: 0.1) { _ in
-                    playbackCommand = .contrast(contrast)
+                    .frame(width: 102, alignment: .leading)
+                CompactSlider(value: $contrast, in: 1.0...2.0, step: 0.1) {
+                    Text(String(format: "%.2f", contrast))
+                    Spacer()
                 }
                 .padding(.horizontal)
             }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780ED6AD2C9191ED001B4B0D /* CompactSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 780ED6AC2C9191ED001B4B0D /* CompactSlider */; };
+		780ED6AF2C919618001B4B0D /* swiftui_video_player.gif in Resources */ = {isa = PBXBuildFile; fileRef = 780ED6AE2C919618001B4B0D /* swiftui_video_player.gif */; };
 		7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */; };
 		78446B872C80D3BD003CF3F1 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78446B862C80D3BD003CF3F1 /* swiftui-loop-videoplayer */; };
 		78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
@@ -54,7 +56,6 @@
 		78F87B452C6743AD007E26CD /* video_filters.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B442C6743AC007E26CD /* video_filters.gif */; };
 		78F87B4A2C6B484D007E26CD /* ArtFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B492C6B484D007E26CD /* ArtFilter.swift */; };
 		78F87B512C6B4D69007E26CD /* apple_logo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B502C6B4D69007E26CD /* apple_logo.mp4 */; };
-		78F87B552C6B5277007E26CD /* swiftui_video_player.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B542C6B5276007E26CD /* swiftui_video_player.gif */; };
 		78F87B602C6BB28C007E26CD /* VectorLogoLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B5E2C6BB28C007E26CD /* VectorLogoLayer.swift */; };
 		78F87B642C6BB689007E26CD /* vector.gif in Resources */ = {isa = PBXBuildFile; fileRef = 78F87B632C6BB689007E26CD /* vector.gif */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		780ED6AE2C919618001B4B0D /* swiftui_video_player.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_player.gif; sourceTree = "<group>"; };
 		7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tip_video_swiftui.gif; sourceTree = "<group>"; };
 		78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerModel.swift; sourceTree = "<group>"; };
 		784A16222A58374B00E8BBEA /* swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui.gif; sourceTree = "<group>"; };
@@ -108,7 +110,6 @@
 		78F87B442C6743AC007E26CD /* video_filters.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = video_filters.gif; sourceTree = "<group>"; };
 		78F87B492C6B484D007E26CD /* ArtFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtFilter.swift; sourceTree = "<group>"; };
 		78F87B502C6B4D69007E26CD /* apple_logo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = apple_logo.mp4; sourceTree = "<group>"; };
-		78F87B542C6B5276007E26CD /* swiftui_video_player.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_player.gif; sourceTree = "<group>"; };
 		78F87B5E2C6BB28C007E26CD /* VectorLogoLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorLogoLayer.swift; sourceTree = "<group>"; };
 		78F87B632C6BB689007E26CD /* vector.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = vector.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				786A7B9F2C6138AE00018844 /* swiftui-loop-videoplayer in Frameworks */,
+				780ED6AD2C9191ED001B4B0D /* CompactSlider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +264,7 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
-				78F87B542C6B5276007E26CD /* swiftui_video_player.gif */,
+				780ED6AE2C919618001B4B0D /* swiftui_video_player.gif */,
 				7892F7332C6BDFE600B7A3B5 /* rotate.gif */,
 				7892F7372C6CA80800B7A3B5 /* rotate_around_edge.gif */,
 				78F87B442C6743AC007E26CD /* video_filters.gif */,
@@ -339,6 +341,7 @@
 			name = "swiftui-loop-videoplayer-example";
 			packageProductDependencies = (
 				786A7B9E2C6138AE00018844 /* swiftui-loop-videoplayer */,
+				780ED6AC2C9191ED001B4B0D /* CompactSlider */,
 			);
 			productName = "swiftui-loop-videoplayer-example";
 			productReference = 78AF7BE82A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example.app */;
@@ -375,6 +378,7 @@
 			mainGroup = 78AF7BDF2A52A9DA0028E9E3;
 			packageReferences = (
 				786A7B9D2C6138AE00018844 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */,
+				780ED6AB2C9191C0001B4B0D /* XCRemoteSwiftPackageReference "CompactSlider" */,
 			);
 			productRefGroup = 78AF7BE92A52A9DA0028E9E3 /* Products */;
 			projectDirPath = "";
@@ -407,8 +411,8 @@
 				7892F7342C6BDFE600B7A3B5 /* rotate.gif in Resources */,
 				78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */,
 				78AF7C072A52BFBB0028E9E3 /* README.md in Resources */,
+				780ED6AF2C919618001B4B0D /* swiftui_video_player.gif in Resources */,
 				78F87B642C6BB689007E26CD /* vector.gif in Resources */,
-				78F87B552C6B5277007E26CD /* swiftui_video_player.gif in Resources */,
 				7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */,
 				784A16232A58374B00E8BBEA /* swiftui.gif in Resources */,
 				78F87B452C6743AD007E26CD /* video_filters.gif in Resources */,
@@ -736,6 +740,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		780ED6AB2C9191C0001B4B0D /* XCRemoteSwiftPackageReference "CompactSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/buh/CompactSlider.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.6;
+			};
+		};
 		786A7B9D2C6138AE00018844 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/The-Igor/swiftui-loop-videoplayer.git";
@@ -747,6 +759,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		780ED6AC2C9191ED001B4B0D /* CompactSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 780ED6AB2C9191C0001B4B0D /* XCRemoteSwiftPackageReference "CompactSlider" */;
+			productName = CompactSlider;
+		};
 		78446B862C80D3BD003CF3F1 /* swiftui-loop-videoplayer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 786A7B9D2C6138AE00018844 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */;
