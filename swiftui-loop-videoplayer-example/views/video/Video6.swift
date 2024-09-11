@@ -65,7 +65,7 @@ struct Video6: VideoTpl {
     private func onPlayerEventChange(events: [PlayerEvent]){
         print(events)
         events.forEach{
-            if case .seek(let success, let currentTime) = $0{
+            if case .seek(_, _) = $0{
                 playbackCommand = .idle
                 isSeeking = false
             }
