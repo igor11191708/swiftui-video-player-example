@@ -41,33 +41,31 @@ struct Video6: VideoTpl {
     
     var body: some View {
         ResponsiveStack(spacing : 0) {
-            ExtVideoPlayer(
-                settings : $settings,
-                command: $playbackCommand
-            )
-            .overlay(playbackControlsTpl, alignment: .bottom)
-            .onPlayerEventChange(perform: onPlayerEventChange)
-            .accessibilityIdentifier(Self.videoPlayerIdentifier)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onChange(of: playbackCommand) { value in
-                updatePlayingState(for: value)
-            }
-            .onChange(of: isLogoAdded){ value in
-                playbackCommand = value ? .addVector(VectorLogoLayer()) : .removeAllVectors
-            }
-            .onChange(of: brightness){ value in
-                playbackCommand = .brightness(value)
-            }
-            .onChange(of: contrast){ value in
-                playbackCommand = .contrast(value)
-            }
-            Spacer()
-            VStack(alignment : .leading, spacing: 15) {
-                vectorControlsTpl
-                pickerTpl
-                slidersBar
-            }.padding(.horizontal)
-
+                ExtVideoPlayer(
+                    settings : $settings,
+                    command: $playbackCommand
+                )
+                .onPlayerEventChange(perform: onPlayerEventChange)
+                .accessibilityIdentifier(Self.videoPlayerIdentifier)
+                .onChange(of: playbackCommand) { value in
+                    updatePlayingState(for: value)
+                }
+                .onChange(of: isLogoAdded){ value in
+                    playbackCommand = value ? .addVector(VectorLogoLayer()) : .removeAllVectors
+                }
+                .onChange(of: brightness){ value in
+                    playbackCommand = .brightness(value)
+                }
+                .onChange(of: contrast){ value in
+                    playbackCommand = .contrast(value)
+                }
+                Spacer()
+                VStack(alignment : .leading, spacing: 15) {
+                    playbackControlsTpl
+                    vectorControlsTpl
+                    pickerTpl
+                    slidersBar
+                }.padding(.horizontal)
         }
     }
     
@@ -93,9 +91,7 @@ struct Video6: VideoTpl {
     }
     
     func pause() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            playbackCommand = .pause
-        }
+        playbackCommand = .pause
     }
     
     @ViewBuilder
@@ -141,7 +137,6 @@ struct Video6: VideoTpl {
     @ViewBuilder
     private var playbackControlsTpl: some View{
         // Control Buttons
-        VStack{
             HStack {
                 Spacer()
                 // Button to move playback to the beginning and pause
@@ -183,9 +178,6 @@ struct Video6: VideoTpl {
             }
             .padding(.vertical, 8)
             .background(RoundedRectangle(cornerRadius: 50).fill(.ultraThinMaterial))
-            .padding(.horizontal)
-            Color.clear.frame(height: 50)
-        }
     }
     
     @ViewBuilder
@@ -200,7 +192,6 @@ struct Video6: VideoTpl {
                     Text(String(format: "%.2f", brightness))
                     Spacer()
                 }
-                .padding(.horizontal)
             }
             
             HStack {
@@ -210,7 +201,6 @@ struct Video6: VideoTpl {
                     Text(String(format: "%.2f", contrast))
                     Spacer()
                 }
-                .padding(.horizontal)
             }
         }
     }
