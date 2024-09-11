@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		780ED6AD2C9191ED001B4B0D /* CompactSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 780ED6AC2C9191ED001B4B0D /* CompactSlider */; };
 		7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */; };
+		7816ADFC2C91A140008179BA /* swiftui_video_player.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7816ADFB2C91A140008179BA /* swiftui_video_player.gif */; };
 		78446B872C80D3BD003CF3F1 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78446B862C80D3BD003CF3F1 /* swiftui-loop-videoplayer */; };
 		78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
 		78446BA02C821C9E003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tip_video_swiftui.gif; sourceTree = "<group>"; };
+		7816ADFB2C91A140008179BA /* swiftui_video_player.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_player.gif; sourceTree = "<group>"; };
 		78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerModel.swift; sourceTree = "<group>"; };
 		784A16222A58374B00E8BBEA /* swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui.gif; sourceTree = "<group>"; };
 		786A7B9A2C60C77800018844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		78AF7C012A52BDDF0028E9E3 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				7816ADFB2C91A140008179BA /* swiftui_video_player.gif */,
 				7892F7332C6BDFE600B7A3B5 /* rotate.gif */,
 				7892F7372C6CA80800B7A3B5 /* rotate_around_edge.gif */,
 				78F87B442C6743AC007E26CD /* video_filters.gif */,
@@ -408,6 +411,7 @@
 				7892F7342C6BDFE600B7A3B5 /* rotate.gif in Resources */,
 				78AF7BFD2A52AA5D0028E9E3 /* swipe.mp4 in Resources */,
 				78AF7C072A52BFBB0028E9E3 /* README.md in Resources */,
+				7816ADFC2C91A140008179BA /* swiftui_video_player.gif in Resources */,
 				78F87B642C6BB689007E26CD /* vector.gif in Resources */,
 				7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */,
 				784A16232A58374B00E8BBEA /* swiftui.gif in Resources */,
