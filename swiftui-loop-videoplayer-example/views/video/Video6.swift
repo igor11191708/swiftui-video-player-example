@@ -21,9 +21,15 @@ struct Video6: VideoTpl {
     
     @State private var isLogoAdded: Bool = false
     
+    @State private var isSeeking : Bool = false
+    
     @State private var isMuted: Bool = true
     
     @State private var selectedFilterIndex: Int = 0
+    
+    @State var brightness: Float = 0.0
+    
+    @State var contrast: Float = 1.0
 
     @State private var settings = VideoSettings {
         SourceName("apple_logo")
@@ -31,34 +37,20 @@ struct Video6: VideoTpl {
         Mute()
     }
     
-    @State var brightness: Float = 0.0
-    
-    @State var contrast: Float = 1.0
-    
-    // Define the filters with their names and parameters
-    let filters = [
-        ("None", [String: Any]()),
-        ("Glow", [String: Any]()),
-        ("CISepiaTone", [kCIInputIntensityKey: 0.8]),
-        ("CIColorMonochrome", [kCIInputColorKey: CIColor(color: .gray), kCIInputIntensityKey: 1.0]),
-        ("CIPixellate", [kCIInputScaleKey: 8.0]),
-        ("CICrystallize", [kCIInputRadiusKey: 20, kCIInputCenterKey: CIVector(x: 150, y: 150)]),
-        ("CIGloom", [kCIInputRadiusKey: 10, kCIInputIntensityKey: 0.75]),
-        ("CIHoleDistortion", [kCIInputRadiusKey: 150, kCIInputCenterKey: CIVector(x: 150, y: 150)]),
-        ("CIKaleidoscope", ["inputCount": 6, "inputCenter": CIVector(x: 150, y: 150)]),
-        ("CIZoomBlur", [kCIInputAmountKey: 20, kCIInputCenterKey: CIVector(x: 150, y: 150)])
-    ]
-    
     var body: some View {
         ResponsiveStack(spacing : 0) {
             ExtVideoPlayer(
                 settings : $settings,
                 command: $playbackCommand
             )
+            .onPlayerEventChange(perform: onPlayerEventChange)
             .accessibilityIdentifier(Self.videoPlayerIdentifier)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .onChange(of: playbackCommand) { value in
                 updatePlayingState(for: value)
+            }
+            .onChange(of: isLogoAdded){ value in
+                playbackCommand = value ? .addVector(VectorLogoLayer()) : .removeAllVectors
             }
             Spacer()
             VStack(alignment : .leading, spacing: 15) {
@@ -67,6 +59,16 @@ struct Video6: VideoTpl {
                 pickerTpl
                 slidersBar
             }.padding()
+        }
+    }
+    
+    private func onPlayerEventChange(events: [PlayerEvent]){
+        print(events)
+        events.forEach{
+            if case .seek(let success, let currentTime) = $0{
+                playbackCommand = .idle
+                isSeeking = false
+            }
         }
     }
     
@@ -81,21 +83,11 @@ struct Video6: VideoTpl {
         }
     }
     
-    private func makeButton(action: @escaping () -> Void, imageName: String, backgroundColor: Color = .blue) -> some View {
-        Button(action: action) {
-            Image(systemName: imageName)
-                .resizable()
-                .frame(width: 20, height: 20)
-        }
-        .buttonStyle(CustomButtonStyle(backgroundColor: backgroundColor))
-    }
-    
     func pause() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             playbackCommand = .pause
         }
     }
-    
     
     @ViewBuilder
     private var pickerTpl : some View {
@@ -106,7 +98,7 @@ struct Video6: VideoTpl {
             Spacer()
             Picker("Select Filter", selection: $selectedFilterIndex) {
                 ForEach(0..<filters.count, id: \.self) { index in
-                    Text(self.filters[index].0).tag(index)
+                    Text(filters[index].0).tag(index)
                 }
             }
             .pickerStyle(.menu)
@@ -118,7 +110,7 @@ struct Video6: VideoTpl {
 
     private func applySelectedFilter(index: Int) {
         let filter = filters[index]
-        print(filter.0)
+
         if filter.0 == "None" {
             playbackCommand = .removeAllFilters
         } else if let filter = CIFilter(name: filter.0, parameters: filter.1) {
@@ -132,20 +124,8 @@ struct Video6: VideoTpl {
     @ViewBuilder
     private var vectorControlsTpl : some View{
         HStack {
-            // Button to add a vector graphic layer over the video
-            makeButton(action: {
-                playbackCommand = .addVector(VectorLogoLayer())
-                isLogoAdded.toggle()
-            }, imageName: "diamond.fill", backgroundColor: isLogoAdded ? .gray : .blue )
-            .disabled(isLogoAdded)
-            
-            // Button to remove all vector graphic layers from the video
-            makeButton(action: {
-                playbackCommand = .removeAllVectors
-                isLogoAdded.toggle()
-            }, imageName: "diamond", backgroundColor: isLogoAdded ? .blue : .gray )
-            .disabled(!isLogoAdded)
-            Spacer()
+            Toggle("Vector layer", isOn: $isLogoAdded)
+                .tint(.blue)
         }
     }
     
@@ -153,6 +133,7 @@ struct Video6: VideoTpl {
     private var playbackControlsTpl: some View{
         // Control Buttons
         HStack {
+            Spacer()
             // Button to move playback to the beginning and pause
             makeButton(action: {
                 playbackCommand = .begin
@@ -160,22 +141,26 @@ struct Video6: VideoTpl {
             }, imageName: "backward.end.fill")
             
             // Button to play the video
-            makeButton(action: {
-                playbackCommand = .play
-            }, imageName: "play.fill", backgroundColor: isPlaying ? .gray : .blue)
-            .disabled(isPlaying)
-            
-            // Button to pause the video
-            makeButton(action: {
-                playbackCommand = .pause
-            }, imageName: "pause.fill", backgroundColor: isPlaying ? .blue : .gray)
-            .disabled(!isPlaying)
+            if !isPlaying{
+                makeButton(action: {
+                    playbackCommand = .play
+                }, imageName: "play.fill", backgroundColor: .ultraThin)
+               // .disabled(isPlaying)
+            }else{
+                
+                // Button to pause the video
+                makeButton(action: {
+                    playbackCommand = .pause
+                }, imageName: "pause.fill", backgroundColor: .ultraThin)
+               // .disabled(!isPlaying)
+            }
             
             // Button to seek back 10 seconds in the video and pause
             makeButton(action: {
+                isSeeking = true
                 playbackCommand = .seek(to: 2.0)
-                pause()
             }, imageName: "gobackward.10")
+            .disabled(isSeeking)
             
             // Button to move playback to the end and pause
             makeButton(action: {
@@ -190,6 +175,8 @@ struct Video6: VideoTpl {
             }, imageName: isMuted ? "speaker.slash.fill" : "speaker.2.fill")
             Spacer()
         }
+        .padding(.vertical, 8)
+        .background(RoundedRectangle(cornerRadius: 50).fill(.ultraThickMaterial))
     }
     
     @ViewBuilder
@@ -216,8 +203,25 @@ struct Video6: VideoTpl {
     }
 }
 
+// MARK: - Fileprivate
+
+// Define the filters with their names and parameters
+fileprivate let filters = [
+    ("None", [String: Any]()),
+    ("Glow", [String: Any]()),
+    ("CISepiaTone", [kCIInputIntensityKey: 0.8]),
+    ("CIColorMonochrome", [kCIInputColorKey: CIColor(color: .gray), kCIInputIntensityKey: 1.0]),
+    ("CIPixellate", [kCIInputScaleKey: 8.0]),
+    ("CICrystallize", [kCIInputRadiusKey: 20, kCIInputCenterKey: CIVector(x: 150, y: 150)]),
+    ("CIGloom", [kCIInputRadiusKey: 10, kCIInputIntensityKey: 0.75]),
+    ("CIHoleDistortion", [kCIInputRadiusKey: 150, kCIInputCenterKey: CIVector(x: 150, y: 150)]),
+    ("CIKaleidoscope", ["inputCount": 6, "inputCenter": CIVector(x: 150, y: 150)]),
+    ("CIZoomBlur", [kCIInputAmountKey: 20, kCIInputCenterKey: CIVector(x: 150, y: 150)])
+]
+
 fileprivate struct CustomButtonStyle: ButtonStyle {
-    var backgroundColor: Color
+    
+    let backgroundColor: Material
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -227,4 +231,13 @@ fileprivate struct CustomButtonStyle: ButtonStyle {
             .clipShape(Circle())
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
     }
+}
+
+fileprivate func makeButton(action: @escaping () -> Void, imageName: String, backgroundColor: Material = .ultraThickMaterial) -> some View {
+    Button(action: action) {
+        Image(systemName: imageName)
+            .resizable()
+            .frame(width: 20, height: 20)
+    }
+    .buttonStyle(CustomButtonStyle(backgroundColor: backgroundColor))
 }
