@@ -45,6 +45,7 @@ struct Video6: VideoTpl {
                 settings : $settings,
                 command: $playbackCommand
             )
+            .overlay(playbackControlsTpl, alignment: .bottom)
             .onPlayerEventChange(perform: onPlayerEventChange)
             .accessibilityIdentifier(Self.videoPlayerIdentifier)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -62,11 +63,11 @@ struct Video6: VideoTpl {
             }
             Spacer()
             VStack(alignment : .leading, spacing: 15) {
-                playbackControlsTpl
                 vectorControlsTpl
                 pickerTpl
                 slidersBar
-            }.padding()
+            }.padding(.horizontal)
+
         }
     }
     
@@ -140,51 +141,51 @@ struct Video6: VideoTpl {
     @ViewBuilder
     private var playbackControlsTpl: some View{
         // Control Buttons
-        HStack {
-            Spacer()
-            // Button to move playback to the beginning and pause
-            makeButton(action: {
-                playbackCommand = .begin
-                pause()
-            }, imageName: "backward.end.fill")
-            
-            // Button to play the video
-            if !isPlaying{
+        VStack{
+            HStack {
+                Spacer()
+                // Button to move playback to the beginning and pause
                 makeButton(action: {
-                    playbackCommand = .play
-                }, imageName: "play.fill", backgroundColor: .ultraThin)
-               // .disabled(isPlaying)
-            }else{
+                    playbackCommand = .begin
+                    pause()
+                }, imageName: "backward.end.fill")
                 
-                // Button to pause the video
+                // Button to play the video
+                if !isPlaying{
+                    makeButton(action: {
+                        playbackCommand = .play
+                    }, imageName: "play.fill", backgroundColor: .ultraThin)
+                }else{
+                    // Button to pause the video
+                    makeButton(action: {
+                        playbackCommand = .pause
+                    }, imageName: "pause.fill", backgroundColor: .ultraThin)
+                }
+                // Button to seek back 2 seconds in the video and pause
                 makeButton(action: {
-                    playbackCommand = .pause
-                }, imageName: "pause.fill", backgroundColor: .ultraThin)
-               // .disabled(!isPlaying)
+                    isSeeking = true
+                    playbackCommand = .seek(to: 2.0)
+                }, imageName: "gobackward.10")
+                .disabled(isSeeking)
+                
+                // Button to move playback to the end and pause
+                makeButton(action: {
+                    playbackCommand = .end
+                    pause()
+                }, imageName: "forward.end.fill")
+                
+                // Button to toggle mute and unmute
+                makeButton(action: {
+                    isMuted.toggle()
+                    playbackCommand = isMuted ? .mute : .unmute
+                }, imageName: isMuted ? "speaker.slash.fill" : "speaker.2.fill")
+                Spacer()
             }
-            
-            // Button to seek back 10 seconds in the video and pause
-            makeButton(action: {
-                isSeeking = true
-                playbackCommand = .seek(to: 2.0)
-            }, imageName: "gobackward.10")
-            .disabled(isSeeking)
-            
-            // Button to move playback to the end and pause
-            makeButton(action: {
-                playbackCommand = .end
-                pause()
-            }, imageName: "forward.end.fill")
-            
-            // Button to toggle mute and unmute
-            makeButton(action: {
-                isMuted.toggle()
-                playbackCommand = isMuted ? .mute : .unmute
-            }, imageName: isMuted ? "speaker.slash.fill" : "speaker.2.fill")
-            Spacer()
+            .padding(.vertical, 8)
+            .background(RoundedRectangle(cornerRadius: 50).fill(.ultraThinMaterial))
+            .padding(.horizontal)
+            Color.clear.frame(height: 50)
         }
-        .padding(.vertical, 8)
-        .background(RoundedRectangle(cornerRadius: 50).fill(.ultraThickMaterial))
     }
     
     @ViewBuilder
