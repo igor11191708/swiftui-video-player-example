@@ -11,6 +11,8 @@ import CoreImage
 
 struct Video6: VideoTpl {
     
+    // MARK: - Testing
+    
     static let videoPrefix : String = "Video6"
     
     static var videoPlayerIdentifier : String {  "\(videoPrefix)_ExtVideoPlayer" }

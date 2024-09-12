@@ -11,6 +11,8 @@ import AVFoundation
 
 struct Video8: VideoTpl {
     
+    @StateObject var viewModel = Video8ViewModel()
+    
     static let videoPrefix : String = "Video8"
     
     static var videoPlayerIdentifier : String {  "\(videoPrefix)_ExtVideoPlayer" }
@@ -28,8 +30,6 @@ struct Video8: VideoTpl {
     @State private var selectedVideoURL = initVideo
     
     @State private var currentTime: Double = 0
-    
-    @State private var duration: Double? = nil
 
     var body: some View {
         VStack {
@@ -40,7 +40,6 @@ struct Video8: VideoTpl {
                     .onPlayerEventChange(perform: onPlayerEventChange)
             }
             .ignoresSafeArea() 
-            .tag(selectedVideoURL)
             .background(Color("app_blue"))
              sliderTpl
         }
@@ -69,21 +68,9 @@ struct Video8: VideoTpl {
     }
     
     private func handleVideoSelectionChange(_ newURL: String) {
-        loadVideo(from: newURL)
-        currentTime = 0
-        duration = nil
+        viewModel.getDuration(from: newURL)
         settings = getSettings(for: newURL)
-    }
-
-    private func loadVideo(from url: String) {
-        guard let videoURL = URL(string: url) else { return }
-        let asset = AVAsset(url: videoURL)
-        
-        Task {
-            if let duration = try? await asset.load(.duration){
-                self.duration = duration.seconds
-            }
-        }
+        currentTime = 0
     }
     
     private func onEditingChanged(editing: Bool) {
@@ -106,9 +93,9 @@ struct Video8: VideoTpl {
     private var sliderTpl: some View{
         HStack {
             Text(formatTime(currentTime))
-            Slider(value: $currentTime, in: 0...(duration ?? 0), onEditingChanged: onEditingChanged)
-                .disabled(duration == nil || isEditing == true)
-            Text(formatTime(duration ?? 0))
+            Slider(value: $currentTime, in: 0...(viewModel.duration ?? 0), onEditingChanged: onEditingChanged)
+                .disabled(viewModel.duration == nil || isEditing == true)
+            Text(formatTime(viewModel.duration ?? 0))
         }.padding()
     }
     
