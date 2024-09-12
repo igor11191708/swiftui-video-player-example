@@ -15,7 +15,13 @@ struct Video8: VideoTpl {
     
     static var videoPlayerIdentifier : String {  "\(videoPrefix)_ExtVideoPlayer" }
     
-    @State private var playbackCommand: PlaybackCommand = .idle
+    // MARK: - Public properties
+    
+    @State public var playbackCommand: PlaybackCommand = .idle
+    
+    @State public var settings = getSettings(for: initVideo)
+    
+    // MARK: - Private properties
     
     @State private var isEditing = false
     
@@ -24,8 +30,6 @@ struct Video8: VideoTpl {
     @State private var currentTime: Double = 0
     
     @State private var duration: Double? = nil
-    
-    @State private var settings = getSettings(for: initVideo)
 
     var body: some View {
         VStack {

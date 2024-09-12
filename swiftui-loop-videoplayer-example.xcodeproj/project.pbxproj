@@ -10,6 +10,16 @@
 		780ED6AD2C9191ED001B4B0D /* CompactSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 780ED6AC2C9191ED001B4B0D /* CompactSlider */; };
 		7810A3D52A7CE3570032340D /* tip_video_swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */; };
 		7816ADFC2C91A140008179BA /* swiftui_video_player.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7816ADFB2C91A140008179BA /* swiftui_video_player.gif */; };
+		7816ADFF2C9337EA008179BA /* ButtonsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816ADFE2C9337EA008179BA /* ButtonsBuilder.swift */; };
+		7816AE022C933B48008179BA /* BrightnessSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE012C933B48008179BA /* BrightnessSlider.swift */; };
+		7816AE042C933BF2008179BA /* ContrastSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE032C933BF2008179BA /* ContrastSlider.swift */; };
+		7816AE062C933E93008179BA /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE052C933E93008179BA /* PlayButton.swift */; };
+		7816AE082C933FCB008179BA /* FiltersPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE072C933FCB008179BA /* FiltersPicker.swift */; };
+		7816AE0A2C9340FE008179BA /* VectorToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE092C9340FE008179BA /* VectorToggle.swift */; };
+		7816AE0C2C9341D8008179BA /* MuteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE0B2C9341D7008179BA /* MuteButton.swift */; };
+		7816AE102C934269008179BA /* SeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE0F2C934269008179BA /* SeekButton.swift */; };
+		7816AE122C93430F008179BA /* BeginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE112C93430F008179BA /* BeginButton.swift */; };
+		7816AE142C934365008179BA /* EndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE132C934365008179BA /* EndButton.swift */; };
 		78446B872C80D3BD003CF3F1 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78446B862C80D3BD003CF3F1 /* swiftui-loop-videoplayer */; };
 		78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
 		78446BA02C821C9E003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
@@ -73,6 +83,16 @@
 /* Begin PBXFileReference section */
 		7810A3D42A7CE3570032340D /* tip_video_swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tip_video_swiftui.gif; sourceTree = "<group>"; };
 		7816ADFB2C91A140008179BA /* swiftui_video_player.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui_video_player.gif; sourceTree = "<group>"; };
+		7816ADFE2C9337EA008179BA /* ButtonsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsBuilder.swift; sourceTree = "<group>"; };
+		7816AE012C933B48008179BA /* BrightnessSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessSlider.swift; sourceTree = "<group>"; };
+		7816AE032C933BF2008179BA /* ContrastSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrastSlider.swift; sourceTree = "<group>"; };
+		7816AE052C933E93008179BA /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		7816AE072C933FCB008179BA /* FiltersPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersPicker.swift; sourceTree = "<group>"; };
+		7816AE092C9340FE008179BA /* VectorToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorToggle.swift; sourceTree = "<group>"; };
+		7816AE0B2C9341D7008179BA /* MuteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteButton.swift; sourceTree = "<group>"; };
+		7816AE0F2C934269008179BA /* SeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekButton.swift; sourceTree = "<group>"; };
+		7816AE112C93430F008179BA /* BeginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginButton.swift; sourceTree = "<group>"; };
+		7816AE132C934365008179BA /* EndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndButton.swift; sourceTree = "<group>"; };
 		78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerModel.swift; sourceTree = "<group>"; };
 		784A16222A58374B00E8BBEA /* swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui.gif; sourceTree = "<group>"; };
 		786A7B9A2C60C77800018844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +155,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7816ADFD2C9337D5008179BA /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				7816ADFE2C9337EA008179BA /* ButtonsBuilder.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		7816AE002C933B28008179BA /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				7816AE012C933B48008179BA /* BrightnessSlider.swift */,
+				7816AE032C933BF2008179BA /* ContrastSlider.swift */,
+				7816AE052C933E93008179BA /* PlayButton.swift */,
+				7816AE072C933FCB008179BA /* FiltersPicker.swift */,
+				7816AE092C9340FE008179BA /* VectorToggle.swift */,
+				7816AE0B2C9341D7008179BA /* MuteButton.swift */,
+				7816AE0F2C934269008179BA /* SeekButton.swift */,
+				7816AE112C93430F008179BA /* BeginButton.swift */,
+				7816AE132C934365008179BA /* EndButton.swift */,
+			);
+			path = controls;
+			sourceTree = "<group>";
+		};
 		78446B8F2C820FD6003CF3F1 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +265,7 @@
 		78AF7BEA2A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example */ = {
 			isa = PBXGroup;
 			children = (
+				7816ADFD2C9337D5008179BA /* utils */,
 				78ABCC202C8F5DCD0083884B /* protocol */,
 				78446B8F2C820FD6003CF3F1 /* model */,
 				78F87B5F2C6BB28C007E26CD /* vector */,
@@ -288,6 +333,7 @@
 		78F87B4E2C6B48B9007E26CD /* views */ = {
 			isa = PBXGroup;
 			children = (
+				7816AE002C933B28008179BA /* controls */,
 				7876EDE62C80B11B0084DC8C /* video */,
 				7876EDE72C80B1310084DC8C /* ResponsiveStack.swift */,
 			);
@@ -457,16 +503,26 @@
 				78D7B6732C6E1CE1002833B3 /* Video8.swift in Sources */,
 				78F87B3F2C6668F0007E26CD /* Video6.swift in Sources */,
 				78D7B6752C6E2C13002833B3 /* Video1.swift in Sources */,
+				7816AE142C934365008179BA /* EndButton.swift in Sources */,
 				7876EDE52C80B0D00084DC8C /* Video3.swift in Sources */,
+				7816AE082C933FCB008179BA /* FiltersPicker.swift in Sources */,
 				78ABCC242C8F5E280083884B /* VideoTpl.swift in Sources */,
 				7876EDE82C80B1310084DC8C /* ResponsiveStack.swift in Sources */,
+				7816AE062C933E93008179BA /* PlayButton.swift in Sources */,
+				7816AE042C933BF2008179BA /* ContrastSlider.swift in Sources */,
 				78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */,
 				78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */,
+				7816AE102C934269008179BA /* SeekButton.swift in Sources */,
 				78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */,
+				7816ADFF2C9337EA008179BA /* ButtonsBuilder.swift in Sources */,
 				7876EDE12C80B0590084DC8C /* Video11.swift in Sources */,
+				7816AE0C2C9341D8008179BA /* MuteButton.swift in Sources */,
 				7876EDE32C80B09D0084DC8C /* Video2.swift in Sources */,
+				7816AE122C93430F008179BA /* BeginButton.swift in Sources */,
 				78F87B602C6BB28C007E26CD /* VectorLogoLayer.swift in Sources */,
+				7816AE0A2C9340FE008179BA /* VectorToggle.swift in Sources */,
 				78F87B4A2C6B484D007E26CD /* ArtFilter.swift in Sources */,
+				7816AE022C933B48008179BA /* BrightnessSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
