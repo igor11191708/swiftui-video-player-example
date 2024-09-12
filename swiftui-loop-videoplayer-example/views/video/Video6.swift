@@ -3,13 +3,13 @@
 //  loop_player
 //
 //  Created by Igor Shelopaev on 09.08.24.
+//  The slider from the package https://github.com/buh/CompactSlider
 //
 import swiftui_loop_videoplayer
 import SwiftUI
 import AVFoundation
 import CoreImage
 import CompactSlider
-/// The slider from the package https://github.com/buh/CompactSlider
 
 struct Video6: VideoTpl {
     
