@@ -45,6 +45,9 @@ struct Video6: VideoTpl {
                 )
                 .frame(minHeight: vStackWidth)
                 .accessibilityIdentifier(Self.videoPlayerIdentifier)
+                .mask{
+                    RoundedRectangle(cornerRadius: 25)
+                }
                 
                 playbackControlsTpl
                 VectorToggle(playbackCommand: $playbackCommand)
