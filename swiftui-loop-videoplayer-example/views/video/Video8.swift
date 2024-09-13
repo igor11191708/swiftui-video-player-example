@@ -43,17 +43,19 @@ struct Video8: VideoTpl {
             }
             .ignoresSafeArea() 
             .background(Color("app_blue"))
-            .overlay(TimeSlider(
-                duration: viewModel.duration,
-                playbackCommand: $playbackCommand,
-                currentTime: $viewModel.currentTime,
-                isSeeking: $isSeeking
-            ), alignment: .bottom)
+            .overlay(timeScaleTpl, alignment: .bottom)
         }
         .toolbar { toolbarTpl }
-        .onAppear {
-            handleVideoSelectionChange(selectedVideoURL)
-        }
+        .onAppear { handleVideoSelectionChange(selectedVideoURL) }
+    }
+    
+    private var timeScaleTpl : some View{
+        TimeSlider(
+            duration: viewModel.duration,
+            playbackCommand: $playbackCommand,
+            currentTime: $viewModel.currentTime,
+            isSeeking: $isSeeking
+        )
     }
     
     private func onPlayerEventChange(events: [PlayerEvent]){
