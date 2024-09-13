@@ -7,7 +7,6 @@
 
 import SwiftUI
 import swiftui_loop_videoplayer
-import CompactSlider
 
 struct BrightnessSlider: View {
     
@@ -19,7 +18,7 @@ struct BrightnessSlider: View {
         HStack {
             Text("Brightness")
                 .frame(width: 102, alignment: .leading)
-            CompactSlider(value: $brightness, in: 0.0...1.0, step: 0.1) {
+                Slider(value: $brightness, in: 0.0...1.0, step: 0.1) {
                 Text(String(format: "%.2f", brightness))
                 Spacer()
             }

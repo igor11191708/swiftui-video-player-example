@@ -7,7 +7,6 @@
 
 import SwiftUI
 import swiftui_loop_videoplayer
-import CompactSlider
 
 struct ContrastSlider: View {
     
@@ -19,7 +18,7 @@ struct ContrastSlider: View {
         HStack {
             Text("Contrast")
                 .frame(width: 102, alignment: .leading)
-            CompactSlider(value: $contrast, in: 1.0...2.0, step: 0.1) {
+            Slider(value: $contrast, in: 1.0...2.0, step: 0.1) {
                 Text(String(format: "%.2f", contrast))
                 Spacer()
             }
