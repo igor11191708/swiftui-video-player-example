@@ -30,18 +30,21 @@ struct TimeSlider: View {
                 .disabled(duration == 0 || isSeeking == true)
             Text(formatTime(duration))
         }.padding()
+         .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.75)))
+         .padding(.horizontal)
     }
     
     private func onEditingChanged(editing: Bool) {
         if !editing {
             seekToTime(currentTime)
+        }else{
+            isSeeking = true
         }
     }
     
     private func seekToTime(_ time: Double) {
         let command: PlaybackCommand  = .seek(to: time)
         if playbackCommand != command{
-            isSeeking = true
             playbackCommand = command
         }else{
             isSeeking = false

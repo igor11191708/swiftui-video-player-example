@@ -43,12 +43,12 @@ struct Video8: VideoTpl {
             }
             .ignoresSafeArea() 
             .background(Color("app_blue"))
-            TimeSlider(
+            .overlay(TimeSlider(
                 duration: viewModel.duration,
                 playbackCommand: $playbackCommand,
                 currentTime: $viewModel.currentTime,
                 isSeeking: $isSeeking
-            )
+            ), alignment: .bottom)
         }
         .toolbar { toolbarTpl }
         .onAppear {
