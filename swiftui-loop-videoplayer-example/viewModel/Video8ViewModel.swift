@@ -10,14 +10,18 @@ import AVFoundation
 
 final class Video8ViewModel : ObservableObject{
     
-    @Published private(set) var duration: Double? = nil
+    @Published private(set) var duration: Double = 0
+    
+    @Published var currentTime: Double = 0
     
     public func getDuration(from url: String) {
         
-        duration = nil
-        
         guard let videoURL = URL(string: url) else { return }
+        
         let asset = AVAsset(url: videoURL)
+        
+        duration = 0
+        currentTime = 0
         
         Task { @MainActor in
             if let duration = try? await asset.load(.duration){

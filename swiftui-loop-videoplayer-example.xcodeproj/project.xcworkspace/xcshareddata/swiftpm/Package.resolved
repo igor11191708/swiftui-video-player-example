@@ -1,5 +1,5 @@
 {
-  "originHash" : "00ee89b947ec2ff40378fcc69ec223bb0082721223021c483a6313ec4700485a",
+  "originHash" : "1664655fc6672f43e7411faff36955011927f24a2972dfea4ba54b1c09fc2050",
   "pins" : [
     {
       "identity" : "compactslider",
@@ -13,10 +13,10 @@
     {
       "identity" : "swiftui-loop-videoplayer",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/The-Igor/swiftui-loop-videoplayer.git",
+      "location" : "https://github.com/igor11191708/swiftui-loop-videoplayer",
       "state" : {
         "branch" : "main",
-        "revision" : "0419d25d05e7d87c6fe6266aa762a9668f93c43b"
+        "revision" : "127df510eb36be91fe290f3b1c75ddfc7ad38ae3"
       }
     }
   ],

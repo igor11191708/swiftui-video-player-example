@@ -21,11 +21,12 @@
 		7816AE122C93430F008179BA /* BeginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE112C93430F008179BA /* BeginButton.swift */; };
 		7816AE142C934365008179BA /* EndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE132C934365008179BA /* EndButton.swift */; };
 		7816AE172C9345BA008179BA /* Video8ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE162C9345BA008179BA /* Video8ViewModel.swift */; };
-		78446B872C80D3BD003CF3F1 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78446B862C80D3BD003CF3F1 /* swiftui-loop-videoplayer */; };
+		7816AE192C93473E008179BA /* TimeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE182C93473E008179BA /* TimeSlider.swift */; };
+		7816AE1B2C93503E008179BA /* VideoURLPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE1A2C93503E008179BA /* VideoURLPicker.swift */; };
+		7816AE212C9428F4008179BA /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 7816AE202C9428F4008179BA /* swiftui-loop-videoplayer */; };
 		78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
 		78446BA02C821C9E003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
 		784A16232A58374B00E8BBEA /* swiftui.gif in Resources */ = {isa = PBXBuildFile; fileRef = 784A16222A58374B00E8BBEA /* swiftui.gif */; };
-		786A7B9F2C6138AE00018844 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 786A7B9E2C6138AE00018844 /* swiftui-loop-videoplayer */; };
 		7876EDE12C80B0590084DC8C /* Video11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE02C80B0590084DC8C /* Video11.swift */; };
 		7876EDE32C80B09D0084DC8C /* Video2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE22C80B09D0084DC8C /* Video2.swift */; };
 		7876EDE52C80B0D00084DC8C /* Video3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876EDE42C80B0D00084DC8C /* Video3.swift */; };
@@ -95,6 +96,8 @@
 		7816AE112C93430F008179BA /* BeginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginButton.swift; sourceTree = "<group>"; };
 		7816AE132C934365008179BA /* EndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndButton.swift; sourceTree = "<group>"; };
 		7816AE162C9345BA008179BA /* Video8ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video8ViewModel.swift; sourceTree = "<group>"; };
+		7816AE182C93473E008179BA /* TimeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlider.swift; sourceTree = "<group>"; };
+		7816AE1A2C93503E008179BA /* VideoURLPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoURLPicker.swift; sourceTree = "<group>"; };
 		78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerModel.swift; sourceTree = "<group>"; };
 		784A16222A58374B00E8BBEA /* swiftui.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiftui.gif; sourceTree = "<group>"; };
 		786A7B9A2C60C77800018844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -141,7 +144,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78446B872C80D3BD003CF3F1 /* swiftui-loop-videoplayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +151,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				786A7B9F2C6138AE00018844 /* swiftui-loop-videoplayer in Frameworks */,
 				780ED6AD2C9191ED001B4B0D /* CompactSlider in Frameworks */,
+				7816AE212C9428F4008179BA /* swiftui-loop-videoplayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +179,8 @@
 				7816AE0F2C934269008179BA /* SeekButton.swift */,
 				7816AE112C93430F008179BA /* BeginButton.swift */,
 				7816AE132C934365008179BA /* EndButton.swift */,
+				7816AE182C93473E008179BA /* TimeSlider.swift */,
+				7816AE1A2C93503E008179BA /* VideoURLPicker.swift */,
 			);
 			path = controls;
 			sourceTree = "<group>";
@@ -377,7 +381,6 @@
 			);
 			name = VideoPlayerUITests;
 			packageProductDependencies = (
-				78446B862C80D3BD003CF3F1 /* swiftui-loop-videoplayer */,
 			);
 			productName = VideoPlayerUITests;
 			productReference = 7876EDD52C80AFBA0084DC8C /* VideoPlayerUITests.xctest */;
@@ -397,8 +400,8 @@
 			);
 			name = "swiftui-loop-videoplayer-example";
 			packageProductDependencies = (
-				786A7B9E2C6138AE00018844 /* swiftui-loop-videoplayer */,
 				780ED6AC2C9191ED001B4B0D /* CompactSlider */,
+				7816AE202C9428F4008179BA /* swiftui-loop-videoplayer */,
 			);
 			productName = "swiftui-loop-videoplayer-example";
 			productReference = 78AF7BE82A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example.app */;
@@ -434,8 +437,8 @@
 			);
 			mainGroup = 78AF7BDF2A52A9DA0028E9E3;
 			packageReferences = (
-				786A7B9D2C6138AE00018844 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */,
 				780ED6AB2C9191C0001B4B0D /* XCRemoteSwiftPackageReference "CompactSlider" */,
+				7816AE1F2C9428EA008179BA /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */,
 			);
 			productRefGroup = 78AF7BE92A52A9DA0028E9E3 /* Products */;
 			projectDirPath = "";
@@ -520,6 +523,7 @@
 				78ABCC242C8F5E280083884B /* VideoTpl.swift in Sources */,
 				7876EDE82C80B1310084DC8C /* ResponsiveStack.swift in Sources */,
 				7816AE062C933E93008179BA /* PlayButton.swift in Sources */,
+				7816AE192C93473E008179BA /* TimeSlider.swift in Sources */,
 				7816AE042C933BF2008179BA /* ContrastSlider.swift in Sources */,
 				78AF7BEE2A52A9DA0028E9E3 /* ContentView.swift in Sources */,
 				78AF7BEC2A52A9DA0028E9E3 /* swiftui_loop_videoplayer_exampleApp.swift in Sources */,
@@ -529,6 +533,7 @@
 				7876EDE12C80B0590084DC8C /* Video11.swift in Sources */,
 				7816AE0C2C9341D8008179BA /* MuteButton.swift in Sources */,
 				7876EDE32C80B09D0084DC8C /* Video2.swift in Sources */,
+				7816AE1B2C93503E008179BA /* VideoURLPicker.swift in Sources */,
 				7816AE122C93430F008179BA /* BeginButton.swift in Sources */,
 				7816AE172C9345BA008179BA /* Video8ViewModel.swift in Sources */,
 				78F87B602C6BB28C007E26CD /* VectorLogoLayer.swift in Sources */,
@@ -816,9 +821,9 @@
 				version = 1.1.6;
 			};
 		};
-		786A7B9D2C6138AE00018844 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */ = {
+		7816AE1F2C9428EA008179BA /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/The-Igor/swiftui-loop-videoplayer.git";
+			repositoryURL = "https://github.com/igor11191708/swiftui-loop-videoplayer";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -832,14 +837,9 @@
 			package = 780ED6AB2C9191C0001B4B0D /* XCRemoteSwiftPackageReference "CompactSlider" */;
 			productName = CompactSlider;
 		};
-		78446B862C80D3BD003CF3F1 /* swiftui-loop-videoplayer */ = {
+		7816AE202C9428F4008179BA /* swiftui-loop-videoplayer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 786A7B9D2C6138AE00018844 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */;
-			productName = "swiftui-loop-videoplayer";
-		};
-		786A7B9E2C6138AE00018844 /* swiftui-loop-videoplayer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 786A7B9D2C6138AE00018844 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */;
+			package = 7816AE1F2C9428EA008179BA /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */;
 			productName = "swiftui-loop-videoplayer";
 		};
 /* End XCSwiftPackageProductDependency section */

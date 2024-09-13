@@ -31,7 +31,7 @@ struct ContentView: View {
         }
         .preferredColorScheme(.dark)
         .onAppear{
-             // navigationPath = .init(["Video6"])
+              navigationPath = .init(["Video8"])
         }
     }
     
