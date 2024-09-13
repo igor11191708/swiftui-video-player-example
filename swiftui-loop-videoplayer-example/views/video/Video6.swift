@@ -21,32 +21,40 @@ struct Video6: VideoTpl {
     
     @State public var playbackCommand: PlaybackCommand = .idle
     
-    @State public var settings = VideoSettings {
-        SourceName("apple_logo")
-        Loop()
-        Mute()
+    @State public var settings : VideoSettings
+    
+    @State private var vStackWidth: CGFloat = 0
+    
+    init(videoName : String){
+        let settings = VideoSettings {
+            SourceName(videoName)
+            Loop()
+            Mute()
+            Gravity(.resizeAspectFill)
+        }
+        self._settings = State(initialValue: settings)
     }
     
     // MARK: - Life circle
     
     var body: some View {
-        ResponsiveStack(spacing : 0) {
+            VStack{
                 ExtVideoPlayer(
                     settings : $settings,
                     command: $playbackCommand
                 )
+                .frame(minHeight: vStackWidth)
                 .accessibilityIdentifier(Self.videoPlayerIdentifier)
-                Spacer()
-                VStack(alignment : .leading, spacing: 15) {
-                    playbackControlsTpl
-                    VectorToggle(playbackCommand: $playbackCommand)
-                    FiltersPicker(playbackCommand: $playbackCommand)
-                    /// Brightness and Contrast: These settings function also filters but are managed separately from the filter stack. Adjustments to brightness and contrast are applied additionally and independently of the image filters.
-                    /// Independent Management: Developers should manage brightness and contrast adjustments through their dedicated methods or properties to ensure these settings are accurately reflected in the video output.
-                    BrightnessSlider(playbackCommand: $playbackCommand)
-                    ContrastSlider(playbackCommand: $playbackCommand)
-                }.padding(.horizontal)
-        }
+                
+                playbackControlsTpl
+                VectorToggle(playbackCommand: $playbackCommand)
+                FiltersPicker(playbackCommand: $playbackCommand)
+                /// Brightness and Contrast: These settings function also filters but are managed separately from the filter stack. Adjustments to brightness and contrast are applied additionally and independently of the image filters.
+                /// Independent Management: Developers should manage brightness and contrast adjustments through their dedicated methods or properties to ensure these settings are accurately reflected in the video output.
+                BrightnessSlider(playbackCommand: $playbackCommand)
+                ContrastSlider(playbackCommand: $playbackCommand)
+            }.padding(.horizontal)
+            .measureWidth($vStackWidth) // Using the custom modifier
     }
 
     @ViewBuilder
@@ -65,3 +73,5 @@ struct Video6: VideoTpl {
             .background(RoundedRectangle(cornerRadius: 50).fill(.ultraThinMaterial))
     }
 }
+
+

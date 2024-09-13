@@ -48,9 +48,15 @@ func getDestination(for name: String) -> some View {
         case "Video11": Video11()
         case "Video1": Video1()
         case "Video2": Video2()
-        case "Video6": Video6()
+        case "Video6": ScrollView{
+            VStack(spacing: 29){
+                Video6(videoName: "apple_logo")
+                Divider()
+                Video6(videoName: "swipe")
+            }
+        }
         case "Video8": Video8()
         case "Video3": Video3()
-    default : EmptyView()
+        default : EmptyView()
     }
 }
