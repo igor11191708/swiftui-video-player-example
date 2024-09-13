@@ -2,7 +2,7 @@
 //  Extractor.swift
 //  VideoPlayerUITests
 //
-//  Created by Igor
+//  Created by Igor Shelopaev
 //
 
 import Foundation

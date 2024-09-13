@@ -2,7 +2,7 @@
 //  AppManager.swift
 //  VideoPlayerUITests
 //
-//  Created by Igor  on 04.09.24.
+//  Created by Igor Shelopaev on 04.09.24.
 //
 
 import XCTest

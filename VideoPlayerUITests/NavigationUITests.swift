@@ -2,7 +2,7 @@
 //  ContentViewUITests.swift
 //  VideoPlayerUITests
 //
-//  Created by Igor Shelopaev  on 29.08.24.
+//  Created by Igor Shelopaev on 29.08.24.
 // print(XCUIApplication().debugDescription)
 
 import XCTest

@@ -2,7 +2,7 @@
 //  LoopTests.swift
 //  VideoPlayerUITests
 //
-//  Created by Igor on 03.09.24.
+//  Created by Igor Shelopaev on 03.09.24.
 //
 
 import XCTest
