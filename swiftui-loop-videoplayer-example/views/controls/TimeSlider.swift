@@ -27,7 +27,7 @@ struct TimeSlider: View {
         HStack {
             Text(formatTime(currentTime))
             Slider(value: $currentTime, in: 0...duration, onEditingChanged: onEditingChanged)
-                .disabled(isSeeking == true)
+                .disabled(duration == 0 || isSeeking == true)
             Text(formatTime(duration))
         }.padding()
     }
