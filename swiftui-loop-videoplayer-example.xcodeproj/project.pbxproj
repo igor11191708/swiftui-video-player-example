@@ -22,7 +22,6 @@
 		7816AE172C9345BA008179BA /* Video8ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE162C9345BA008179BA /* Video8ViewModel.swift */; };
 		7816AE192C93473E008179BA /* TimeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE182C93473E008179BA /* TimeSlider.swift */; };
 		7816AE1B2C93503E008179BA /* VideoURLPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE1A2C93503E008179BA /* VideoURLPicker.swift */; };
-		7816AE212C9428F4008179BA /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 7816AE202C9428F4008179BA /* swiftui-loop-videoplayer */; };
 		7816AE222C942A19008179BA /* Video8ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE162C9345BA008179BA /* Video8ViewModel.swift */; };
 		7816AE232C942A2F008179BA /* VideoURLPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE1A2C93503E008179BA /* VideoURLPicker.swift */; };
 		7816AE242C942A37008179BA /* TimeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE182C93473E008179BA /* TimeSlider.swift */; };
@@ -36,7 +35,6 @@
 		7816AE2C2C942A46008179BA /* SeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE0F2C934269008179BA /* SeekButton.swift */; };
 		7816AE2D2C942A46008179BA /* BrightnessSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE012C933B48008179BA /* BrightnessSlider.swift */; };
 		7816AE2E2C942A57008179BA /* ButtonsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816ADFE2C9337EA008179BA /* ButtonsBuilder.swift */; };
-		7816AE322C942ABD008179BA /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 7816AE312C942ABD008179BA /* swiftui-loop-videoplayer */; };
 		7816AE352C943842008179BA /* MeasureWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE342C943842008179BA /* MeasureWidth.swift */; };
 		7816AE362C94388E008179BA /* MeasureWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816AE342C943842008179BA /* MeasureWidth.swift */; };
 		78446B912C820FF0003CF3F1 /* VideoPlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78446B902C820FF0003CF3F1 /* VideoPlayerModel.swift */; };
@@ -50,6 +48,7 @@
 		788D66212A5B1B7B0047A134 /* swiftui_video_hint.gif in Resources */ = {isa = PBXBuildFile; fileRef = 788D66202A5B1B7B0047A134 /* swiftui_video_hint.gif */; };
 		7892F7342C6BDFE600B7A3B5 /* rotate.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7892F7332C6BDFE600B7A3B5 /* rotate.gif */; };
 		7892F7382C6CA80800B7A3B5 /* rotate_around_edge.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7892F7372C6CA80800B7A3B5 /* rotate_around_edge.gif */; };
+		78A2F66D2C95EA2200D2BF05 /* swiftui-loop-videoplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 78A2F66C2C95EA2200D2BF05 /* swiftui-loop-videoplayer */; };
 		78ABCBFB2C870C670083884B /* Video8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D7B6722C6E1CE1002833B3 /* Video8.swift */; };
 		78ABCBFC2C870C690083884B /* Video6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F87B3E2C6668F0007E26CD /* Video6.swift */; };
 		78ABCBFD2C870C6C0083884B /* Video1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D7B6742C6E2C13002833B3 /* Video1.swift */; };
@@ -160,7 +159,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7816AE322C942ABD008179BA /* swiftui-loop-videoplayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7816AE212C9428F4008179BA /* swiftui-loop-videoplayer in Frameworks */,
+				78A2F66D2C95EA2200D2BF05 /* swiftui-loop-videoplayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +404,6 @@
 			);
 			name = VideoPlayerUITests;
 			packageProductDependencies = (
-				7816AE312C942ABD008179BA /* swiftui-loop-videoplayer */,
 			);
 			productName = VideoPlayerUITests;
 			productReference = 7876EDD52C80AFBA0084DC8C /* VideoPlayerUITests.xctest */;
@@ -426,7 +423,7 @@
 			);
 			name = "swiftui-loop-videoplayer-example";
 			packageProductDependencies = (
-				7816AE202C9428F4008179BA /* swiftui-loop-videoplayer */,
+				78A2F66C2C95EA2200D2BF05 /* swiftui-loop-videoplayer */,
 			);
 			productName = "swiftui-loop-videoplayer-example";
 			productReference = 78AF7BE82A52A9DA0028E9E3 /* swiftui-loop-videoplayer-example.app */;
@@ -462,7 +459,7 @@
 			);
 			mainGroup = 78AF7BDF2A52A9DA0028E9E3;
 			packageReferences = (
-				7816AE1F2C9428EA008179BA /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */,
+				78A2F66B2C95EA1300D2BF05 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */,
 			);
 			productRefGroup = 78AF7BE92A52A9DA0028E9E3 /* Products */;
 			projectDirPath = "";
@@ -852,7 +849,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7816AE1F2C9428EA008179BA /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */ = {
+		78A2F66B2C95EA1300D2BF05 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/igor11191708/swiftui-loop-videoplayer";
 			requirement = {
@@ -863,14 +860,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7816AE202C9428F4008179BA /* swiftui-loop-videoplayer */ = {
+		78A2F66C2C95EA2200D2BF05 /* swiftui-loop-videoplayer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7816AE1F2C9428EA008179BA /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */;
-			productName = "swiftui-loop-videoplayer";
-		};
-		7816AE312C942ABD008179BA /* swiftui-loop-videoplayer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7816AE1F2C9428EA008179BA /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */;
+			package = 78A2F66B2C95EA1300D2BF05 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */;
 			productName = "swiftui-loop-videoplayer";
 		};
 /* End XCSwiftPackageProductDependency section */
