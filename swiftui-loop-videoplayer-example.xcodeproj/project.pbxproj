@@ -855,7 +855,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		78A2F66B2C95EA1300D2BF05 /* XCRemoteSwiftPackageReference "swiftui-loop-videoplayer" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/igor11191708/swiftui-loop-videoplayer";
+			repositoryURL = "https://github.com/swiftuiux/swiftui-loop-videoplayer";
 			requirement = {
 				branch = main;
 				kind = branch;
