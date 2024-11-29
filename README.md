@@ -1,25 +1,25 @@
 # SwiftUI video player Video from URL or Local file
 
-## [Video player API](https://github.com/The-Igor/swiftui-loop-videoplayer)
+## [Video player API](https://github.com/swiftuiux/swiftui-loop-videoplayer)
 
 ## Disclaimer on Video Sources like YouTube
 Please note that using videos from URLs requires ensuring that you have the right to use and stream these videos. Videos hosted on platforms like YouTube cannot be used directly due to restrictions in their terms of service. Always ensure the video URL is compliant with copyright laws and platform policies. 
   
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui_video_player.gif) 
+![The concept](https://github.com/swiftuiux/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui_video_player.gif) 
 
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/vector.gif) 
+![The concept](https://github.com/swiftuiux/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/vector.gif) 
 
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/rotate.gif) 
+![The concept](https://github.com/swiftuiux/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/rotate.gif) 
 
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/rotate_around_edge.gif) 
+![The concept](https://github.com/swiftuiux/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/rotate_around_edge.gif) 
   
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui.gif)
+![The concept](https://github.com/swiftuiux/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui.gif)
   
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/macos.gif) 
+![The concept](https://github.com/swiftuiux/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/macos.gif) 
   
 ## Practical idea for the package
 You can introduce video hints about some functionality into the app, for example how to add positions to favorites. Put loop video hint into background or open as popup.
 
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui_video_hint.gif)
+![The concept](https://github.com/swiftuiux/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/swiftui_video_hint.gif)
 
-![The concept](https://github.com/The-Igor/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/tip_video_swiftui.gif)
+![The concept](https://github.com/swiftuiux/swiftui-loop-videoplayer-example/blob/main/swiftui-loop-videoplayer-example/img/tip_video_swiftui.gif)
